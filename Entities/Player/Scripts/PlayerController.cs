@@ -4,9 +4,9 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public int playerLevel = 1;
-    public int playerXP = 0;
-    public int playerStr = 10;
+    public static int playerLevel = 1;
+    public static int playerXP = 0;
+    public static int playerStr = 10;
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
     public Sword weapon;
