@@ -9,11 +9,11 @@ public class PlayerController : MonoBehaviour {
     public static int playerStr = 10;
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
+    public static int playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
     public Sword weapon;
 
     private int weaponDamage;
     private int damage;
-    private int playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
 

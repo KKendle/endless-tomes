@@ -6,11 +6,11 @@ public class PlayerHealth : MonoBehaviour {
 
 	// static means it belongs to class itself, not a created instance of the class
 	// meaning, there is only one playerHealth
-	private static int playerBaseHealth = 100;
-	public static int playerHealth = playerBaseHealth;
+	public static int playerHealth = PlayerController.playerHealthMax;
 	static PlayerHealth instance = null;
 
 	private static Text healthText;
+	private PlayerController player;
 
 	void Start() {
 		if (instance != null && instance != this) {
@@ -22,12 +22,12 @@ public class PlayerHealth : MonoBehaviour {
 			healthText = GetComponent<Text>();
 			healthText.text = playerHealth.ToString();
 		}
-	}
 
-	// public void InitialHealth(int health) {
-	// 	Debug.Log("running initial health");
-	// 	healthText.text = playerHealth.ToString();
-	// }
+		player = GameObject.Find("Player").GetComponent<PlayerController>();
+        if (player != null) {
+            Debug.Log("should have found Player");
+        }
+	}
 
 	public void Health(int points) {
 		// Debug.Log("Running player Health function");
@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour {
 	public static void Reset() {
 		Debug.Log("Player health is at " + playerHealth);
 		Debug.Log("Resetting player health");
-		playerHealth = playerBaseHealth;
+		playerHealth = PlayerController.playerHealthMax;
 		healthText.text = playerHealth.ToString();
 		Debug.Log("Player health now is at " + playerHealth);
 	}
