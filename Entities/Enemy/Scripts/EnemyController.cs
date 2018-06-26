@@ -7,7 +7,9 @@ public class EnemyController : MonoBehaviour {
     public int enemyLevel = 1;
     public int enemyStr = 5;
     public int enemyCon = 10;
+    public int enemyBaseHealth = 100;
     public int enemyXPValue = 35;
+    public int enemyHealthMax;
     public Sword weapon;
 
     private int weaponDamage;
@@ -29,7 +31,9 @@ public class EnemyController : MonoBehaviour {
             Debug.Log("should have found Player");
         }
 
-        EnemyHealth.Reset();
+        enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
+
+        EnemyHealth.Reset(enemyHealthMax);
 	}
 
     void Update() {
