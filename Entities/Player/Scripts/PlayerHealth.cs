@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour {
 
 		player = GameObject.Find("Player").GetComponent<PlayerController>();
         if (player != null) {
-            Debug.Log("should have found Player");
+            Debug.Log(this + "should have found Player");
         }
 	}
 
@@ -41,10 +41,10 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public static void Reset() {
-		Debug.Log("Player health is at " + playerHealth);
-		Debug.Log("Resetting player health");
+		// Debug.Log("Player health is at " + playerHealth);
+		// Debug.Log("Resetting player health");
 		playerHealth = PlayerController.playerHealthMax;
 		healthText.text = playerHealth.ToString();
-		Debug.Log("Player health now is at " + playerHealth);
+		// Debug.Log("Player health now is at " + playerHealth);
 	}
 }

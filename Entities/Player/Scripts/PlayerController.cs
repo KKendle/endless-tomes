@@ -18,19 +18,15 @@ public class PlayerController : MonoBehaviour {
     private EnemyHealth enemyHealth;
 
 	void Start() {
-        Debug.Log("player con " + playerCon);
-        Debug.Log("player basehealth " + playerBaseHealth);
-        Debug.Log("player health max " + playerHealthMax);
-
         Debug.Log("Player Health");
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
-            Debug.Log("should have found Player Health");
+            Debug.Log(this + "should have found Player Health");
         }
 
         enemyHealth = GameObject.Find("Enemy Health").GetComponent<EnemyHealth>();
         if (enemyHealth != null) {
-            Debug.Log("should have found Enemy Health");
+            Debug.Log(this + "should have found Enemy Health");
         }
 
         PlayerHealth.Reset();
@@ -62,7 +58,6 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("Calculating XP");
         playerXP += xp;
         Debug.Log("Current XP " + playerXP);
-        // CheckLevelUp(playerXP);
     }
 
 	void Die() {

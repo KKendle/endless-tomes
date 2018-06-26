@@ -35,10 +35,10 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	public static void Reset(int healthMax) {
-		Debug.Log("Enemy health is at " + enemyHealth);
-		Debug.Log("Resetting enemy health");
+		// Debug.Log("Enemy health is at " + enemyHealth);
+		// Debug.Log("Resetting enemy health");
 		enemyHealth = healthMax;
 		healthText.text = enemyHealth.ToString();
-		Debug.Log("Enemy health now is at " + enemyHealth);
+		// Debug.Log("Enemy health now is at " + enemyHealth);
 	}
 }

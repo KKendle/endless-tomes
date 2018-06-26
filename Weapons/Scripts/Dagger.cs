@@ -11,9 +11,9 @@ public class Dagger : MonoBehaviour {
 	private int damage;
 
 	public int WeaponDamage() {
-		Debug.Log("running dagger weapon damage");
+		// Debug.Log("running dagger weapon damage");
 		damage = (Mathf.RoundToInt(Random.Range(damageMin, damageMax)) + (baseStr / 2));
-		Debug.Log("dagger damage " + damage);
+		// Debug.Log("dagger damage " + damage);
 		return damage;
 	}
 }

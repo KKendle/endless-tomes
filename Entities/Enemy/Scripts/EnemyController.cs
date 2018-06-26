@@ -18,17 +18,15 @@ public class EnemyController : MonoBehaviour {
     private PlayerController player;
     private PlayerHealth playerHealth;
 
-
 	void Start() {
-        Debug.Log("Enemy Health");
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
-            Debug.Log("should have found Player Health");
+            Debug.Log(this + "should have found Player Health");
         }
 
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         if (player != null) {
-            Debug.Log("should have found Player");
+            Debug.Log(this + "should have found Player");
         }
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
@@ -50,10 +48,10 @@ public class EnemyController : MonoBehaviour {
     void Attack() {
         // Debug.Log("Enemy Attacking");
         weaponDamage = weapon.WeaponDamage();
-        Debug.Log("enemy str " + enemyStr);
-        Debug.Log("enemy rounded " + Mathf.RoundToInt(enemyStr / 2));
+        // Debug.Log("enemy str " + enemyStr);
+        // Debug.Log("enemy rounded " + Mathf.RoundToInt(enemyStr / 2));
         damage = Mathf.RoundToInt(weaponDamage + (enemyStr / 2));
-        Debug.Log("Total enemy damage - rounded " + damage);
+        // Debug.Log("Total enemy damage - rounded " + damage);
         playerHealth.Health(damage);
         // playerHealth.Health(enemyWeapon.GetDamage());
         // Debug.Log("Player health is now at " + PlayerHealth.playerHealth);
