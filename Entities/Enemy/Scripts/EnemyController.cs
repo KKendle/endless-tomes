@@ -21,12 +21,12 @@ public class EnemyController : MonoBehaviour {
 	void Start() {
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
-            Debug.Log(this + "should have found Player Health");
+            // Debug.Log(this + "should have found Player Health");
         }
 
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         if (player != null) {
-            Debug.Log(this + "should have found Player");
+            // Debug.Log(this + "should have found Player");
         }
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));

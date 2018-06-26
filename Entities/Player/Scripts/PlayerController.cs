@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public static int playerStr = 10;
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
-    public static int playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
+    public static int playerHealthMax;
     public Sword weapon;
 
     private int weaponDamage;
@@ -18,17 +18,17 @@ public class PlayerController : MonoBehaviour {
     private EnemyHealth enemyHealth;
 
 	void Start() {
-        Debug.Log("Player Health");
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
-            Debug.Log(this + "should have found Player Health");
+            // Debug.Log(this + "should have found Player Health");
         }
 
         enemyHealth = GameObject.Find("Enemy Health").GetComponent<EnemyHealth>();
         if (enemyHealth != null) {
-            Debug.Log(this + "should have found Enemy Health");
+            // Debug.Log(this + "should have found Enemy Health");
         }
 
+        playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
         PlayerHealth.Reset();
 	}
 
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
         // Debug.Log("Player attacking");
         weaponDamage = weapon.WeaponDamage();
         damage = Mathf.RoundToInt(weaponDamage + (playerStr / 2));
+        // Debug.Log("player str " + playerStr);
         // Debug.Log("total player damage " + damage);
         enemyHealth.Health(damage);
         // Debug.Log("Enemy health is now at " + EnemyHealth.enemyHealth);

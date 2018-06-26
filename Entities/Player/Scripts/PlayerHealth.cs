@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour {
 
 		player = GameObject.Find("Player").GetComponent<PlayerController>();
         if (player != null) {
-            Debug.Log(this + "should have found Player");
+            // Debug.Log(this + "should have found Player");
         }
 	}
 
