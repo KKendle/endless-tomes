@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     private int damage;
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
+    private static Text playerLevelText;
+    private static Text playerXPText;
 
 	void Start() {
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
@@ -29,6 +31,13 @@ public class PlayerController : MonoBehaviour {
         }
 
         playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
+
+        playerLevelText = GameObject.Find("Player Level").GetComponent<Text>();
+        playerLevelText.text = playerLevel.ToString();
+
+        playerXPText = GameObject.Find("Player XP").GetComponent<Text>();
+        playerXPText.text = playerXP.ToString();
+
         PlayerHealth.Reset();
 	}
 
