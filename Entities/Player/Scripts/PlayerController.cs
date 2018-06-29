@@ -30,11 +30,14 @@ public class PlayerController : MonoBehaviour {
             // Debug.Log(this + "should have found Enemy Health");
         }
 
+        // gets max health of player
         playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
 
+        // show level of player
         playerLevelText = GameObject.Find("Player Level").GetComponent<Text>();
         playerLevelText.text = playerLevel.ToString();
 
+        // show experience points of player
         playerXPText = GameObject.Find("Player XP").GetComponent<Text>();
         playerXPText.text = playerXP.ToString();
 
