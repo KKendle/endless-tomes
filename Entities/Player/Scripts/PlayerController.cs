@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
     public static int playerHealthMax;
-    public Sword weapon;
+    public Weapon weapon;
 
     private int weaponDamage;
     private int damage;
@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour {
     private EnemyHealth enemyHealth;
     private static Text playerLevelText;
     private static Text playerXPText;
+    private static Text currentWeaponText;
+    private static string currentWeapon;
 
 	void Start() {
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
@@ -30,6 +32,13 @@ public class PlayerController : MonoBehaviour {
             // Debug.Log(this + "should have found Enemy Health");
         }
 
+        // weapon is attached to player prefab
+        // no need to find it
+        if (weapon != null) {
+            Debug.Log(this + "should have found weapon");
+            Debug.Log("weapon equipped is " + weapon);
+        }
+
         // gets max health of player
         playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
 
@@ -40,6 +49,11 @@ public class PlayerController : MonoBehaviour {
         // show experience points of player
         playerXPText = GameObject.Find("Player XP").GetComponent<Text>();
         playerXPText.text = playerXP.ToString();
+
+        currentWeaponText = GameObject.Find("Player Weapon Equipped").GetComponent<Text>();
+        currentWeapon = currentWeaponText.text.ToString();
+        Debug.Log("current weapon found is " + currentWeaponText);
+        Debug.Log("current weapon variable " + currentWeapon);
 
         PlayerHealth.Reset();
 	}
@@ -56,13 +70,24 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Attack() {
-        // Debug.Log("Player attacking");
-        weaponDamage = weapon.WeaponDamage();
+        Debug.Log("Player attacking");
+        weaponDamage = weapon.WeaponDamage(currentWeapon);
+        Debug.Log("weapon damage from " + currentWeapon + " is " + weaponDamage);
         damage = Mathf.RoundToInt(weaponDamage + (playerStr / 2));
         // Debug.Log("player str " + playerStr);
-        // Debug.Log("total player damage " + damage);
+        Debug.Log("total player damage " + damage);
         enemyHealth.Health(damage);
         // Debug.Log("Enemy health is now at " + EnemyHealth.enemyHealth);
+    }
+
+    public void ChangeWeapon(string newWeapon) {
+        Debug.Log("changing weapons");
+        Debug.Log("current weapon is " + currentWeaponText);
+        Debug.Log("weapon changing to " + newWeapon);
+        currentWeaponText.text = newWeapon;
+        Debug.Log("current weapon is now " + currentWeaponText);
+        currentWeapon = currentWeaponText.text.ToString();
+        Debug.Log("current weapon variable " + currentWeapon);
     }
 
     public void CalculateXP(int xp) {
