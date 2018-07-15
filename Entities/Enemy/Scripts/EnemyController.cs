@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour {
     public int enemyLevel = 1;
     public int enemyStr = 5;
     public int enemyCon = 10;
-    public int enemyBaseHealth = 100;
+    private int enemyBaseHealth = 1;
     public int enemyXPValue = 35;
     public int enemyHealthMax;
     public Sword weapon;
@@ -60,8 +60,14 @@ public class EnemyController : MonoBehaviour {
 	void Die() {
 		Debug.Log("Enemy Died");
 		// Destroy(gameObject);
-        player.CalculateXP(enemyXPValue);
+        // player.CalculateXP(enemyXPValue);
+
+        // check loot
+        LootManager lootManager = GameObject.Find("LootManager").GetComponent<LootManager>();
+        lootManager.enemyDrops();
+
+        // next level
 		LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-		levelManager.LoadLevel("Win");
+		// levelManager.LoadLevel("Win");
 	}
 }
