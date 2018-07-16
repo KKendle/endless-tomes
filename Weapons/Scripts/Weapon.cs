@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
+	public string weaponName;
+	public string weaponType;
+	public float weaponDamageMin;
+	public float weaponDamageMax;
+	public int weaponStr;
+	public int weaponCon;
+	public string weaponElement;
+	public string weaponMaterial;
+	public string weaponAttributeType;
+
 	public int WeaponDamage(string currentWeapon) {
 		int damage = 0;
 
 		Debug.Log("running weapon damage");
+		Debug.Log("weapon name is " + weaponName);
 		Debug.Log("current weapon is " + currentWeapon);
 		// damage = sword.WeaponDamage();
 		// Debug.Log(damage + " damage");
@@ -37,6 +48,10 @@ public class Weapon : MonoBehaviour {
 		int baseStr = 1;
 
 		int swordDamage = (Mathf.RoundToInt(Random.Range(damageMin, damageMax)) + (baseStr / 2));
+		Debug.Log(swordDamage);
+		Debug.Log(weaponStr);
+		swordDamage += weaponStr;
+		Debug.Log(swordDamage);
 
 		return swordDamage;
 	}

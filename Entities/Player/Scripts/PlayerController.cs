@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour {
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
     public static int playerHealthMax;
-    public Weapon weapon;
 
     private int weaponDamage;
     private int damage;
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
+    private Weapon weapon;
     private static Text playerLevelText;
     private static Text playerXPText;
     private static Text currentWeaponText;
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 
         // weapon is attached to player prefab
         // no need to find it
+        weapon = GetComponent<Weapon>();
         if (weapon != null) {
             Debug.Log(this + "should have found weapon");
             Debug.Log("weapon equipped is " + weapon);
