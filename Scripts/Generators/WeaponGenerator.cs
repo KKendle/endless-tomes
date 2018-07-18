@@ -56,21 +56,53 @@ public class WeaponGenerator : MonoBehaviour {
 
 	void getWeaponDamageRange(string weaponType) {
 		Debug.Log("running getWeaponDamageRange");
-		Debug.Log("weapontype generated is " + weaponType);
 		switch (weaponType.ToLower()) {
-			case "sword":
-				spawnedWeapon.weaponDamageMin = 10.0f;
-				spawnedWeapon.weaponDamageMax = 12.0f;
-				break;
 			case "dagger":
 				spawnedWeapon.weaponDamageMin = 6.0f;
 				spawnedWeapon.weaponDamageMax = 8.0f;
+				break;
+			case "sword":
+				spawnedWeapon.weaponDamageMin = 10.0f;
+				spawnedWeapon.weaponDamageMax = 12.0f;
 				break;
 			case "battleaxe":
 				spawnedWeapon.weaponDamageMin = 12.0f;
 				spawnedWeapon.weaponDamageMax = 15.0f;
 				break;
-			
+			case "staff":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "mace":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "flail":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "spear":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "bow":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "club":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "wand":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+			case "book":
+				spawnedWeapon.weaponDamageMin = 12.0f;
+				spawnedWeapon.weaponDamageMax = 15.0f;
+				break;
+
+
 			default:
 				Debug.Log("no weapon equipped");
 				break;
