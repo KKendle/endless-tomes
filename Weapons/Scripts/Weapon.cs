@@ -10,6 +10,10 @@ public class Weapon : MonoBehaviour {
 	public float weaponDamageMax;
 	public int weaponStr;
 	public int weaponCon;
+	public int weaponDex;
+	public int weaponInt;
+	public int weaponWis;
+	public int weaponHeal;
 	public string weaponElement;
 	public string weaponMaterial;
 	public string weaponAttributeType;
