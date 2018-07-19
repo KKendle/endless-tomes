@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour {
     private int damage;
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
-    private Weapon weapon;
+    private GameObject weapon;
+    private Weapon weaponEquipped;
     private static Text playerLevelText;
     private static Text playerXPText;
     private static Text currentWeaponText;
@@ -34,10 +35,15 @@ public class PlayerController : MonoBehaviour {
 
         // weapon is attached to player prefab
         // no need to find it
-        weapon = GetComponent<Weapon>();
+        // weapon = GetComponent<Weapon>();
+        // looks for Equipped and then for Weapon underneath that
+        // only search one level deep, not recursive
+        weapon = GameObject.Find("Equipped/Weapon");
+        weaponEquipped = weapon.GetComponent<Weapon>();
         if (weapon != null) {
             Debug.Log(this + "should have found weapon");
             Debug.Log("weapon equipped is " + weapon);
+            Debug.Log("name of weapon equipped is " + weaponEquipped.weaponName);
         }
 
         // gets max health of player
@@ -72,8 +78,10 @@ public class PlayerController : MonoBehaviour {
 
     void Attack() {
         Debug.Log("Player attacking");
-        weaponDamage = weapon.WeaponDamage(currentWeapon);
-        Debug.Log("weapon damage from " + currentWeapon + " is " + weaponDamage);
+        // weaponDamage = weaponEquipped.WeaponDamage(currentWeapon);
+        weaponDamage = weaponEquipped.WeaponDamage();
+        // weaponDamage = 100;
+        // Debug.Log("weapon damage from " + currentWeapon + " is " + weaponDamage);
         damage = Mathf.RoundToInt(weaponDamage + (playerStr / 2));
         // Debug.Log("player str " + playerStr);
         Debug.Log("total player damage " + damage);

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WeaponGenerator : MonoBehaviour {
 
+	private GameObject weaponPrefab;
+	private Weapon weaponPrefabComponent;
+	private GameObject playerEquipped;
+
 	private GameObject objToSpawn;
 	private Weapon spawnedWeapon;
 	private string randomElement;
@@ -18,6 +22,23 @@ public class WeaponGenerator : MonoBehaviour {
     List<string> weaponAttributeTypes = new List<string>() {"healing", "strength", "intellect", "dexterity", "constitution", "wisdom"};
 	// List<string> weaponAttributeTypes = new List<string>() {"strength"};
     List<string> weaponMaterials = new List<string>() {"bone", "paper", "steel", "wood", "copper", "iron", "dragonhide"};
+
+	void Start() {
+		weaponPrefab = GameObject.Find("Inventory/Weapon");
+		playerEquipped = GameObject.Find("Equipped");
+		GameObject createdWeapon = Instantiate(weaponPrefab, playerEquipped.transform);
+		weaponPrefabComponent = createdWeapon.GetComponent<Weapon>();
+		Debug.Log(weaponPrefabComponent);
+		weaponPrefabComponent.weaponName = "Poop";
+		weaponPrefabComponent.name = "Weapon";
+		Debug.Log(weaponPrefabComponent.weaponName);
+		weaponPrefabComponent.weaponStr = 3;
+		Debug.Log(weaponPrefabComponent.weaponStr);
+		weaponPrefabComponent.weaponDamageMin = 3;
+		Debug.Log(weaponPrefabComponent.weaponDamageMin);
+		weaponPrefabComponent.weaponDamageMax = 5;
+		Debug.Log(weaponPrefabComponent.weaponDamageMax);
+	}
 
 	public void generateWeapon() {
 		resetGenerator();
