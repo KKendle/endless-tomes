@@ -12,7 +12,7 @@ public class LootManager : MonoBehaviour {
 	private string generatedWeapon;
 
 	public void enemyDrops() {
-        Debug.Log("checking for enemy drops");
+        // Debug.Log("checking for enemy drops");
 		WeaponGenerator weaponGenerator = gameObject.GetComponent<WeaponGenerator>();
 
 		if (isWeaponDrop) {

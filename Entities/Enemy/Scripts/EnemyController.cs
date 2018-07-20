@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour {
 		}
 
         if(EnemyHealth.enemyHealth <= 0) {
-            Debug.Log("Enemy health is zero or below. dying. " + EnemyHealth.enemyHealth);
+            // Debug.Log("Enemy health is zero or below. dying. " + EnemyHealth.enemyHealth);
             Die();
         }
     }
@@ -59,7 +59,7 @@ public class EnemyController : MonoBehaviour {
     }
 
 	void Die() {
-		Debug.Log("Enemy Died");
+		// Debug.Log("Enemy Died");
 		// Destroy(gameObject);
         // player.CalculateXP(enemyXPValue);
 

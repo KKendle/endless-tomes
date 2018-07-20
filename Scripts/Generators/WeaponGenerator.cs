@@ -65,13 +65,18 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponType = randomType;
 		getBaseStats();
 		addAttributeModifiers();
+		// temp set weapon name to just the type
+		objToSpawn.name = randomType;
 		GameObject findSlot = GameObject.Find("Player/Canvas/Player Inventory/Sword");
 		GameObject createSlot = GameObject.Find("Player/Canvas/Player Inventory");
 		GameObject newSlot = Instantiate(findSlot, createSlot.transform);
 		Text newSlotText = newSlot.GetComponent<Text>();
-		newSlot.name = "other weapon";
+		newSlot.name = randomType;
 		newSlot.transform.position += new Vector3(0.0f, 30.0f, 0.0f);
-		newSlotText.text = "other weapon";
+		PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+		UnityEngine.Events.UnityAction action1 = () => { player.ChangeWeapon(randomType); };
+		newSlot.GetComponent<Button>().onClick.AddListener(action1);
+		newSlotText.text = randomType;
 	}
 
 	string generateType() {

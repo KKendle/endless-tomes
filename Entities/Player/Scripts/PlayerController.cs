@@ -109,7 +109,9 @@ public class PlayerController : MonoBehaviour {
 
         // move currently equipped weapon to inventory
         // change currently equipped weapon to name of weapon
-        weaponEquipped.name = weaponEquipped.weaponName;
+        // weaponEquipped.name = weaponEquipped.weaponName;
+        // temp keep weapon name as just the type
+        weaponEquipped.name = weaponEquipped.weaponType;
         // move currently equipped weapon from Equipped to Inventory
         weaponEquipped.transform.parent = playerInventory.transform;
 
