@@ -17,6 +17,7 @@ public class LootManager : MonoBehaviour {
 
 		if (isWeaponDrop) {
 			weaponGenerator.generateWeapon();
+			isWeaponDrop = false;
 		}
     }
 }

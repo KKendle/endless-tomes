@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponGenerator : MonoBehaviour {
 
@@ -28,18 +29,18 @@ public class WeaponGenerator : MonoBehaviour {
 		weaponPrefab = GameObject.Find("Equipped/Weapon");
 		playerInventory = GameObject.Find("Inventory");
 		playerEquipped = GameObject.Find("Equipped");
-		GameObject createdWeapon = Instantiate(weaponPrefab, playerInventory.transform);
-		weaponPrefabComponent = createdWeapon.GetComponent<Weapon>();
-		Debug.Log(weaponPrefabComponent);
-		weaponPrefabComponent.weaponName = "Poop";
-		weaponPrefabComponent.name = "Weapon";
-		Debug.Log(weaponPrefabComponent.weaponName);
-		weaponPrefabComponent.weaponStr = 3;
-		Debug.Log(weaponPrefabComponent.weaponStr);
-		weaponPrefabComponent.weaponDamageMin = 3;
-		Debug.Log(weaponPrefabComponent.weaponDamageMin);
-		weaponPrefabComponent.weaponDamageMax = 5;
-		Debug.Log(weaponPrefabComponent.weaponDamageMax);
+		// GameObject createdWeapon = Instantiate(weaponPrefab, playerInventory.transform);
+		// weaponPrefabComponent = createdWeapon.GetComponent<Weapon>();
+		// Debug.Log(weaponPrefabComponent);
+		// weaponPrefabComponent.weaponName = "Poop";
+		// weaponPrefabComponent.name = "Weapon";
+		// Debug.Log(weaponPrefabComponent.weaponName);
+		// weaponPrefabComponent.weaponStr = 3;
+		// Debug.Log(weaponPrefabComponent.weaponStr);
+		// weaponPrefabComponent.weaponDamageMin = 3;
+		// Debug.Log(weaponPrefabComponent.weaponDamageMin);
+		// weaponPrefabComponent.weaponDamageMax = 5;
+		// Debug.Log(weaponPrefabComponent.weaponDamageMax);
 	}
 
 	public void generateWeapon() {
@@ -53,6 +54,8 @@ public class WeaponGenerator : MonoBehaviour {
 
 		objToSpawn = new GameObject(generatedWeapon);
 
+		//move to Inventory
+		objToSpawn.transform.parent = playerInventory.transform;
 		// add Weapon script to newly created game object
 		objToSpawn.AddComponent<Weapon>();
 		// put the Weapon component (script) in a variable for use
@@ -62,6 +65,13 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponType = randomType;
 		getBaseStats();
 		addAttributeModifiers();
+		GameObject findSlot = GameObject.Find("Player/Canvas/Player Inventory/Sword");
+		GameObject createSlot = GameObject.Find("Player/Canvas/Player Inventory");
+		GameObject newSlot = Instantiate(findSlot, createSlot.transform);
+		Text newSlotText = newSlot.GetComponent<Text>();
+		newSlot.name = "other weapon";
+		newSlot.transform.position += new Vector3(0.0f, 30.0f, 0.0f);
+		newSlotText.text = "other weapon";
 	}
 
 	string generateType() {
