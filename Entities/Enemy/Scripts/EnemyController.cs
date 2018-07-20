@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour {
     private int enemyBaseHealth = 1;
     public int enemyXPValue = 35;
     public int enemyHealthMax;
-    public Sword weapon;
+    // public Sword weapon;
 
     private int weaponDamage;
     private int damage;
@@ -47,7 +47,8 @@ public class EnemyController : MonoBehaviour {
 
     void Attack() {
         // Debug.Log("Enemy Attacking");
-        weaponDamage = weapon.WeaponDamage();
+        // weaponDamage = weapon.WeaponDamage();
+        weaponDamage  = Mathf.RoundToInt(Random.Range(5, 15)) + (enemyStr / 2);
         // Debug.Log("enemy str " + enemyStr);
         // Debug.Log("enemy rounded " + Mathf.RoundToInt(enemyStr / 2));
         damage = Mathf.RoundToInt(weaponDamage + (enemyStr / 2));

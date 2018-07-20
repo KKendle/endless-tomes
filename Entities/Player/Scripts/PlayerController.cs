@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour {
     private static Text currentWeaponText;
     private static string currentWeapon;
 
+	private Weapon weaponPrefabComponent;
+	private GameObject playerInventory;
+	private GameObject playerEquipped;
+
 	void Start() {
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
@@ -33,9 +37,6 @@ public class PlayerController : MonoBehaviour {
             // Debug.Log(this + "should have found Enemy Health");
         }
 
-        // weapon is attached to player prefab
-        // no need to find it
-        // weapon = GetComponent<Weapon>();
         // looks for Equipped and then for Weapon underneath that
         // only search one level deep, not recursive
         weapon = GameObject.Find("Equipped/Weapon");
@@ -44,6 +45,14 @@ public class PlayerController : MonoBehaviour {
             Debug.Log(this + "should have found weapon");
             Debug.Log("weapon equipped is " + weapon);
             Debug.Log("name of weapon equipped is " + weaponEquipped.weaponName);
+        }
+        playerInventory = GameObject.Find("Inventory");
+		playerEquipped = GameObject.Find("Equipped");
+        if (playerInventory != null) {
+            Debug.Log(this + "should have found player inventory");
+        }
+        if (playerEquipped != null) {
+            Debug.Log(this + "should have found player equipped");
         }
 
         // gets max health of player
@@ -97,6 +106,25 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("current weapon is now " + currentWeaponText);
         currentWeapon = currentWeaponText.text.ToString();
         Debug.Log("current weapon variable " + currentWeapon);
+
+        // move currently equipped weapon to inventory
+        // change currently equipped weapon to name of weapon
+        weaponEquipped.name = weaponEquipped.weaponName;
+        // move currently equipped weapon from Equipped to Inventory
+        weaponEquipped.transform.parent = playerInventory.transform;
+
+        // move selected weapon to equipped
+        // find selected weapon
+        GameObject weaponToEquip = GameObject.Find(newWeapon);
+        Weapon newEquippedWeapon = weaponToEquip.GetComponent<Weapon>();
+        // change name to Weapon for usage by Player
+        newEquippedWeapon.name = "Weapon";
+        // move to equipped
+        newEquippedWeapon.transform.parent = playerEquipped.transform;
+
+        // get the new reference to the equipped weapon
+        weapon = GameObject.Find("Equipped/Weapon");
+        weaponEquipped = weapon.GetComponent<Weapon>();
     }
 
     public void CalculateXP(int xp) {

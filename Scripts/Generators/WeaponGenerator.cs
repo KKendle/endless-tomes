@@ -6,6 +6,7 @@ public class WeaponGenerator : MonoBehaviour {
 
 	private GameObject weaponPrefab;
 	private Weapon weaponPrefabComponent;
+	private GameObject playerInventory;
 	private GameObject playerEquipped;
 
 	private GameObject objToSpawn;
@@ -24,9 +25,10 @@ public class WeaponGenerator : MonoBehaviour {
     List<string> weaponMaterials = new List<string>() {"bone", "paper", "steel", "wood", "copper", "iron", "dragonhide"};
 
 	void Start() {
-		weaponPrefab = GameObject.Find("Inventory/Weapon");
+		weaponPrefab = GameObject.Find("Equipped/Weapon");
+		playerInventory = GameObject.Find("Inventory");
 		playerEquipped = GameObject.Find("Equipped");
-		GameObject createdWeapon = Instantiate(weaponPrefab, playerEquipped.transform);
+		GameObject createdWeapon = Instantiate(weaponPrefab, playerInventory.transform);
 		weaponPrefabComponent = createdWeapon.GetComponent<Weapon>();
 		Debug.Log(weaponPrefabComponent);
 		weaponPrefabComponent.weaponName = "Poop";
