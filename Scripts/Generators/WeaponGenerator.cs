@@ -65,18 +65,31 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponType = randomType;
 		getBaseStats();
 		addAttributeModifiers();
+		
 		// temp set weapon name to just the type
 		objToSpawn.name = randomType;
+		// find sword weapon text under player inventory
 		GameObject findSlot = GameObject.Find("Player/Canvas/Player Inventory/Sword");
+		// find player inventory text parent
 		GameObject createSlot = GameObject.Find("Player/Canvas/Player Inventory");
+		// copy sword weapon and place it in the inventory
 		GameObject newSlot = Instantiate(findSlot, createSlot.transform);
+		// grab the text component of the sword weapon copied
 		Text newSlotText = newSlot.GetComponent<Text>();
-		newSlot.name = randomType;
+		// set the copied sword name of the game object to the generated random weapon type
+		newSlot.name = generatedWeapon;
+		// scoot the text 30 unit above current position
 		newSlot.transform.position += new Vector3(0.0f, 30.0f, 0.0f);
+		// find the Player and get the PlayerController component
 		PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
+		// no idea how but this prepares the PlayerController function ChangeWeapon and
+		// will pass in the generated randomType variable
 		UnityEngine.Events.UnityAction action1 = () => { player.ChangeWeapon(randomType); };
+		// add a listener to check for when the copied sword is clicked
+		// then run the ChangeWeapon function while passing in randomType
 		newSlot.GetComponent<Button>().onClick.AddListener(action1);
-		newSlotText.text = randomType;
+		// set the text to the generated weapon type
+		newSlotText.text = generatedWeapon;
 	}
 
 	string generateType() {
