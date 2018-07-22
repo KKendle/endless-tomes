@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour {
     public void ChangeWeapon(string newWeapon) {
         Debug.Log("changing weapons");
         Debug.Log("current weapon is " + currentWeaponText);
+        newWeapon = newWeapon.ToLower();
         Debug.Log("weapon changing to " + newWeapon);
         currentWeaponText.text = newWeapon;
         Debug.Log("current weapon is now " + currentWeaponText);
@@ -109,9 +110,7 @@ public class PlayerController : MonoBehaviour {
 
         // move currently equipped weapon to inventory
         // change currently equipped weapon to name of weapon
-        // weaponEquipped.name = weaponEquipped.weaponName;
-        // temp keep weapon name as just the type
-        weaponEquipped.name = weaponEquipped.weaponType;
+        weaponEquipped.name = weaponEquipped.weaponName.ToLower();
         // move currently equipped weapon from Equipped to Inventory
         weaponEquipped.transform.parent = playerInventory.transform;
 

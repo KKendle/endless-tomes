@@ -67,7 +67,7 @@ public class WeaponGenerator : MonoBehaviour {
 		addAttributeModifiers();
 		
 		// temp set weapon name to just the type
-		objToSpawn.name = randomType;
+		// objToSpawn.name = generatedWeapon;
 		// find sword weapon text under player inventory
 		GameObject findSlot = GameObject.Find("Player/Canvas/Player Inventory/Sword");
 		// find player inventory text parent
@@ -83,8 +83,8 @@ public class WeaponGenerator : MonoBehaviour {
 		// find the Player and get the PlayerController component
 		PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
 		// no idea how but this prepares the PlayerController function ChangeWeapon and
-		// will pass in the generated randomType variable
-		UnityEngine.Events.UnityAction action1 = () => { player.ChangeWeapon(randomType); };
+		// will pass in the generated weapon variable
+		UnityEngine.Events.UnityAction action1 = () => { player.ChangeWeapon(generatedWeapon); };
 		// add a listener to check for when the copied sword is clicked
 		// then run the ChangeWeapon function while passing in randomType
 		newSlot.GetComponent<Button>().onClick.AddListener(action1);
