@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public static int playerStr = 10;
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
+    public static int playerArmor = 10;
     public static int playerHealthMax;
 
     private int weaponDamage;
