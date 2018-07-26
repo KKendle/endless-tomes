@@ -27,6 +27,8 @@ public class ArmorGenerator : MonoBehaviour {
 
 		// create generatedArmor game object
 		objToSpawn = new GameObject(generatedArmor);
+		// move to Inventory
+		objToSpawn.transform.parent = playerInventory.transform;
 		// add armor script to later set attributes
 		objToSpawn.AddComponent<Armor>();
 		// change "focus" to the Armor component
@@ -68,7 +70,7 @@ public class ArmorGenerator : MonoBehaviour {
 
 	void baseChestplate() {
 		Debug.Log("running base chestplate stats");
-		armorSpawned.armorDefense = 1;
+		armorSpawned.armorDefense = 10;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
 		armorSpawned.armorDex = 1;
@@ -79,7 +81,7 @@ public class ArmorGenerator : MonoBehaviour {
 
 	void baseBracers() {
 		Debug.Log("running base bracers stats");
-		armorSpawned.armorDefense = 1;
+		armorSpawned.armorDefense = 2;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
 		armorSpawned.armorDex = 1;
@@ -90,7 +92,7 @@ public class ArmorGenerator : MonoBehaviour {
 
 	void baseHelmet() {
 		Debug.Log("running base helmet stats");
-		armorSpawned.armorDefense = 1;
+		armorSpawned.armorDefense = 5;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
 		armorSpawned.armorDex = 1;
@@ -101,7 +103,7 @@ public class ArmorGenerator : MonoBehaviour {
 
 	void baseBoots() {
 		Debug.Log("running base boots stats");
-		armorSpawned.armorDefense = 1;
+		armorSpawned.armorDefense = 5;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
 		armorSpawned.armorDex = 1;
@@ -112,7 +114,7 @@ public class ArmorGenerator : MonoBehaviour {
 
 	void baseLegs() {
 		Debug.Log("running base legs stats");
-		armorSpawned.armorDefense = 1;
+		armorSpawned.armorDefense = 8;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
 		armorSpawned.armorDex = 1;

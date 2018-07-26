@@ -54,7 +54,7 @@ public class WeaponGenerator : MonoBehaviour {
 
 		objToSpawn = new GameObject(generatedWeapon);
 
-		//move to Inventory
+		// move to Inventory
 		objToSpawn.transform.parent = playerInventory.transform;
 		// add Weapon script to newly created game object
 		objToSpawn.AddComponent<Weapon>();
