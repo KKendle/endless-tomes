@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour {
 	public string weaponElement;
 	public string weaponMaterial;
 	public string weaponAttributeType;
+	public string weaponDescription;
+	public string weaponEffect;
 
 	public int WeaponDamage() {
 		int damage = 0;

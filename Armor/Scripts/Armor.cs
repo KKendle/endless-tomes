@@ -13,4 +13,7 @@ public class Armor : MonoBehaviour {
 	public int armorInt;
 	public int armorWis;
 	public int armorHeal;
+	public int armorDescription;
+	public int armorEffect;
+	public int armorSet;
 }
