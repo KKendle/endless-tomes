@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public static int playerStr = 10;
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
-    public static int playerArmor = 10;
+    public static int playerArmor = 2;
     public static int playerHealthMax;
 
     private int weaponDamage;
@@ -71,6 +71,24 @@ public class PlayerController : MonoBehaviour {
         currentWeapon = currentWeaponText.text.ToString();
         Debug.Log("current weapon found is " + currentWeaponText);
         Debug.Log("current weapon variable " + currentWeapon);
+
+        // get total armor value
+        Debug.Log("player armor is " + playerArmor);
+        // grab all the equipped armors defense value
+        Armor equippedHelm = GameObject.Find("Equipped/Helm").GetComponent<Armor>();
+        Debug.Log("player helm is " + equippedHelm.armorDefense);
+        Armor equippedChestplate = GameObject.Find("Equipped/Chestplate").GetComponent<Armor>();
+        Debug.Log("player chestplate is " + equippedChestplate.armorDefense);
+        Armor equippedBracers = GameObject.Find("Equipped/Bracers").GetComponent<Armor>();
+        Debug.Log("player bracers is " + equippedBracers.armorDefense);
+        Armor equippedLegs = GameObject.Find("Equipped/Legs").GetComponent<Armor>();
+        Debug.Log("player legs is " + equippedLegs.armorDefense);
+        Armor equippedBoots = GameObject.Find("Equipped/Boots").GetComponent<Armor>();
+        Debug.Log("player boots is " + equippedBoots.armorDefense);
+
+        // add it all together
+        playerArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
+        Debug.Log("player armor is " + playerArmor);
 
         PlayerHealth.Reset();
 	}
