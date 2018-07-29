@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
@@ -26,6 +27,10 @@ public class PlayerController : MonoBehaviour {
 	private Weapon weaponPrefabComponent;
 	private GameObject playerInventory;
 	private GameObject playerEquipped;
+
+    // static otherwise I lose the reference somehow
+    public static GameObject equippedItemsContainer;
+    public static GameObject inventoryItemsContainer;
 
 	void Start() {
         playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
@@ -90,6 +95,14 @@ public class PlayerController : MonoBehaviour {
         playerArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
         Debug.Log("player armor is " + playerArmor);
 
+        // find player equipped items screen
+        equippedItemsContainer = GameObject.Find("Equipped Items Container");
+        equippedItemsContainer.SetActive(false);
+
+        // find player inventory items screen
+        inventoryItemsContainer = GameObject.Find("Inventory Items Container");
+        inventoryItemsContainer.SetActive(false);
+
         PlayerHealth.Reset();
 	}
 
@@ -146,6 +159,36 @@ public class PlayerController : MonoBehaviour {
         weapon = GameObject.Find("Equipped/Weapon");
         weaponEquipped = weapon.GetComponent<Weapon>();
     }
+
+    public void viewEquippedItems() {
+        Debug.Log("viewing equipped items");
+        equippedItemsContainer.SetActive(true);
+    }
+
+    public void viewInventoryItems() {
+        Debug.Log("viewing inventory items");
+        inventoryItemsContainer.SetActive(true);
+    }
+
+    public void closeWindow() {
+        Debug.Log("closing window " + EventSystem.current.currentSelectedGameObject.name);
+        GameObject objToClose = GameObject.Find(EventSystem.current.currentSelectedGameObject.name);
+        objToClose.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void openChildWindow() {
+        Debug.Log("opening child window of " + EventSystem.current.currentSelectedGameObject.name);
+    }
+
+    // public void closeEquippedItems() {
+    //     Debug.Log("closing equipped items");
+    //     equippedItemsContainer.SetActive(false);
+    // }
+
+    // public void closeInventoryItems() {
+    //     Debug.Log("closing inventory items");
+    //     inventoryItemsContainer.SetActive(false);
+    // }
 
     public void CalculateXP(int xp) {
         Debug.Log("Current XP " + playerXP);
