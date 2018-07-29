@@ -173,7 +173,6 @@ public class PlayerController : MonoBehaviour {
         // gets the current selected (clicked, in this case) game object
         // grab transform, get the first child, grab just the gameobject
         // set it to active
-        // GameObject objToOpen = GameObject.Find(EventSystem.current.currentSelectedGameObject.name);
         EventSystem.current.currentSelectedGameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 
