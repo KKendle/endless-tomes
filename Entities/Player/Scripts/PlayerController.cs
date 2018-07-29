@@ -160,35 +160,22 @@ public class PlayerController : MonoBehaviour {
         weaponEquipped = weapon.GetComponent<Weapon>();
     }
 
-    public void viewEquippedItems() {
-        Debug.Log("viewing equipped items");
-        equippedItemsContainer.SetActive(true);
-    }
-
-    public void viewInventoryItems() {
-        Debug.Log("viewing inventory items");
-        inventoryItemsContainer.SetActive(true);
-    }
-
     public void closeWindow() {
         Debug.Log("closing window " + EventSystem.current.currentSelectedGameObject.name);
-        GameObject objToClose = GameObject.Find(EventSystem.current.currentSelectedGameObject.name);
-        objToClose.transform.parent.gameObject.SetActive(false);
+        // gets the current selected (clicked, in this case) game object
+        // grab transform, get it's parent, grab just the parent gameobject
+        // set it to inactive
+        EventSystem.current.currentSelectedGameObject.transform.parent.gameObject.SetActive(false);
     }
 
     public void openChildWindow() {
         Debug.Log("opening child window of " + EventSystem.current.currentSelectedGameObject.name);
+        // gets the current selected (clicked, in this case) game object
+        // grab transform, get the first child, grab just the gameobject
+        // set it to active
+        // GameObject objToOpen = GameObject.Find(EventSystem.current.currentSelectedGameObject.name);
+        EventSystem.current.currentSelectedGameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
-
-    // public void closeEquippedItems() {
-    //     Debug.Log("closing equipped items");
-    //     equippedItemsContainer.SetActive(false);
-    // }
-
-    // public void closeInventoryItems() {
-    //     Debug.Log("closing inventory items");
-    //     inventoryItemsContainer.SetActive(false);
-    // }
 
     public void CalculateXP(int xp) {
         Debug.Log("Current XP " + playerXP);
