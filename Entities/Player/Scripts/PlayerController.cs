@@ -171,9 +171,30 @@ public class PlayerController : MonoBehaviour {
     public void openChildWindow() {
         Debug.Log("opening child window of " + EventSystem.current.currentSelectedGameObject.name);
         // gets the current selected (clicked, in this case) game object
+        GameObject objToOpen = EventSystem.current.currentSelectedGameObject;
         // grab transform, get the first child, grab just the gameobject
         // set it to active
-        EventSystem.current.currentSelectedGameObject.transform.GetChild(0).gameObject.SetActive(true);
+        objToOpen.transform.GetChild(0).gameObject.SetActive(true);
+
+        if (objToOpen.tag == "Slot") {
+            Debug.Log("opening a slot");
+            displayWeaponDetails(objToOpen);
+        }
+    }
+
+    public void displayWeaponDetails(GameObject itemObj) {
+        Debug.Log("displaying item details for " + itemObj.name);
+        string itemName = itemObj.name.Substring(0, itemObj.name.Length - 5);
+        Debug.Log("item name is shortened to " + itemName + ".");
+        GameObject item = GameObject.Find(itemName);
+        Weapon itemDetails = item.GetComponent<Weapon>();
+        Debug.Log("item details type is " + itemDetails.weaponType + ".");
+        // weapon name
+        itemObj.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<Text>().text = itemDetails.weaponName;
+        // weapon type
+        itemObj.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<Text>().text = itemDetails.weaponType;
+        // weapon damage
+        itemObj.transform.GetChild(0).GetChild(2).GetChild(2).GetComponent<Text>().text = itemDetails.weaponDamageMin + " - " + itemDetails.weaponDamageMax;
     }
 
     public void CalculateXP(int xp) {
