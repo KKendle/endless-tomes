@@ -6,45 +6,61 @@ public class PlayerHealth : MonoBehaviour {
 
 	// static means it belongs to class itself, not a created instance of the class
 	// meaning, there is only one playerHealth
-	public static int playerHealth = PlayerController.playerHealthMax;
-	static PlayerHealth instance = null;
+	// static PlayerHealth instance = null;
 
-	private static Text healthText;
+	private Text healthText;
 	private PlayerController player;
+	private string health;
 
 	void Start() {
-		if (instance != null && instance != this) {
-			Destroy(gameObject);
+		// if (instance != null && instance != this) {
+		// 	Destroy(gameObject);
+		// }
+		// else {
+		// 	instance = this;
+		// 	GameObject.DontDestroyOnLoad(gameObject);
+		// 	healthText = GetComponent<Text>();
+		// 	healthText.text = playerHealth.ToString();
+		// }
+		healthText = GetComponent<Text>();
+		if (healthText != null) {
+			Debug.Log("healthText should have found the Text component");
 		}
-		else {
-			instance = this;
-			GameObject.DontDestroyOnLoad(gameObject);
-			healthText = GetComponent<Text>();
-			healthText.text = playerHealth.ToString();
-		}
-
-		player = GameObject.Find("Player").GetComponent<PlayerController>();
-        if (player != null) {
-            // Debug.Log(this + "should have found Player");
-        }
+		// Debug.Log("healthText text is " + healthText.text);
+		// healthText.text = health;
+		// Debug.Log("healthText text is " + healthText.text);
+		// player = GameObject.Find("Player").GetComponent<PlayerController>();
+        // if (player != null) {
+        //     Debug.Log(this + "should have found Player");
+        // }
 	}
 
 	public void Health(int points) {
-		// Debug.Log("Running player Health function");
-		playerHealth -= points;
-		healthText.text = playerHealth.ToString();
+		Debug.Log("Running player Health function");
+		Debug.Log("Player health is at " + PlayerController.playerHealthCurrent);
+		PlayerController.playerHealthCurrent -= points;
+		Debug.Log("Player health now is at " + PlayerController.playerHealthCurrent);
+		healthText.text = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;;
 	}
 
 	public void HealthRestore(int points) {
-		playerHealth += points;
-		healthText.text = playerHealth.ToString();
+		Debug.Log("Player health is at " + PlayerController.playerHealthCurrent);
+		PlayerController.playerHealthCurrent += points;
+		Debug.Log("Player health now is at " + PlayerController.playerHealthCurrent);
+		healthText.text = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;
 	}
 
-	public static void Reset() {
-		// Debug.Log("Player health is at " + playerHealth);
-		// Debug.Log("Resetting player health");
-		playerHealth = PlayerController.playerHealthMax;
-		healthText.text = playerHealth.ToString();
-		// Debug.Log("Player health now is at " + playerHealth);
+	public void Reset() {
+		// gets max health of player
+        PlayerController.playerHealthMax = Mathf.RoundToInt(PlayerController.playerBaseHealth + (PlayerController.playerCon * 2));
+        // current health starts as max health
+        PlayerController.playerHealthCurrent = PlayerController.playerHealthMax;
+		// calculate player health
+		health = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;
+
+		Debug.Log("Player health is at " + PlayerController.playerHealthCurrent);
+		Debug.Log("Resetting player health");
+		healthText.text = health;
+		Debug.Log("Player health now is at " + PlayerController.playerHealthCurrent);
 	}
 }

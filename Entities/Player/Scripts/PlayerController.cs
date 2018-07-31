@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public static int playerCon = 10;
     public static int playerBaseHealth = 100;
     public static int playerArmor = 2;
+    public static int playerHealthCurrent;
     public static int playerHealthMax;
 
     private int weaponDamage;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     private EnemyHealth enemyHealth;
     private GameObject weapon;
     private Weapon weaponEquipped;
+    // private static Text playerHealthText;
     private static Text playerLevelText;
     private static Text playerXPText;
     private static Text currentWeaponText;
@@ -33,10 +35,12 @@ public class PlayerController : MonoBehaviour {
     public static GameObject inventoryItemsContainer;
 
 	void Start() {
-        playerHealth = GameObject.Find("Player Health").GetComponent<PlayerHealth>();
+        playerHealth = transform.Find("Canvas/Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
-            // Debug.Log(this + "should have found Player Health");
+            Debug.Log(this + "should have found Player Health");
         }
+        // playerHealthText = transform.Find("Canvas/Health").GetComponent<Text>();
+        // playerHealthText.text = "HP " + playerHealthCurrent + "/" + playerHealthMax;
 
         enemyHealth = GameObject.Find("Enemy Health").GetComponent<EnemyHealth>();
         if (enemyHealth != null) {
@@ -61,21 +65,18 @@ public class PlayerController : MonoBehaviour {
             Debug.Log(this + "should have found player equipped");
         }
 
-        // gets max health of player
-        playerHealthMax = Mathf.RoundToInt(playerBaseHealth + (playerCon * 2));
-
         // show level of player
-        playerLevelText = GameObject.Find("Player Level").GetComponent<Text>();
-        playerLevelText.text = playerLevel.ToString();
+        playerLevelText = transform.Find("Canvas/Level").GetComponent<Text>();
+        playerLevelText.text = "Lvl " + playerLevel.ToString();
 
         // show experience points of player
-        playerXPText = GameObject.Find("Player XP").GetComponent<Text>();
-        playerXPText.text = playerXP.ToString();
+        playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
+        playerXPText.text = "XP " + playerXP.ToString() + "/" + "0";
 
-        currentWeaponText = GameObject.Find("Player Weapon Equipped").GetComponent<Text>();
-        currentWeapon = currentWeaponText.text.ToString();
-        Debug.Log("current weapon found is " + currentWeaponText);
-        Debug.Log("current weapon variable " + currentWeapon);
+        // currentWeaponText = GameObject.Find("Player Weapon Equipped").GetComponent<Text>();
+        // currentWeapon = currentWeaponText.text.ToString();
+        // Debug.Log("current weapon found is " + currentWeaponText);
+        // Debug.Log("current weapon variable " + currentWeapon);
 
         // get total armor value
         Debug.Log("player armor is " + playerArmor);
@@ -103,7 +104,7 @@ public class PlayerController : MonoBehaviour {
         inventoryItemsContainer = GameObject.Find("Inventory Items Container");
         inventoryItemsContainer.SetActive(false);
 
-        PlayerHealth.Reset();
+        playerHealth.Reset();
 	}
 
     void Update() {
@@ -111,8 +112,8 @@ public class PlayerController : MonoBehaviour {
 			Attack();
 		}
 
-        if(PlayerHealth.playerHealth <= 0) {
-            Debug.Log("Player health is zero or below. dying. " + PlayerHealth.playerHealth);
+        if(playerHealthCurrent <= 0) {
+            Debug.Log("Player health is zero or below. dying. " + playerHealthCurrent);
             Die();
         }
     }
@@ -203,6 +204,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("Calculating XP");
         playerXP += xp;
         Debug.Log("Current XP " + playerXP);
+        playerXPText.text = "XP " + playerXP.ToString() + "/" + "0";
     }
 
 	void Die() {
