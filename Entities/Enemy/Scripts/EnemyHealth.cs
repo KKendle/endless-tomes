@@ -6,8 +6,8 @@ public class EnemyHealth : MonoBehaviour {
 
 	// static means it belongs to class itself, not a created instance of the class
 	// meaning, there is only one enemyHealth
-	public int enemyHealth;
 	// static EnemyHealth instance = null;
+	public int enemyHealth;
 
 	private Text healthText;
 
