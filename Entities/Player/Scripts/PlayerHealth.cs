@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour {
 	private string health;
 
 	void Start() {
+		Debug.Log("running start of " + this);
 		// if (instance != null && instance != this) {
 		// 	Destroy(gameObject);
 		// }
@@ -50,7 +51,8 @@ public class PlayerHealth : MonoBehaviour {
 		healthText.text = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;
 	}
 
-	public void Reset() {
+	public void Reset(string name) {
+		Debug.Log("name reset for " + name);
 		// gets max health of player
         PlayerController.playerHealthMax = Mathf.RoundToInt(PlayerController.playerBaseHealth + (PlayerController.playerCon * 2));
         // current health starts as max health
@@ -58,9 +60,9 @@ public class PlayerHealth : MonoBehaviour {
 		// calculate player health
 		health = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;
 
-		Debug.Log("Player health is at " + PlayerController.playerHealthCurrent);
-		Debug.Log("Resetting player health");
+		Debug.Log(name + " health is at " + PlayerController.playerHealthCurrent);
+		Debug.Log("Resetting " + name + " health");
 		healthText.text = health;
-		Debug.Log("Player health now is at " + PlayerController.playerHealthCurrent);
+		Debug.Log(name + " health now is at " + PlayerController.playerHealthCurrent);
 	}
 }

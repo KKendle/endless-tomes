@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour {
     public static GameObject inventoryItemsContainer;
 
 	void Start() {
+        Debug.Log("running start of PlayerController");
+        Debug.Log(this.name);
         playerHealth = transform.Find("Canvas/Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
             Debug.Log(this + "should have found Player Health");
@@ -79,32 +81,32 @@ public class PlayerController : MonoBehaviour {
         // Debug.Log("current weapon variable " + currentWeapon);
 
         // get total armor value
-        Debug.Log("player armor is " + playerArmor);
+        Debug.Log(this.name + " armor is " + playerArmor);
         // grab all the equipped armors defense value
         Armor equippedHelm = GameObject.Find("Equipped/Helm").GetComponent<Armor>();
-        Debug.Log("player helm is " + equippedHelm.armorDefense);
+        Debug.Log(this.name + " helm is " + equippedHelm.armorDefense);
         Armor equippedChestplate = GameObject.Find("Equipped/Chestplate").GetComponent<Armor>();
-        Debug.Log("player chestplate is " + equippedChestplate.armorDefense);
+        Debug.Log(this.name + " chestplate is " + equippedChestplate.armorDefense);
         Armor equippedBracers = GameObject.Find("Equipped/Bracers").GetComponent<Armor>();
-        Debug.Log("player bracers is " + equippedBracers.armorDefense);
+        Debug.Log(this.name + " bracers is " + equippedBracers.armorDefense);
         Armor equippedLegs = GameObject.Find("Equipped/Legs").GetComponent<Armor>();
-        Debug.Log("player legs is " + equippedLegs.armorDefense);
+        Debug.Log(this.name + " legs is " + equippedLegs.armorDefense);
         Armor equippedBoots = GameObject.Find("Equipped/Boots").GetComponent<Armor>();
-        Debug.Log("player boots is " + equippedBoots.armorDefense);
+        Debug.Log(this.name + " boots is " + equippedBoots.armorDefense);
 
         // add it all together
         playerArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
-        Debug.Log("player armor is " + playerArmor);
+        Debug.Log(this.name + " armor is " + playerArmor);
 
         // find player equipped items screen
-        equippedItemsContainer = GameObject.Find("Equipped Items Container");
+        equippedItemsContainer = GameObject.Find("Equipped");
         equippedItemsContainer.SetActive(false);
 
         // find player inventory items screen
-        inventoryItemsContainer = GameObject.Find("Inventory Items Container");
+        inventoryItemsContainer = GameObject.Find("Inventory");
         inventoryItemsContainer.SetActive(false);
 
-        playerHealth.Reset();
+        playerHealth.Reset(this.name);
 	}
 
     void Update() {
