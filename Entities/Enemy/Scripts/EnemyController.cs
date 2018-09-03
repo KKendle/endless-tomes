@@ -17,16 +17,38 @@ public class EnemyController : MonoBehaviour {
 	private EnemyHealth enemyHealth;
     private PlayerController player;
     private PlayerHealth playerHealth;
+    // ally
+    private PlayerController ally;
+    private PlayerHealth allyHealth;
 
 	void Start() {
-        playerHealth = GameObject.Find("Player/Canvas/Health").GetComponent<PlayerHealth>();
+        GameObject[] allies = GameObject.FindGameObjectsWithTag("Ally");
+        foreach (GameObject ally in allies) {
+            Debug.Log(ally);
+        }
+
+        playerHealth = GameObject.Find(allies[0].name + "/Canvas/Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
+            Debug.Log(playerHealth);
             Debug.Log(this + "should have found Player Health");
         }
 
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = GameObject.Find(allies[0].name).GetComponent<PlayerController>();
         if (player != null) {
+            Debug.Log(player);
             Debug.Log(this + "should have found Player");
+        }
+
+        allyHealth = GameObject.Find(allies[1].name + "/Canvas/Health").GetComponent<PlayerHealth>();
+        if (allyHealth != null) {
+            Debug.Log(allyHealth);
+            Debug.Log(this + "should have found Ally Health");
+        }
+
+        ally = GameObject.Find(allies[1].name).GetComponent<PlayerController>();
+        if (ally != null) {
+            Debug.Log(ally);
+            Debug.Log(this + "should have found Ally");
         }
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
