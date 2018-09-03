@@ -6,20 +6,24 @@ public class EnemyHealth : MonoBehaviour {
 
 	// static means it belongs to class itself, not a created instance of the class
 	// meaning, there is only one enemyHealth
-	public static int enemyHealth;
-	static EnemyHealth instance = null;
+	public int enemyHealth;
+	// static EnemyHealth instance = null;
 
-	private static Text healthText;
+	private Text healthText;
 
 	void Start() {
-		if (instance != null && instance != this) {
-			Destroy(gameObject);
-		}
-		else {
-			instance = this;
-			GameObject.DontDestroyOnLoad(gameObject);
-			healthText = GetComponent<Text>();
-			// healthText.text = enemyHealth.ToString();
+		// if (instance != null && instance != this) {
+		// 	Destroy(gameObject);
+		// }
+		// else {
+		// 	instance = this;
+		// 	GameObject.DontDestroyOnLoad(gameObject);
+		// 	healthText = GetComponent<Text>();
+		// 	// healthText.text = enemyHealth.ToString();
+		// }
+		healthText = GetComponent<Text>();
+		if (healthText != null) {
+			Debug.Log("healthText should have found the Text component");
 		}
 	}
 
@@ -34,7 +38,7 @@ public class EnemyHealth : MonoBehaviour {
 		healthText.text = enemyHealth.ToString();
 	}
 
-	public static void Reset(int healthMax) {
+	public void Reset(int healthMax) {
 		// Debug.Log("Enemy health is at " + enemyHealth);
 		// Debug.Log("Resetting enemy health");
 		enemyHealth = healthMax;

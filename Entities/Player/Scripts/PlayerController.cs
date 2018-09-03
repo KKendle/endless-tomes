@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     private int weaponDamage;
     private int damage;
     private PlayerHealth playerHealth;
-    private EnemyHealth enemyHealth;
+    private EnemyController enemy;
     private GameObject weapon;
     private Weapon weaponEquipped;
     // private static Text playerHealthText;
@@ -44,9 +44,9 @@ public class PlayerController : MonoBehaviour {
         // playerHealthText = transform.Find("Canvas/Health").GetComponent<Text>();
         // playerHealthText.text = "HP " + playerHealthCurrent + "/" + playerHealthMax;
 
-        enemyHealth = GameObject.Find("Enemy Health").GetComponent<EnemyHealth>();
-        if (enemyHealth != null) {
-            // Debug.Log(this + "should have found Enemy Health");
+        enemy = GameObject.Find("Enemy").GetComponent<EnemyController>();
+        if (enemy != null) {
+            Debug.Log(this + "should have found Enemy ");
         }
 
         // looks for Equipped and then for Weapon underneath that
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour {
         damage = Mathf.RoundToInt(weaponDamage + (playerStr / 2));
         // Debug.Log("player str " + playerStr);
         Debug.Log("total player damage " + damage);
-        enemyHealth.Health(damage);
+        enemy.TakeDamage(damage);
         // Debug.Log("Enemy health is now at " + EnemyHealth.enemyHealth);
     }
 
@@ -207,6 +207,12 @@ public class PlayerController : MonoBehaviour {
         playerXP += xp;
         Debug.Log("Current XP " + playerXP);
         playerXPText.text = "XP " + playerXP.ToString() + "/" + "0";
+    }
+
+    public void TakeDamage(int damage) {
+        Debug.Log("running " + this + " TakeDamage");
+        Debug.Log("taking " + damage + " amount");
+        playerHealth.Health(damage);
     }
 
 	void Die() {

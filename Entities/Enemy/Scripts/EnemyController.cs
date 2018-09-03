@@ -22,30 +22,35 @@ public class EnemyController : MonoBehaviour {
     private PlayerHealth allyHealth;
 
 	void Start() {
-        GameObject[] allies = GameObject.FindGameObjectsWithTag("Ally");
-        foreach (GameObject ally in allies) {
+        GameObject[] playerAllies = GameObject.FindGameObjectsWithTag("Player Ally");
+        foreach (GameObject ally in playerAllies) {
             Debug.Log(ally);
         }
 
-        playerHealth = GameObject.Find(allies[0].name + "/Canvas/Health").GetComponent<PlayerHealth>();
-        if (playerHealth != null) {
-            Debug.Log(playerHealth);
-            Debug.Log(this + "should have found Player Health");
+        enemyHealth = transform.Find("Canvas/Health").GetComponent<EnemyHealth>();
+        if (enemyHealth != null) {
+            Debug.Log(this + "should have found Enemy Health");
         }
 
-        player = GameObject.Find(allies[0].name).GetComponent<PlayerController>();
+        // playerHealth = GameObject.Find(allies[0].name + "/Canvas/Health").GetComponent<PlayerHealth>();
+        // if (playerHealth != null) {
+        //     Debug.Log(playerHealth);
+        //     Debug.Log(this + "should have found Player Health");
+        // }
+
+        player = GameObject.Find(playerAllies[0].name).GetComponent<PlayerController>();
         if (player != null) {
             Debug.Log(player);
             Debug.Log(this + "should have found Player");
         }
 
-        allyHealth = GameObject.Find(allies[1].name + "/Canvas/Health").GetComponent<PlayerHealth>();
-        if (allyHealth != null) {
-            Debug.Log(allyHealth);
-            Debug.Log(this + "should have found Ally Health");
-        }
+        // allyHealth = GameObject.Find(allies[1].name + "/Canvas/Health").GetComponent<PlayerHealth>();
+        // if (allyHealth != null) {
+        //     Debug.Log(allyHealth);
+        //     Debug.Log(this + "should have found Ally Health");
+        // }
 
-        ally = GameObject.Find(allies[1].name).GetComponent<PlayerController>();
+        ally = GameObject.Find(playerAllies[1].name).GetComponent<PlayerController>();
         if (ally != null) {
             Debug.Log(ally);
             Debug.Log(this + "should have found Ally");
@@ -53,7 +58,7 @@ public class EnemyController : MonoBehaviour {
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
 
-        EnemyHealth.Reset(enemyHealthMax);
+        enemyHealth.Reset(enemyHealthMax);
 	}
 
     void Update() {
@@ -61,7 +66,7 @@ public class EnemyController : MonoBehaviour {
 			Attack();
 		}
 
-        if(EnemyHealth.enemyHealth <= 0) {
+        if(enemyHealth.enemyHealth <= 0) {
             // Debug.Log("Enemy health is zero or below. dying. " + EnemyHealth.enemyHealth);
             Die();
         }
@@ -75,9 +80,15 @@ public class EnemyController : MonoBehaviour {
         // Debug.Log("enemy rounded " + Mathf.RoundToInt(enemyStr / 2));
         damage = Mathf.RoundToInt(weaponDamage + (enemyStr / 2));
         // Debug.Log("Total enemy damage - rounded " + damage);
-        playerHealth.Health(damage);
+        player.TakeDamage(damage);
         // playerHealth.Health(enemyWeapon.GetDamage());
         // Debug.Log("Player health is now at " + PlayerHealth.playerHealth);
+    }
+
+    public void TakeDamage(int damage) {
+        Debug.Log("running take damage");
+        Debug.Log("taking " + damage + " amount");
+        enemyHealth.Health(damage);
     }
 
 	void Die() {

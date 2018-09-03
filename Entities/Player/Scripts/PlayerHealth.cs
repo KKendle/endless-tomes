@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void Reset(string name) {
-		Debug.Log("name reset for " + name);
+		Debug.Log("running health reset for " + name);
 		// gets max health of player
         PlayerController.playerHealthMax = Mathf.RoundToInt(PlayerController.playerBaseHealth + (PlayerController.playerCon * 2));
         // current health starts as max health
