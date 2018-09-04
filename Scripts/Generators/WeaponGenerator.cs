@@ -17,6 +17,7 @@ public class WeaponGenerator : MonoBehaviour {
 	private string randomType;
 	private string randomAttributeType;
 	private string generatedWeapon;
+	private string generatedDescription;
 
 	List<string> weaponTypes = new List<string>() {"dagger", "sword", "battleaxe", "staff", "mace", "flail", "spear", "bow", "club", "wand", "book"};
 	// List<string> weaponTypes = new List<string>() {"dagger"};
@@ -51,6 +52,7 @@ public class WeaponGenerator : MonoBehaviour {
 		randomAttributeType = generateAttribute();
 		randomMaterial = generateMaterial();
 		generatedWeapon = randomElement + randomMaterial + " " + randomType + randomAttributeType;
+		generatedDescription = randomElement + randomMaterial + " " + randomType + randomAttributeType;
 
 		objToSpawn = new GameObject(generatedWeapon);
 
@@ -63,6 +65,9 @@ public class WeaponGenerator : MonoBehaviour {
 		// set Weapon component variables based on what weapon was just generated
 		spawnedWeapon.weaponName = generatedWeapon;
 		spawnedWeapon.weaponType = randomType;
+		spawnedWeapon.weaponDescription = generatedDescription;
+		spawnedWeapon.weaponMaterial = randomMaterial;
+		spawnedWeapon.weaponElement = randomElement;
 		getBaseStats();
 		addAttributeModifiers();
 		

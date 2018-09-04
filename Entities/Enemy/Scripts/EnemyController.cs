@@ -111,6 +111,6 @@ public class EnemyController : MonoBehaviour {
 
         // next level
 		LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-		levelManager.LoadLevel("Win");
+		// levelManager.LoadLevel("Win");
 	}
 }

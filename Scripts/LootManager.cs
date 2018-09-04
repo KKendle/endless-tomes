@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LootManager : MonoBehaviour {
 
-	private bool isWeaponDrop = false;
+	private bool isWeaponDrop = true;
 	private bool isArmorDrop = true;
 	private string randomElement;
 	private string randomMaterial;
