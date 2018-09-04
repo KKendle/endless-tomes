@@ -44,15 +44,22 @@ public class WeaponGenerator : MonoBehaviour {
 		// Debug.Log(weaponPrefabComponent.weaponDamageMax);
 	}
 
-	public void generateWeapon() {
+	public void generateWeapon(bool presetWeapon) {
 		resetGenerator();
 
-		randomType = generateType();
-		randomElement = generateElement();
-		randomAttributeType = generateAttribute();
-		randomMaterial = generateMaterial();
-		generatedWeapon = randomElement + randomMaterial + " " + randomType + randomAttributeType;
-		generatedDescription = randomElement + randomMaterial + " " + randomType + randomAttributeType;
+		if (presetWeapon) {
+			Debug.Log("preset weapon is " + presetWeapon + ".");
+			Debug.Log("getting preset weapon");
+		}
+		else {
+			Debug.Log("generating random weapon");
+			randomType = generateType();
+			randomElement = generateElement();
+			randomAttributeType = generateAttribute();
+			randomMaterial = generateMaterial();
+			generatedWeapon = randomElement + randomMaterial + " " + randomType + randomAttributeType;
+			generatedDescription = randomElement + randomMaterial + " " + randomType + randomAttributeType;
+		}
 
 		objToSpawn = new GameObject(generatedWeapon);
 
