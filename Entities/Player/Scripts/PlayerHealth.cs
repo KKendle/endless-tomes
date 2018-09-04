@@ -36,33 +36,39 @@ public class PlayerHealth : MonoBehaviour {
         // }
 	}
 
-	public void Health(int points) {
+	public void Health(string name, int points) {
 		Debug.Log("Running player Health function");
-		Debug.Log("Player health is at " + PlayerController.playerHealthCurrent);
-		PlayerController.playerHealthCurrent -= points;
-		Debug.Log("Player health now is at " + PlayerController.playerHealthCurrent);
-		healthText.text = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;;
+		PlayerController character = GameObject.Find(name).GetComponent<PlayerController>();
+		Debug.Log(character);
+		Debug.Log("Player health is at " + character.playerHealthCurrent);
+		character.playerHealthCurrent -= points;
+		Debug.Log("Player health now is at " + character.playerHealthCurrent);
+		healthText.text = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;;
 	}
 
-	public void HealthRestore(int points) {
-		Debug.Log("Player health is at " + PlayerController.playerHealthCurrent);
-		PlayerController.playerHealthCurrent += points;
-		Debug.Log("Player health now is at " + PlayerController.playerHealthCurrent);
-		healthText.text = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;
+	public void HealthRestore(string name, int points) {
+		PlayerController character = GameObject.Find(name).GetComponent<PlayerController>();
+		Debug.Log(character);
+		Debug.Log("Player health is at " + character.playerHealthCurrent);
+		character.playerHealthCurrent += points;
+		Debug.Log("Player health now is at " + character.playerHealthCurrent);
+		healthText.text = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;
 	}
 
 	public void Reset(string name) {
 		Debug.Log("running health reset for " + name);
+		PlayerController character = GameObject.Find(name).GetComponent<PlayerController>();
+		Debug.Log(character);
 		// gets max health of player
-        PlayerController.playerHealthMax = Mathf.RoundToInt(PlayerController.playerBaseHealth + (PlayerController.playerCon * 2));
+        character.playerHealthMax = Mathf.RoundToInt(character.playerBaseHealth + (character.playerCon * 2));
         // current health starts as max health
-        PlayerController.playerHealthCurrent = PlayerController.playerHealthMax;
+        character.playerHealthCurrent = character.playerHealthMax;
 		// calculate player health
-		health = "HP " + PlayerController.playerHealthCurrent + "/" + PlayerController.playerHealthMax;
+		health = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;
 
-		Debug.Log(name + " health is at " + PlayerController.playerHealthCurrent);
+		Debug.Log(name + " health is at " + character.playerHealthCurrent);
 		Debug.Log("Resetting " + name + " health");
 		healthText.text = health;
-		Debug.Log(name + " health now is at " + PlayerController.playerHealthCurrent);
+		Debug.Log(name + " health now is at " + character.playerHealthCurrent);
 	}
 }

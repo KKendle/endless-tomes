@@ -5,17 +5,21 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public static int playerLevel = 1;
-    public static int playerXP = 0;
-    public static int playerStr = 10;
-    public static int playerCon = 10;
-    public static int playerBaseHealth = 100;
-    public static int playerArmor = 2;
-    public static int playerHealthCurrent;
-    public static int playerHealthMax;
+    public int playerLevel = 1;
+    public int playerXP = 0;
+    public int playerStr = 10;
+    public int playerCon = 10;
+    public int playerBaseHealth = 100;
+    public int playerArmor = 2;
+    public int playerHealthCurrent;
+    public int playerHealthMax;
 
     private int weaponDamage;
     private int damage;
+
+    private GameObject[] playerAllies;
+    private PlayerController[] player = new PlayerController[2];
+
     private PlayerHealth playerHealth;
     private EnemyController enemy;
     private GameObject weapon;
@@ -37,6 +41,15 @@ public class PlayerController : MonoBehaviour {
 	void Start() {
         Debug.Log("running start of PlayerController");
         Debug.Log(this.name);
+
+        playerAllies = GameObject.FindGameObjectsWithTag("Player Ally");
+        Debug.Log("number of player allies is " + playerAllies.Length);
+        for (int i = 0; i < playerAllies.Length; i++) {
+            Debug.Log(i + " " + playerAllies[i].name);
+            Debug.Log(playerAllies[i].GetComponent<PlayerController>());
+            player[i] = playerAllies[i].GetComponent<PlayerController>();
+        }
+
         playerHealth = transform.Find("Canvas/Health").GetComponent<PlayerHealth>();
         if (playerHealth != null) {
             Debug.Log(this + "should have found Player Health");
@@ -212,7 +225,7 @@ public class PlayerController : MonoBehaviour {
     public void TakeDamage(int damage) {
         Debug.Log("running " + this + " TakeDamage");
         Debug.Log("taking " + damage + " amount");
-        playerHealth.Health(damage);
+        playerHealth.Health(this.name, damage);
     }
 
 	void Die() {
