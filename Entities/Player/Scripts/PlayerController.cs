@@ -6,7 +6,8 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public int playerLevel = 1;
-    public int playerXP = 0;
+    public int playerXP;
+    public int playerXPNextLevel = 83;
     public int playerStr = 10;
     public int playerCon = 10;
     public int playerBaseHealth = 100;
@@ -25,8 +26,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject weapon;
     private Weapon weaponEquipped;
     // private static Text playerHealthText;
-    private static Text playerLevelText;
-    private static Text playerXPText;
+    private Text playerLevelText;
+    private Text playerXPText;
     private static Text currentWeaponText;
     private static string currentWeapon;
 
@@ -82,11 +83,11 @@ public class PlayerController : MonoBehaviour {
 
         // show level of player
         playerLevelText = transform.Find("Canvas/Level").GetComponent<Text>();
-        playerLevelText.text = "Lvl " + playerLevel.ToString();
+        playerLevelText.text = "Lvl " + playerLevel;
 
         // show experience points of player
         playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
-        playerXPText.text = "XP " + playerXP.ToString() + "/" + "0";
+        playerXPText.text = "XP " + playerXP + "/" + playerXPNextLevel;
 
         // currentWeaponText = GameObject.Find("Player Weapon Equipped").GetComponent<Text>();
         // currentWeapon = currentWeaponText.text.ToString();
@@ -97,15 +98,15 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(this.name + " armor is " + playerArmor);
         // grab all the equipped armors defense value
         Armor equippedHelm = GameObject.Find("Equipped/Helm").GetComponent<Armor>();
-        Debug.Log(this.name + " helm is " + equippedHelm.armorDefense);
+        // Debug.Log(this.name + " helm is " + equippedHelm.armorDefense);
         Armor equippedChestplate = GameObject.Find("Equipped/Chestplate").GetComponent<Armor>();
-        Debug.Log(this.name + " chestplate is " + equippedChestplate.armorDefense);
+        // Debug.Log(this.name + " chestplate is " + equippedChestplate.armorDefense);
         Armor equippedBracers = GameObject.Find("Equipped/Bracers").GetComponent<Armor>();
-        Debug.Log(this.name + " bracers is " + equippedBracers.armorDefense);
+        // Debug.Log(this.name + " bracers is " + equippedBracers.armorDefense);
         Armor equippedLegs = GameObject.Find("Equipped/Legs").GetComponent<Armor>();
-        Debug.Log(this.name + " legs is " + equippedLegs.armorDefense);
+        // Debug.Log(this.name + " legs is " + equippedLegs.armorDefense);
         Armor equippedBoots = GameObject.Find("Equipped/Boots").GetComponent<Armor>();
-        Debug.Log(this.name + " boots is " + equippedBoots.armorDefense);
+        // Debug.Log(this.name + " boots is " + equippedBoots.armorDefense);
 
         // add it all together
         playerArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
@@ -214,12 +215,15 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void CalculateXP(int xp) {
-        Debug.Log("Current XP " + playerXP);
+        // show experience points of player
+        playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
+
+        Debug.Log("Current XP for " + this + " is " + playerXP);
         Debug.Log("XP gained " + xp);
         Debug.Log("Calculating XP");
         playerXP += xp;
-        Debug.Log("Current XP " + playerXP);
-        playerXPText.text = "XP " + playerXP.ToString() + "/" + "0";
+        Debug.Log("Current XP for " + this + " is " + playerXP);
+        playerXPText.text = "XP " + playerXP + "/" + playerXPNextLevel;
     }
 
     public void TakeDamage(int damage) {

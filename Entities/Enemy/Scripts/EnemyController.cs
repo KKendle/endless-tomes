@@ -103,6 +103,7 @@ public class EnemyController : MonoBehaviour {
 		// Debug.Log("Enemy Died");
 		// Destroy(gameObject);
         for (int i = 0; i < playerAllies.Length; i++) {
+            Debug.Log(player[i]);
             player[i].CalculateXP(enemyXPValue);
         }
 

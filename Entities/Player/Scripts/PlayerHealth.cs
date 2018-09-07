@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour {
 	// static PlayerHealth instance = null;
 
 	private Text healthText;
-	private PlayerController player;
+	private PlayerController character;
 	private string health;
 
 	void Awake() {
