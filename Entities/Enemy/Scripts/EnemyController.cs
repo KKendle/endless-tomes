@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour {
     public int enemyCon = 10;
     private int enemyBaseHealth = 100;
     public int enemyXPValue = 35;
+    public int enemyHealthCurrent;
     public int enemyHealthMax;
     // public Sword weapon;
 
@@ -65,7 +66,7 @@ public class EnemyController : MonoBehaviour {
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
 
-        enemyHealth.Reset(enemyHealthMax);
+        enemyHealth.Reset();
 	}
 
     void Update() {
@@ -73,8 +74,8 @@ public class EnemyController : MonoBehaviour {
 			Attack();
 		}
 
-        if(enemyHealth.enemyHealth <= 0) {
-            // Debug.Log("Enemy health is zero or below. dying. " + EnemyHealth.enemyHealth);
+        if(enemyHealthCurrent <= 0) {
+            // Debug.Log("Enemy health is zero or below. dying. " + enemyHealthCurrent);
             Die();
         }
     }

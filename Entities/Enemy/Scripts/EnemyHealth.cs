@@ -7,11 +7,12 @@ public class EnemyHealth : MonoBehaviour {
 	// static means it belongs to class itself, not a created instance of the class
 	// meaning, there is only one enemyHealth
 	// static EnemyHealth instance = null;
-	public int enemyHealth;
+	// public int enemyHealth;
 
+	private EnemyController enemy;
 	private Text healthText;
 
-	void Start() {
+	void Awake() {
 		// if (instance != null && instance != this) {
 		// 	Destroy(gameObject);
 		// }
@@ -21,6 +22,11 @@ public class EnemyHealth : MonoBehaviour {
 		// 	healthText = GetComponent<Text>();
 		// 	// healthText.text = enemyHealth.ToString();
 		// }
+		enemy = GameObject.Find("Enemy").GetComponent<EnemyController>();
+		if (enemy != null) {
+			Debug.Log("enemy should have found the Enemy Controller component");
+		}
+
 		healthText = GetComponent<Text>();
 		if (healthText != null) {
 			Debug.Log("healthText should have found the Text component");
@@ -29,20 +35,18 @@ public class EnemyHealth : MonoBehaviour {
 
 	public void Health(int points) {
 		// Debug.Log("Running enemy Health function");
-		enemyHealth -= points;
-		healthText.text = enemyHealth.ToString();
+		enemy.enemyHealthCurrent -= points;
+		healthText.text = "HP " + enemy.enemyHealthCurrent + "/" + enemy.enemyHealthMax;
 	}
 
 	public void HealthRestore(int points) {
-		enemyHealth += points;
-		healthText.text = enemyHealth.ToString();
+		enemy.enemyHealthCurrent += points;
+		healthText.text = "HP " + enemy.enemyHealthCurrent + "/" + enemy.enemyHealthMax;
 	}
 
-	public void Reset(int healthMax) {
-		// Debug.Log("Enemy health is at " + enemyHealth);
-		// Debug.Log("Resetting enemy health");
-		enemyHealth = healthMax;
-		healthText.text = enemyHealth.ToString();
-		// Debug.Log("Enemy health now is at " + enemyHealth);
+	public void Reset() {
+		Debug.Log("Resetting enemy health");
+		enemy.enemyHealthCurrent = enemy.enemyHealthMax;
+		healthText.text = "HP " + enemy.enemyHealthCurrent + "/" + enemy.enemyHealthMax;
 	}
 }

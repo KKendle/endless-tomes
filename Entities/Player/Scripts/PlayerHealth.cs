@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
 	private PlayerController player;
 	private string health;
 
-	void Start() {
+	void Awake() {
 		Debug.Log("running start of " + this);
 		// if (instance != null && instance != this) {
 		// 	Destroy(gameObject);
@@ -27,13 +27,6 @@ public class PlayerHealth : MonoBehaviour {
 		if (healthText != null) {
 			Debug.Log("healthText should have found the Text component");
 		}
-		// Debug.Log("healthText text is " + healthText.text);
-		// healthText.text = health;
-		// Debug.Log("healthText text is " + healthText.text);
-		// player = GameObject.Find("Player").GetComponent<PlayerController>();
-        // if (player != null) {
-        //     Debug.Log(this + "should have found Player");
-        // }
 	}
 
 	public void Health(string name, int points) {
@@ -43,15 +36,15 @@ public class PlayerHealth : MonoBehaviour {
 		Debug.Log("Player health is at " + character.playerHealthCurrent);
 		character.playerHealthCurrent -= points;
 		Debug.Log("Player health now is at " + character.playerHealthCurrent);
-		healthText.text = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;;
+		healthText.text = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;
 	}
 
 	public void HealthRestore(string name, int points) {
 		PlayerController character = GameObject.Find(name).GetComponent<PlayerController>();
 		Debug.Log(character);
-		Debug.Log("Player health is at " + character.playerHealthCurrent);
+		Debug.Log(character + " health is at " + character.playerHealthCurrent);
 		character.playerHealthCurrent += points;
-		Debug.Log("Player health now is at " + character.playerHealthCurrent);
+		Debug.Log(character + " health now is at " + character.playerHealthCurrent);
 		healthText.text = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;
 	}
 
@@ -65,10 +58,6 @@ public class PlayerHealth : MonoBehaviour {
         character.playerHealthCurrent = character.playerHealthMax;
 		// calculate player health
 		health = "HP " + character.playerHealthCurrent + "/" + character.playerHealthMax;
-
-		Debug.Log(name + " health is at " + character.playerHealthCurrent);
-		Debug.Log("Resetting " + name + " health");
 		healthText.text = health;
-		Debug.Log(name + " health now is at " + character.playerHealthCurrent);
 	}
 }
