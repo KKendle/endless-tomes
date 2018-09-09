@@ -1343,7 +1343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &759266497 stripped
 RectTransform:
@@ -1477,6 +1477,46 @@ MonoBehaviour:
   weaponAttributeType: 
   weaponDescription: 
   weaponEffect: 
+--- !u!1 &905593981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 905593983}
+  - component: {fileID: 905593982}
+  m_Layer: 0
+  m_Name: ResetPlayerPrefs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &905593982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 905593981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf3049ae74b2480d98c72725221b98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &905593983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 905593981}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &910412215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,7 +1643,7 @@ RectTransform:
   - {fileID: 1995434959}
   - {fileID: 1490689557}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1722,7 +1762,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4773506805242606, guid: 01f286c40be0b4d18bf329cde59d3629, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01f286c40be0b4d18bf329cde59d3629, type: 2}
@@ -1756,6 +1796,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659ff6fbdcf2480f9d8b8e5269df209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 1
+  playerXP: 0
+  playerXPNextLevel: 83
+  playerStr: 10
+  playerCon: 10
+  playerArmor: 2
+  playerBaseHealth: 100
+  playerHealthCurrent: 0
+  playerHealthMax: 0
 --- !u!4 &1061834947
 Transform:
   m_ObjectHideFlags: 0
@@ -1771,7 +1820,7 @@ Transform:
   - {fileID: 1649352639}
   - {fileID: 398434618}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091539254
 GameObject:
@@ -2902,7 +2951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c32e73226bf44fd80f65cb014e3183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 0
 --- !u!114 &1574453674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3580,7 +3628,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4070505557715410, guid: f18a6f93385de4af39ed7074bb3d766b, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f18a6f93385de4af39ed7074bb3d766b, type: 2}
@@ -3746,7 +3794,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4192812945212024, guid: 8fcf607b7c8d544aa96dc03cbc3b38ab, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcf607b7c8d544aa96dc03cbc3b38ab, type: 2}
@@ -4377,6 +4425,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9659ff6fbdcf2480f9d8b8e5269df209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 1
+  playerXP: 0
+  playerXPNextLevel: 83
+  playerStr: 10
+  playerCon: 10
+  playerArmor: 2
+  playerBaseHealth: 100
+  playerHealthCurrent: 0
+  playerHealthMax: 0
 --- !u!4 &2062282307
 Transform:
   m_ObjectHideFlags: 0
@@ -4392,7 +4449,7 @@ Transform:
   - {fileID: 2112429725}
   - {fileID: 910412216}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064131761
 GameObject:
@@ -4500,7 +4557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4066077604596088, guid: 9d92f385cfd0549d3b43daa6d329a73a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d92f385cfd0549d3b43daa6d329a73a, type: 2}

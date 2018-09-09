@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour {
     public int playerXPNextLevel = 83;
     public int playerStr = 10;
     public int playerCon = 10;
-    public int playerBaseHealth = 100;
     public int playerArmor = 2;
+    public int playerBaseHealth = 100;
     public int playerHealthCurrent;
     public int playerHealthMax;
 
@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour {
 	private Weapon weaponPrefabComponent;
 	private GameObject playerInventory;
 	private GameObject playerEquipped;
+
+    private LevelUpManager levelUpManager;
 
     // static otherwise I lose the reference somehow
     public static GameObject equippedItemsContainer;
@@ -87,7 +89,10 @@ public class PlayerController : MonoBehaviour {
 
         // show experience points of player
         playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
-        playerXPText.text = "XP " + playerXP + "/" + playerXPNextLevel;
+        PlayerPrefs.GetInt(this.name + " experience", 0);
+        playerXPText.text = "XP " + PlayerPrefs.GetInt(this.name + " experience") + "/" + playerXPNextLevel;
+
+        levelUpManager = GameObject.Find("LevelUpManager").GetComponent<LevelUpManager>();
 
         // currentWeaponText = GameObject.Find("Player Weapon Equipped").GetComponent<Text>();
         // currentWeapon = currentWeaponText.text.ToString();
@@ -215,15 +220,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void CalculateXP(int xp) {
-        // show experience points of player
-        playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
+        Debug.Log("xp gained is " + xp);
+        PlayerPrefs.SetInt(this.name + " experience", PlayerPrefs.GetInt(this.name + " experience") + xp);
 
-        Debug.Log("Current XP for " + this + " is " + playerXP);
-        Debug.Log("XP gained " + xp);
-        Debug.Log("Calculating XP");
-        playerXP += xp;
-        Debug.Log("Current XP for " + this + " is " + playerXP);
-        playerXPText.text = "XP " + playerXP + "/" + playerXPNextLevel;
+        playerXPText.text = "XP " + PlayerPrefs.GetInt(this.name + " experience") + "/" + playerXPNextLevel;
+        levelUpManager.CheckLvlUp(PlayerPrefs.GetInt(this.name + " experience"));
     }
 
     public void TakeDamage(int damage) {

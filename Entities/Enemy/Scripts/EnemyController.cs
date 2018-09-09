@@ -7,8 +7,8 @@ public class EnemyController : MonoBehaviour {
     public int enemyLevel = 1;
     public int enemyStr = 5;
     public int enemyCon = 10;
-    private int enemyBaseHealth = 100;
     public int enemyXPValue = 35;
+    private int enemyBaseHealth = 100;
     public int enemyHealthCurrent;
     public int enemyHealthMax;
     // public Sword weapon;

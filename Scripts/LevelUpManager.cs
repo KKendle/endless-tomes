@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class LevelUpManager : MonoBehaviour {
 
-	public GameObject levelUpInfo;
-
+	private GameObject levelUpInfo;
 	private PlayerController player;
 
 	void Start () {
@@ -21,8 +20,8 @@ public class LevelUpManager : MonoBehaviour {
 		}
 		HideLevelUpScreen();
 
-		Debug.Log(this + " says player xp is " + player.playerXP);
-		CheckLvlUp(player.playerXP);
+		// Debug.Log(this + " says player xp is " + player.playerXP);
+		// CheckLvlUp(player.playerXP);
 	}
 
 	void ShowLevelUpScreen() {
@@ -53,7 +52,26 @@ public class LevelUpManager : MonoBehaviour {
 		GameObject.Find("Level Up Info").SetActive(false);
     }
 
-	void CheckLvlUp(int currentXP) {
+	// public void CalculateXP(string name, int xp) {
+	// 	Debug.Log("running CalculateXP from " + this);
+	// 	Debug.Log("xp received is " + xp);
+	// 	PlayerController ally = GameObject.Find(name).GetComponent<PlayerController>();
+    //     // // show experience points of player
+	// 	// Debug.Log(name + "/Canvas/Experience");
+    //     // Text playerXPText = transform.Find(name + "Canvas/Experience").GetComponent<Text>();
+
+    //     Debug.Log("Current XP for " + this + " is " + ally.playerXP);
+    //     Debug.Log("XP gained " + xp);
+    //     Debug.Log("Calculating XP");
+    //     ally.playerXP += xp;
+	// 	Debug.Log(PlayerPrefs.GetInt("PlayerCharXP"));
+	// 	PlayerPrefs.SetInt("PlayerCharXP", PlayerPrefs.GetInt("PlayerCharXP") + xp);
+	// 	Debug.Log(PlayerPrefs.GetInt("PlayerCharXP"));
+    //     Debug.Log("Current XP for " + this + " is " + ally.playerXP);
+    //     // playerXPText.text = "XP " + ally.playerXP + "/" + ally.playerXPNextLevel;
+    // }
+
+	public void CheckLvlUp(int currentXP) {
 		Debug.Log("player level is " + player.playerLevel);
 		Debug.Log("calculating if there is a lvl up");
 		if (currentXP >= 83 && player.playerLevel < 2) {
