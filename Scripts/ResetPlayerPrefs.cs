@@ -17,7 +17,9 @@ public class ResetPlayerPrefs : MonoBehaviour {
 			// reset player prefs
 			// only for dev
 			PlayerPrefs.DeleteKey("Ally1 experience");
+			PlayerPrefs.DeleteKey("Ally1 level");
 			PlayerPrefs.DeleteKey("Player experience");
+			PlayerPrefs.DeleteKey("Player level");
         }
     }
 }

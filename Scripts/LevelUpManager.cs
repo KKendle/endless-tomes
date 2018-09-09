@@ -71,34 +71,34 @@ public class LevelUpManager : MonoBehaviour {
     //     // playerXPText.text = "XP " + ally.playerXP + "/" + ally.playerXPNextLevel;
     // }
 
-	public void CheckLvlUp(int currentXP) {
-		Debug.Log("player level is " + player.playerLevel);
+	public void CheckLvlUp(string name, int currentXP) {
+		Debug.Log(name + " level is " + PlayerPrefs.GetInt(name + " level"));
 		Debug.Log("calculating if there is a lvl up");
-		if (currentXP >= 83 && player.playerLevel < 2) {
+		if (currentXP >= 83 && PlayerPrefs.GetInt(name + " level") < 2) {
 			Debug.Log("you lvl up");
-			player.playerLevel++;
-			Debug.Log("player level is now " + player.playerLevel);
+			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
+			Debug.Log(name + " level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(2);
 			ShowLevelUpScreen();
 		}
-		if (currentXP >= 174 && player.playerLevel < 3) {
+		if (currentXP >= 174 && PlayerPrefs.GetInt(name + " level") < 3) {
 			Debug.Log("you lvl up");
-			player.playerLevel++;
-			Debug.Log("player level is now " + player.playerLevel);
+			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
+			Debug.Log("player level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(2);
 			ShowLevelUpScreen();
 		}
-		if (currentXP >= 276 && player.playerLevel < 4) {
+		if (currentXP >= 276 && PlayerPrefs.GetInt(name + " level") < 4) {
 			Debug.Log("you lvl up");
-			player.playerLevel++;
-			Debug.Log("player level is now " + player.playerLevel);
+			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
+			Debug.Log("player level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(2);
 			ShowLevelUpScreen();
 		}
-		if (currentXP >= 388 && player.playerLevel < 5) {
+		if (currentXP >= 388 && PlayerPrefs.GetInt(name + " level") < 5) {
 			Debug.Log("you lvl up");
-			player.playerLevel++;
-			Debug.Log("player level is now " + player.playerLevel);
+			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
+			Debug.Log("player level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(5);
 			ShowLevelUpScreen();
 		}
