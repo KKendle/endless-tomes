@@ -17,12 +17,11 @@ public class PlayerController : MonoBehaviour {
 
     private int weaponDamage;
     private int damage;
-
     private GameObject[] playerAllies;
     private PlayerController[] player = new PlayerController[2];
-
     private PlayerHealth playerHealth;
-    private EnemyController enemy;
+    private GameObject[] enemyAllies;
+    private EnemyController[] enemy = new EnemyController[2];
     private GameObject weapon;
     private Weapon weaponEquipped;
     // private static Text playerHealthText;
@@ -45,12 +44,22 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("running start of PlayerController");
         Debug.Log(this.name);
 
+        // find allies
         playerAllies = GameObject.FindGameObjectsWithTag("Player Ally");
         Debug.Log("number of player allies is " + playerAllies.Length);
         for (int i = 0; i < playerAllies.Length; i++) {
             Debug.Log(i + " " + playerAllies[i].name);
             Debug.Log(playerAllies[i].GetComponent<PlayerController>());
             player[i] = playerAllies[i].GetComponent<PlayerController>();
+        }
+
+        // find enemies
+        enemyAllies = GameObject.FindGameObjectsWithTag("Enemy Ally");
+        Debug.Log("number of enemy allies is " + enemyAllies.Length);
+        for (int i = 0; i < enemyAllies.Length; i++) {
+            Debug.Log(i + " " + enemyAllies[i].name);
+            Debug.Log(enemyAllies[i].GetComponent<EnemyController>());
+            enemy[i] = enemyAllies[i].GetComponent<EnemyController>();
         }
 
         playerHealth = transform.Find("Canvas/Health").GetComponent<PlayerHealth>();
@@ -60,10 +69,10 @@ public class PlayerController : MonoBehaviour {
         // playerHealthText = transform.Find("Canvas/Health").GetComponent<Text>();
         // playerHealthText.text = "HP " + playerHealthCurrent + "/" + playerHealthMax;
 
-        enemy = GameObject.Find("Enemy").GetComponent<EnemyController>();
-        if (enemy != null) {
-            Debug.Log(this + "should have found Enemy ");
-        }
+        // enemy = GameObject.Find("Enemy").GetComponent<EnemyController>();
+        // if (enemy != null) {
+        //     Debug.Log(this + "should have found Enemy ");
+        // }
 
         // looks for Equipped and then for Weapon underneath that
         // only search one level deep, not recursive
@@ -151,7 +160,8 @@ public class PlayerController : MonoBehaviour {
         damage = Mathf.RoundToInt(weaponDamage + (playerStr / 2));
         // Debug.Log("player str " + playerStr);
         Debug.Log("total player damage " + damage);
-        enemy.TakeDamage(damage);
+        enemy[Mathf.RoundToInt(Random.Range(0, enemyAllies.Length))].TakeDamage(damage);
+        // enemy.TakeDamage(damage);
         // Debug.Log("Enemy health is now at " + EnemyHealth.enemyHealth);
     }
 

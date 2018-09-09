@@ -33,19 +33,21 @@ public class EnemyHealth : MonoBehaviour {
 		}
 	}
 
-	public void Health(int points) {
-		// Debug.Log("Running enemy Health function");
+	public void Health(string name, int points) {
+		EnemyController enemy = GameObject.Find(name).GetComponent<EnemyController>();
 		enemy.enemyHealthCurrent -= points;
 		healthText.text = "HP " + enemy.enemyHealthCurrent + "/" + enemy.enemyHealthMax;
 	}
 
-	public void HealthRestore(int points) {
+	public void HealthRestore(string name, int points) {
+		EnemyController enemy = GameObject.Find(name).GetComponent<EnemyController>();
 		enemy.enemyHealthCurrent += points;
 		healthText.text = "HP " + enemy.enemyHealthCurrent + "/" + enemy.enemyHealthMax;
 	}
 
-	public void Reset() {
+	public void Reset(string name) {
 		Debug.Log("Resetting enemy health");
+		EnemyController enemy = GameObject.Find(name).GetComponent<EnemyController>();
 		enemy.enemyHealthCurrent = enemy.enemyHealthMax;
 		healthText.text = "HP " + enemy.enemyHealthCurrent + "/" + enemy.enemyHealthMax;
 	}

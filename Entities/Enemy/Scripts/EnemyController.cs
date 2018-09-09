@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour {
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
 
-        enemyHealth.Reset();
+        enemyHealth.Reset(this.name);
 	}
 
     void Update() {
@@ -96,7 +96,7 @@ public class EnemyController : MonoBehaviour {
     public void TakeDamage(int damage) {
         Debug.Log("running take damage");
         Debug.Log("taking " + damage + " amount");
-        enemyHealth.Health(damage);
+        enemyHealth.Health(this.name, damage);
     }
 
 	void Die() {
