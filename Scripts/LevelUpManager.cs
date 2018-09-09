@@ -71,32 +71,37 @@ public class LevelUpManager : MonoBehaviour {
     //     // playerXPText.text = "XP " + ally.playerXP + "/" + ally.playerXPNextLevel;
     // }
 
-	public void CheckLvlUp(string name, int currentXP) {
+	public void CheckLvlUp(string name) {
 		Debug.Log(name + " level is " + PlayerPrefs.GetInt(name + " level"));
+		Debug.Log("current xp for " + name + " is " + PlayerPrefs.GetInt(name + " experience"));
 		Debug.Log("calculating if there is a lvl up");
-		if (currentXP >= 83 && PlayerPrefs.GetInt(name + " level") < 2) {
+		if (PlayerPrefs.GetInt(name + " experience") >= 83 && PlayerPrefs.GetInt(name + " level") < 2) {
 			Debug.Log("you lvl up");
+			Debug.Log(name + " is " + PlayerPrefs.GetInt(name + " experience"));
 			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
 			Debug.Log(name + " level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(2);
 			ShowLevelUpScreen();
 		}
-		if (currentXP >= 174 && PlayerPrefs.GetInt(name + " level") < 3) {
+		if (PlayerPrefs.GetInt(name + " experience") >= 174 && PlayerPrefs.GetInt(name + " level") < 3) {
 			Debug.Log("you lvl up");
+			Debug.Log(name + " is " + PlayerPrefs.GetInt(name + " experience"));
 			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
 			Debug.Log("player level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(2);
 			ShowLevelUpScreen();
 		}
-		if (currentXP >= 276 && PlayerPrefs.GetInt(name + " level") < 4) {
+		if (PlayerPrefs.GetInt(name + " experience") >= 276 && PlayerPrefs.GetInt(name + " level") < 4) {
 			Debug.Log("you lvl up");
+			Debug.Log(name + " is " + PlayerPrefs.GetInt(name + " experience"));
 			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
 			Debug.Log("player level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(2);
 			ShowLevelUpScreen();
 		}
-		if (currentXP >= 388 && PlayerPrefs.GetInt(name + " level") < 5) {
+		if (PlayerPrefs.GetInt(name + " experience") >= 388 && PlayerPrefs.GetInt(name + " level") < 5) {
 			Debug.Log("you lvl up");
+			Debug.Log(name + " is " + PlayerPrefs.GetInt(name + " experience"));
 			PlayerPrefs.SetInt(name + " level", PlayerPrefs.GetInt(name + " level") + 1);
 			Debug.Log("player level is now " + PlayerPrefs.GetInt(name + " level"));
 			AbilityLevelUp(5);

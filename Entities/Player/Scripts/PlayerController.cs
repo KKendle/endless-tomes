@@ -85,11 +85,14 @@ public class PlayerController : MonoBehaviour {
 
         // show level of player
         playerLevelText = transform.Find("Canvas/Level").GetComponent<Text>();
-        playerLevelText.text = "Lvl " + PlayerPrefs.GetInt(this.name + " level", 1);
+        // PlayerPrefs.GetInt(this.name + " level", 1);
+        PlayerPrefs.SetInt(this.name + " level", PlayerPrefs.GetInt(this.name + " level", 1));
+        playerLevelText.text = "Lvl " + PlayerPrefs.GetInt(this.name + " level");
 
         // show experience points of player
         playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
-        PlayerPrefs.GetInt(this.name + " experience", 0);
+        // PlayerPrefs.GetInt(this.name + " experience", 0);
+        PlayerPrefs.SetInt(this.name + " experience", PlayerPrefs.GetInt(this.name + " experience", 0));
         playerXPText.text = "XP " + PlayerPrefs.GetInt(this.name + " experience") + "/" + playerXPNextLevel;
 
         levelUpManager = GameObject.Find("LevelUpManager").GetComponent<LevelUpManager>();
@@ -224,7 +227,7 @@ public class PlayerController : MonoBehaviour {
         PlayerPrefs.SetInt(this.name + " experience", PlayerPrefs.GetInt(this.name + " experience") + xp);
 
         playerXPText.text = "XP " + PlayerPrefs.GetInt(this.name + " experience") + "/" + playerXPNextLevel;
-        levelUpManager.CheckLvlUp(this.name, PlayerPrefs.GetInt(this.name + " experience"));
+        levelUpManager.CheckLvlUp(this.name);
     }
 
     public void TakeDamage(int damage) {
