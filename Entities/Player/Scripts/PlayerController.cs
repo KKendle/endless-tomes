@@ -34,7 +34,11 @@ public class PlayerController : MonoBehaviour {
 	private GameObject playerInventory;
 	private GameObject playerEquipped;
 
+    // turn related
+    private bool yourTurn = false;
+
     private LevelUpManager levelUpManager;
+    private TurnOrderManager turnOrderManager;
 
     // static otherwise I lose the reference somehow
     public static GameObject equippedItemsContainer;
@@ -137,13 +141,20 @@ public class PlayerController : MonoBehaviour {
         inventoryItemsContainer = GameObject.Find("Inventory");
         inventoryItemsContainer.SetActive(false);
 
+        // find turn order manager
+        turnOrderManager = GameObject.Find("TurnOrderManager").GetComponent<TurnOrderManager>();
+
         playerHealth.Reset(this.name);
 	}
 
     void Update() {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-			Attack();
-		}
+        if (yourTurn) {
+            if(Input.GetKeyDown(KeyCode.Space)) {
+                Debug.Log(this.name + " is attacking");
+                yourTurn = false;
+                Attack();
+            }
+        }
 
         if(playerHealthCurrent <= 0) {
             Debug.Log("Player health is zero or below. dying. " + playerHealthCurrent);
@@ -152,7 +163,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Attack() {
-        Debug.Log("Player attacking");
+        Debug.Log(this.name + " attacking");
         // weaponDamage = weaponEquipped.WeaponDamage(currentWeapon);
         weaponDamage = weaponEquipped.WeaponDamage();
         // weaponDamage = 100;
@@ -163,6 +174,8 @@ public class PlayerController : MonoBehaviour {
         enemy[Mathf.RoundToInt(Random.Range(0, enemyAllies.Length))].TakeDamage(damage);
         // enemy.TakeDamage(damage);
         // Debug.Log("Enemy health is now at " + EnemyHealth.enemyHealth);
+
+        turnOrderManager.EndTurn();
     }
 
     public void ChangeWeapon(string newWeapon) {
@@ -244,6 +257,11 @@ public class PlayerController : MonoBehaviour {
         Debug.Log("running " + this + " TakeDamage");
         Debug.Log("taking " + damage + " amount");
         playerHealth.Health(this.name, damage);
+    }
+
+    public void TakeTurn() {
+        Debug.Log(this.name + " is taking their turn");
+        yourTurn = true;
     }
 
 	void Die() {

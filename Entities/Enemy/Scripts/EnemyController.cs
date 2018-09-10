@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour {
 
     private int weaponDamage;
     private int damage;
+    // turn related
+    private bool yourTurn = false;
 	private EnemyHealth enemyHealth;
     // private PlayerController player;
     private PlayerController[] player = new PlayerController[2];
@@ -24,6 +26,8 @@ public class EnemyController : MonoBehaviour {
     // ally
     // private PlayerController ally;
     private PlayerHealth allyHealth;
+
+    private TurnOrderManager turnOrderManager;
 
 	void Start() {
         Debug.Log("running Enemy Controller");
@@ -66,13 +70,20 @@ public class EnemyController : MonoBehaviour {
 
         enemyHealthMax = Mathf.RoundToInt(enemyBaseHealth + (enemyCon * 2));
 
+        // find turn order manager
+        turnOrderManager = GameObject.Find("TurnOrderManager").GetComponent<TurnOrderManager>();
+
         enemyHealth.Reset(this.name);
 	}
 
     void Update() {
-        if(Input.GetKeyDown(KeyCode.Space)) {
-			Attack();
-		}
+        if (yourTurn) {
+            if(Input.GetKeyDown(KeyCode.Space)) {
+                Debug.Log(this.name + " is attacking");
+                yourTurn = false;
+                Attack();
+            }
+        }
 
         if(enemyHealthCurrent <= 0) {
             // Debug.Log("Enemy health is zero or below. dying. " + enemyHealthCurrent);
@@ -91,12 +102,19 @@ public class EnemyController : MonoBehaviour {
         player[Mathf.RoundToInt(Random.Range(0, playerAllies.Length))].TakeDamage(damage);
         // playerHealth.Health(enemyWeapon.GetDamage());
         // Debug.Log("Player health is now at " + PlayerHealth.playerHealth);
+
+        turnOrderManager.EndTurn();
     }
 
     public void TakeDamage(int damage) {
         Debug.Log("running take damage");
         Debug.Log("taking " + damage + " amount");
         enemyHealth.Health(this.name, damage);
+    }
+
+    public void TakeTurn() {
+        Debug.Log(this.name + " is taking their turn");
+        yourTurn = true;
     }
 
 	void Die() {
