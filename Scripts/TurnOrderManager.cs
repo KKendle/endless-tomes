@@ -66,55 +66,63 @@ public class TurnOrderManager : MonoBehaviour {
 		Debug.Log("was " + currentTurn + " turn");
 
 		if (alliesTurn) {
-			if (currentTurn == "Ally1") {
-				currentTurn = "Player";
-			}
-			else if (currentTurn == "Player") {
-				currentTurn = "Ally1";
-			}
-			// for swapping between enemy and player
-			else if (currentTurn == "Enemy" || currentTurn == "Enemy (1)") {
-				currentTurn = "Player";
-			}
-			Debug.Log("current turn is " + currentTurn);
-			PlayerController playerTurn = GameObject.Find(currentTurn).GetComponent<PlayerController>();
-			playerTurn.TakeTurn();
-			allyTurnCount++;
-			Debug.Log("ally turn count is " + allyTurnCount + ".");
-			if (allyTurnCount >= 2) {
-				alliesTurn = false;
-				enemiesTurn = true;
-
-				// reset for continued play
-				allyTurnCount = 0;
-			}
+			AllyTurn();
 		}
 		else if (enemiesTurn) {
-			if (currentTurn == "Enemy") {
-				currentTurn = "Enemy (1)";
-			}
-			else if (currentTurn == "Enemy (1)") {
-				currentTurn = "Enemy";
-			}
-			// for swapping from player to enemy
-			else if (currentTurn == "Player" || currentTurn == "Ally1") {
-				currentTurn = "Enemy";
-			}
-			Debug.Log("current turn is " + currentTurn);
-			EnemyController enemyTurn = GameObject.Find(currentTurn).GetComponent<EnemyController>();
-			enemyTurn.TakeTurn();
-			enemyTurnCount++;
-			Debug.Log("enemy turn count is + " + enemyTurnCount + ".");
-			if (enemyTurnCount >= 2) {
-				enemiesTurn = false;
-				alliesTurn = true;
-
-				// reset for continued play
-				enemyTurnCount = 0;
-			}
+			EnemyTurn();
 		}
 		else {
 			Debug.Log("not sure who's turn it was");
+		}
+	}
+
+	private void AllyTurn() {
+		if (currentTurn == "Ally1") {
+			currentTurn = "Player";
+		}
+		else if (currentTurn == "Player") {
+			currentTurn = "Ally1";
+		}
+		// for swapping between enemy and player
+		else if (currentTurn == "Enemy" || currentTurn == "Enemy (1)") {
+			currentTurn = "Player";
+		}
+		Debug.Log("current turn is " + currentTurn);
+		PlayerController playerTurn = GameObject.Find(currentTurn).GetComponent<PlayerController>();
+		playerTurn.TakeTurn();
+		allyTurnCount++;
+		Debug.Log("ally turn count is " + allyTurnCount + ".");
+		if (allyTurnCount >= 2) {
+			alliesTurn = false;
+			enemiesTurn = true;
+
+			// reset for continued play
+			allyTurnCount = 0;
+		}
+	}
+
+	private void EnemyTurn() {
+		if (currentTurn == "Enemy") {
+			currentTurn = "Enemy (1)";
+		}
+		else if (currentTurn == "Enemy (1)") {
+			currentTurn = "Enemy";
+		}
+		// for swapping from player to enemy
+		else if (currentTurn == "Player" || currentTurn == "Ally1") {
+			currentTurn = "Enemy";
+		}
+		Debug.Log("current turn is " + currentTurn);
+		EnemyController enemyTurn = GameObject.Find(currentTurn).GetComponent<EnemyController>();
+		enemyTurn.TakeTurn();
+		enemyTurnCount++;
+		Debug.Log("enemy turn count is + " + enemyTurnCount + ".");
+		if (enemyTurnCount >= 2) {
+			enemiesTurn = false;
+			alliesTurn = true;
+
+			// reset for continued play
+			enemyTurnCount = 0;
 		}
 	}
 }
