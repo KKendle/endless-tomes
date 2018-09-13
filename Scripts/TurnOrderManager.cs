@@ -116,7 +116,7 @@ public class TurnOrderManager : MonoBehaviour {
 		EnemyController enemyTurn = GameObject.Find(currentTurn).GetComponent<EnemyController>();
 		enemyTurn.TakeTurn();
 		enemyTurnCount++;
-		Debug.Log("enemy turn count is + " + enemyTurnCount + ".");
+		Debug.Log("enemy turn count is " + enemyTurnCount + ".");
 		if (enemyTurnCount >= 2) {
 			enemiesTurn = false;
 			alliesTurn = true;

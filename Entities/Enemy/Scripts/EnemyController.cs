@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour {
     public int enemyLevel = 1;
     public int enemyStr = 5;
     public int enemyCon = 10;
+    public int enemyArmor = 2;
     public int enemyXPValue = 35;
     private int enemyBaseHealth = 100;
     public int enemyHealthCurrent;
@@ -73,6 +74,8 @@ public class EnemyController : MonoBehaviour {
         // find turn order manager
         turnOrderManager = GameObject.Find("TurnOrderManager").GetComponent<TurnOrderManager>();
 
+        setArmorValue();
+
         enemyHealth.Reset(this.name);
 	}
 
@@ -91,6 +94,11 @@ public class EnemyController : MonoBehaviour {
         }
     }
 
+    void setArmorValue() {
+        enemyArmor = Mathf.RoundToInt(Random.Range(1.0f, 40.0f));
+        Debug.Log(this.name + " armor value is " + enemyArmor);
+    }
+
     void Attack() {
         // Debug.Log("Enemy Attacking");
         // weaponDamage = weapon.WeaponDamage();
@@ -107,8 +115,11 @@ public class EnemyController : MonoBehaviour {
     }
 
     public void TakeDamage(int damage) {
-        Debug.Log("running take damage");
         Debug.Log("taking " + damage + " amount");
+        int armorDamageReduction = Mathf.RoundToInt(enemyArmor * .1f);
+        Debug.Log(this.name + " armor is negating " + armorDamageReduction + " damage");
+        damage = damage - armorDamageReduction;
+        Debug.Log(this.name + " is taking " + damage + " damage");
         enemyHealth.Health(this.name, damage);
     }
 

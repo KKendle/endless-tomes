@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if(playerHealthCurrent <= 0) {
-            Debug.Log("Player health is zero or below. dying. " + playerHealthCurrent);
+            Debug.Log(this.name + " health is zero or below. dying. " + playerHealthCurrent);
             Die();
         }
     }
@@ -254,8 +254,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     public void TakeDamage(int damage) {
-        Debug.Log("running " + this + " TakeDamage");
         Debug.Log("taking " + damage + " amount");
+        int armorDamageReduction = Mathf.RoundToInt(playerArmor * .1f);
+        Debug.Log(this.name + " armor is negating " + armorDamageReduction + " damage");
+        damage = damage - armorDamageReduction;
+        Debug.Log(this.name + " is taking " + damage + " damage");
         playerHealth.Health(this.name, damage);
     }
 
