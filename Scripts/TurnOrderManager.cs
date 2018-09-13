@@ -62,7 +62,7 @@ public class TurnOrderManager : MonoBehaviour {
 
 	IEnumerator NextTurn() {
 		// temp faking next turn
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.2f);
 		Debug.Log("was " + currentTurn + " turn");
 
 		if (alliesTurn) {
