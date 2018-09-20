@@ -96,10 +96,11 @@ public class WeaponGenerator : MonoBehaviour {
 		PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
 		// no idea how but this prepares the PlayerController function ChangeWeapon and
 		// will pass in the generated weapon variable
-		UnityEngine.Events.UnityAction action1 = () => { player.ChangeWeapon(generatedWeapon); };
+		// temp commenting out
+		// UnityEngine.Events.UnityAction action1 = () => { player.ChangeWeapon(generatedWeapon); };
 		// add a listener to check for when the copied sword is clicked
 		// then run the ChangeWeapon function while passing in randomType
-		newSlot.GetComponent<Button>().onClick.AddListener(action1);
+		// newSlot.GetComponent<Button>().onClick.AddListener(action1);
 		// set the text to the generated weapon type
 		newSlotText.text = generatedWeapon;
 	}

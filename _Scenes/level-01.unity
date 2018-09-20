@@ -612,7 +612,8 @@ Prefab:
       propertyPath: m_Text
       value: Enemy 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114351291400378610, guid: 9d92f385cfd0549d3b43daa6d329a73a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9d92f385cfd0549d3b43daa6d329a73a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &398434617
@@ -651,6 +652,22 @@ Transform:
   m_Father: {fileID: 1061834947}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &403342620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1388577244915130, guid: 9d92f385cfd0549d3b43daa6d329a73a,
+    type: 2}
+  m_PrefabInternal: {fileID: 353278678}
+--- !u!114 &403342625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 403342620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c0638b3ce2b44bcb6cc6014b6b92d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &426588865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061834947}
   - component: {fileID: 1061834946}
+  - component: {fileID: 1061834948}
   m_Layer: 0
   m_Name: Ally1
   m_TagString: Player Ally
@@ -1677,24 +1695,20 @@ GameObject:
 --- !u!114 &1061834946
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114434034273021038, guid: b927853957bf24764b4f924c41014c56,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1061834945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9659ff6fbdcf2480f9d8b8e5269df209, type: 3}
+  m_Script: {fileID: 11500000, guid: 82d719440e6044751be876acf602109b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: 1
-  playerXP: 0
-  playerXPNextLevel: 83
-  playerStr: 10
-  playerCon: 10
-  playerArmor: 2
-  playerBaseHealth: 100
-  playerHealthCurrent: 0
-  playerHealthMax: 0
+  characterLevel: 1
+  characterStr: 10
+  characterCon: 10
+  characterArmor: 2
+  characterHealthCurrent: 0
+  characterHealthMax: 0
 --- !u!4 &1061834947
 Transform:
   m_ObjectHideFlags: 0
@@ -1712,6 +1726,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1061834948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1061834945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9659ff6fbdcf2480f9d8b8e5269df209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLevel: 1
+  playerXP: 0
+  playerXPNextLevel: 83
+  playerStr: 10
+  playerCon: 10
+  playerArmor: 2
+  playerBaseHealth: 100
+  playerHealthCurrent: 0
+  playerHealthMax: 0
 --- !u!1001 &1076019757
 Prefab:
   m_ObjectHideFlags: 0
@@ -1820,6 +1854,7 @@ GameObject:
   - component: {fileID: 1155918080}
   - component: {fileID: 1155918079}
   - component: {fileID: 1155918081}
+  - component: {fileID: 1155918082}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -1894,6 +1929,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00a87cda46b4b45fe98c6ecab23215d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1155918082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1155918077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c0638b3ce2b44bcb6cc6014b6b92d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1234167694
@@ -2831,6 +2877,22 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1555277379}
   m_CullTransparentMesh: 0
+--- !u!1 &1574453671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1388577244915130, guid: 9d92f385cfd0549d3b43daa6d329a73a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2079620091}
+--- !u!114 &1574453676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574453671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c0638b3ce2b44bcb6cc6014b6b92d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1649352638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3417,7 @@ GameObject:
   - component: {fileID: 1757783238}
   - component: {fileID: 1757783237}
   - component: {fileID: 1757783236}
+  - component: {fileID: 1757783239}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -3431,6 +3494,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1757783234}
   m_CullTransparentMesh: 0
+--- !u!114 &1757783239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1757783234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c0638b3ce2b44bcb6cc6014b6b92d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1792541906
 Prefab:
   m_ObjectHideFlags: 0
@@ -4171,6 +4245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062282307}
   - component: {fileID: 2062282306}
+  - component: {fileID: 2062282308}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player Ally
@@ -4181,24 +4256,20 @@ GameObject:
 --- !u!114 &2062282306
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114434034273021038, guid: b927853957bf24764b4f924c41014c56,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2062282305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9659ff6fbdcf2480f9d8b8e5269df209, type: 3}
+  m_Script: {fileID: 11500000, guid: 82d719440e6044751be876acf602109b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLevel: 1
-  playerXP: 0
-  playerXPNextLevel: 83
-  playerStr: 10
-  playerCon: 10
-  playerArmor: 2
-  playerBaseHealth: 100
-  playerHealthCurrent: 0
-  playerHealthMax: 0
+  characterLevel: 1
+  characterStr: 10
+  characterCon: 10
+  characterArmor: 2
+  characterHealthCurrent: 0
+  characterHealthMax: 0
 --- !u!4 &2062282307
 Transform:
   m_ObjectHideFlags: 0
@@ -4216,6 +4287,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062282308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2062282305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9659ff6fbdcf2480f9d8b8e5269df209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLevel: 1
+  playerXP: 0
+  playerXPNextLevel: 83
+  playerStr: 10
+  playerCon: 10
+  playerArmor: 2
+  playerBaseHealth: 100
+  playerHealthCurrent: 0
+  playerHealthMax: 0
 --- !u!1 &2064131761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,7 +4415,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114351291400378610, guid: 9d92f385cfd0549d3b43daa6d329a73a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9d92f385cfd0549d3b43daa6d329a73a, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2082106826

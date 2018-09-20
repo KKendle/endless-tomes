@@ -12,11 +12,21 @@ public class TurnOrderManager : MonoBehaviour {
 	private GameObject[] findPlayerAllies;
 	private GameObject[] findEnemyAllies;
 
+	private string[] sampleArray = {"one", "two", "three", "four"};
+	private int sampleArrayPosition = 0;
+
 	void Start () {
 		Debug.Log("turn order manager");
 		findPlayerAllies = GameObject.FindGameObjectsWithTag("Player Ally");
 		findEnemyAllies = GameObject.FindGameObjectsWithTag("Enemy Ally");
 		int totalCharacters = findPlayerAllies.Length + findEnemyAllies.Length;
+
+
+		Debug.Log("sample array is " + sampleArray.Length);
+
+		for (int i = 0; i < sampleArray.Length; i++) {
+			Debug.Log(i + " is " + sampleArray[i]);
+		}
 
 		int playerOrEnemyTurnFirst = Mathf.RoundToInt(Random.Range(0.0f, 1.0f));
 		if (playerOrEnemyTurnFirst == 0) {
@@ -43,14 +53,24 @@ public class TurnOrderManager : MonoBehaviour {
 
 	private void StartTurn() {
 		Debug.Log("current turn is " + currentTurn);
+
+		if (sampleArrayPosition >= sampleArray.Length) {
+			Debug.Log("resetting position");
+			sampleArrayPosition = 0;
+		}
+		else {
+			Debug.Log("current position is " + sampleArrayPosition + ". which is " + sampleArray[sampleArrayPosition]);
+			sampleArrayPosition++;
+		}
+
 		if (alliesTurn) {
 			allyTurnCount++;
-			PlayerController playerTurn = GameObject.Find(currentTurn).GetComponent<PlayerController>();
+			CharacterManager playerTurn = GameObject.Find(currentTurn).GetComponent<CharacterManager>();
 			playerTurn.TakeTurn();
 		}
 		else if (enemiesTurn) {
 			enemyTurnCount++;
-			EnemyController enemyTurn = GameObject.Find(currentTurn).GetComponent<EnemyController>();
+			CharacterManager enemyTurn = GameObject.Find(currentTurn).GetComponent<CharacterManager>();
 			enemyTurn.TakeTurn();
 		}
 	}
@@ -61,6 +81,14 @@ public class TurnOrderManager : MonoBehaviour {
 	}
 
 	IEnumerator NextTurn() {
+		if (sampleArrayPosition >= sampleArray.Length) {
+			Debug.Log("resetting position");
+			sampleArrayPosition = 0;
+		}
+		else {
+			Debug.Log("current position is " + sampleArrayPosition + ". which is " + sampleArray[sampleArrayPosition]);
+			sampleArrayPosition++;
+		}
 		// temp faking next turn
         yield return new WaitForSeconds(.2f);
 		Debug.Log("was " + currentTurn + " turn");
@@ -88,7 +116,7 @@ public class TurnOrderManager : MonoBehaviour {
 			currentTurn = "Player";
 		}
 		Debug.Log("current turn is " + currentTurn);
-		PlayerController playerTurn = GameObject.Find(currentTurn).GetComponent<PlayerController>();
+		CharacterManager playerTurn = GameObject.Find(currentTurn).GetComponent<CharacterManager>();
 		playerTurn.TakeTurn();
 		allyTurnCount++;
 		Debug.Log("ally turn count is " + allyTurnCount + ".");
@@ -113,7 +141,7 @@ public class TurnOrderManager : MonoBehaviour {
 			currentTurn = "Enemy";
 		}
 		Debug.Log("current turn is " + currentTurn);
-		EnemyController enemyTurn = GameObject.Find(currentTurn).GetComponent<EnemyController>();
+		CharacterManager enemyTurn = GameObject.Find(currentTurn).GetComponent<CharacterManager>();
 		enemyTurn.TakeTurn();
 		enemyTurnCount++;
 		Debug.Log("enemy turn count is " + enemyTurnCount + ".");

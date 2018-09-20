@@ -89,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066077604596088}
-  - component: {fileID: 114310464289726034}
+  - component: {fileID: 114298026594300344}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy Ally
@@ -144,7 +144,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: HP 0/0
---- !u!114 &114310464289726034
+--- !u!114 &114298026594300344
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,15 +152,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927139123040226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc8a85fd54818479e99a227f0ab15bc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 82d719440e6044751be876acf602109b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLevel: 1
-  enemyStr: 5
-  enemyCon: 10
-  enemyXPValue: 35
-  enemyHealthCurrent: 0
-  enemyHealthMax: 0
+  characterLevel: 1
+  characterStr: 10
+  characterCon: 10
+  characterArmor: 2
+  characterHealthCurrent: 0
+  characterHealthMax: 0
 --- !u!114 &114351291400378610
 MonoBehaviour:
   m_ObjectHideFlags: 1
