@@ -29,6 +29,12 @@ public class HealthManager : MonoBehaviour {
 
 		// set health in UI
 		healthText.text = "HP " + character.characterHealthCurrent + "/" + character.characterHealthMax;
+
+		// death check
+		if (character.characterHealthCurrent <= 0) {
+			Debug.Log(character + " has no health left");
+			character.CharacterDied();
+		}
 	}
 
 	// add HealthRestore later

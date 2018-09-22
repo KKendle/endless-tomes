@@ -30,7 +30,8 @@ public class CharacterManager : MonoBehaviour {
 	// characters in battle
 	private GameObject[] playerAllies;
 	private GameObject[] enemyAllies;
-	private bool attackAnyCharacter = true;
+	private bool attackAnyCharacter = false;
+	private bool attackAllCharacters = false;
 
 	// managers
 	private LevelUpManager levelUpManager;
@@ -179,5 +180,10 @@ public class CharacterManager : MonoBehaviour {
 	public void TakeTurn() {
 		Debug.Log(this.name + " is taking their turn");
 		yourTurn = true;
+	}
+
+	public void CharacterDied() {
+		Debug.Log(this + " character has died");
+		turnOrderManager.RemoveCharacterTurn(this.name);
 	}
 }
