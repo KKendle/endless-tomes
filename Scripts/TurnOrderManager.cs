@@ -11,11 +11,9 @@ public class TurnOrderManager : MonoBehaviour {
 	private int allyTurnCount = 0;
 	private int enemyTurnCount = 0;
 	private CharacterManager[] findCharacters;
+	private List<CharacterManager> charactersInBattle = new List<CharacterManager>();
 	private GameObject[] findPlayerAllies;
 	private GameObject[] findEnemyAllies;
-
-	// private string[] sampleArray = {"one", "two", "three", "four"};
-	// private int sampleArrayPosition = 0;
 
 	void Start () {
 		Debug.Log("turn order manager");
@@ -24,15 +22,16 @@ public class TurnOrderManager : MonoBehaviour {
 		findEnemyAllies = GameObject.FindGameObjectsWithTag("Enemy Ally");
 		int totalCharacters = findPlayerAllies.Length + findEnemyAllies.Length;
 
-		Debug.Log("total number of characters found is " + findCharacters.Length);
 		for (int i = 0; i < findCharacters.Length; i++) {
 			Debug.Log("number " + i + " is " + findCharacters[i]);
+			charactersInBattle.Add(findCharacters[i]);
+			Debug.Log("characters in battle are " + charactersInBattle[i]);
 		}
+		Debug.Log("total number of characters found is " + charactersInBattle.Count);
 
-		// adding "+1" since int max are exclusive
-		int characterTurnFirst = Mathf.RoundToInt(Random.Range(0, findCharacters.Length + 1));
+		int characterTurnFirst = Mathf.RoundToInt(Random.Range(0, charactersInBattle.Count));
 		Debug.Log("random number is " + characterTurnFirst);
-		currentTurn = findCharacters[characterTurnFirst];
+		currentTurn = charactersInBattle[characterTurnFirst];
 		currentTurnPosition = characterTurnFirst;
 
 		Debug.Log("total characters in battle are " + totalCharacters);
@@ -43,15 +42,15 @@ public class TurnOrderManager : MonoBehaviour {
 		Debug.Log("current turn is " + currentTurn);
 
 		// check reset turn position if starting with "last" character
-		if (currentTurnPosition >= findCharacters.Length) {
+		if (currentTurnPosition >= charactersInBattle.Count) {
 			Debug.Log("resetting position");
 			currentTurnPosition = 0;
-			currentTurn = findCharacters[currentTurnPosition];
+			currentTurn = charactersInBattle[currentTurnPosition];
 			currentTurnPosition++;
 		}
 		else {
-			Debug.Log("current position is " + currentTurnPosition + ". which is " + findCharacters[currentTurnPosition]);
-			currentTurn = findCharacters[currentTurnPosition];
+			Debug.Log("current position is " + currentTurnPosition + ". which is " + charactersInBattle[currentTurnPosition]);
+			currentTurn = charactersInBattle[currentTurnPosition];
 			currentTurnPosition++;
 		}
 
@@ -65,22 +64,36 @@ public class TurnOrderManager : MonoBehaviour {
 
 	IEnumerator NextTurn() {
 		// check reset turn position on each turn
-		if (currentTurnPosition >= findCharacters.Length) {
+		if (currentTurnPosition >= charactersInBattle.Count) {
 			Debug.Log("resetting position");
 			currentTurnPosition = 0;
-			Debug.Log("current position is " + currentTurnPosition + ". which is " + findCharacters[currentTurnPosition]);
+
+			Debug.Log("current position is " + currentTurnPosition + ". which is " + charactersInBattle[currentTurnPosition]);
+			currentTurn = charactersInBattle[currentTurnPosition];
+			currentTurnPosition++;
 		}
 		else {
-			Debug.Log("current position is " + currentTurnPosition + ". which is " + findCharacters[currentTurnPosition]);
+			Debug.Log("current position is " + currentTurnPosition + ". which is " + charactersInBattle[currentTurnPosition]);
+			currentTurn = charactersInBattle[currentTurnPosition];
+			currentTurnPosition++;
 		}
 
         yield return new WaitForSeconds(.2f);
-		Debug.Log("was " + currentTurn + " turn");
 
 		currentTurn.TakeTurn();
 	}
 
 	public void RemoveCharacterTurn(string name) {
 		Debug.Log("looking to remove " + name + " from turn order");
+		for (int i = 0; i < charactersInBattle.Count; i++) {
+			if (name == charactersInBattle[i].name) {
+				Debug.Log("found character to remove at " + i);
+				charactersInBattle.Remove(charactersInBattle[i]);
+				break;
+			}
+			else {
+				Debug.Log("did not find character to remove");
+			}
+		}
 	}
 }
