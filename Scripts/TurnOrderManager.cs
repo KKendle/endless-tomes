@@ -13,14 +13,29 @@ public class TurnOrderManager : MonoBehaviour {
 	private CharacterManager[] findCharacters;
 	private List<CharacterManager> charactersInBattle = new List<CharacterManager>();
 	private GameObject[] findPlayerAllies;
+	private List<CharacterManager> playerAllies = new List<CharacterManager>();
 	private GameObject[] findEnemyAllies;
+	private List<CharacterManager> enemyAllies = new List<CharacterManager>();
 
 	void Start () {
 		Debug.Log("turn order manager");
 		findCharacters = FindObjectsOfType<CharacterManager>();
+		
 		findPlayerAllies = GameObject.FindGameObjectsWithTag("Player Ally");
+		Debug.Log("player length found is " + findPlayerAllies.Length);
+		// add player allies found to List
+		for (int i = 0; i < findPlayerAllies.Length; i++) {
+			playerAllies.Add(findPlayerAllies[i].GetComponent<CharacterManager>());
+		}
+		Debug.Log("player count is " + playerAllies.Count);
+
 		findEnemyAllies = GameObject.FindGameObjectsWithTag("Enemy Ally");
-		int totalCharacters = findPlayerAllies.Length + findEnemyAllies.Length;
+		Debug.Log("enemy length found is " + findEnemyAllies.Length);
+		// add enemy allies found to List
+		for (int i = 0; i < findEnemyAllies.Length; i++) {
+			enemyAllies.Add(findEnemyAllies[i].GetComponent<CharacterManager>());
+		}
+		Debug.Log("enemy count is " + enemyAllies.Count);
 
 		for (int i = 0; i < findCharacters.Length; i++) {
 			Debug.Log("number " + i + " is " + findCharacters[i]);
@@ -34,7 +49,6 @@ public class TurnOrderManager : MonoBehaviour {
 		currentTurn = charactersInBattle[characterTurnFirst];
 		currentTurnPosition = characterTurnFirst;
 
-		Debug.Log("total characters in battle are " + totalCharacters);
 		StartTurn();
 	}
 
@@ -83,16 +97,54 @@ public class TurnOrderManager : MonoBehaviour {
 		currentTurn.TakeTurn();
 	}
 
-	public void RemoveCharacterTurn(string name) {
-		Debug.Log("looking to remove " + name + " from turn order");
+	public CharacterManager ChoosePlayerHit() {
+		CharacterManager character = playerAllies[Mathf.RoundToInt(Random.Range(0, playerAllies.Count))];
+		Debug.Log("player being hit is " + character);
+
+		return character;
+	}
+
+	public CharacterManager ChooseEnemyHit() {
+		CharacterManager character = enemyAllies[Mathf.RoundToInt(Random.Range(0, enemyAllies.Count))];
+		Debug.Log("enemy being hit is " + character);
+
+		return character;
+	}
+
+	public void RemoveCharacterTurn(CharacterManager character) {
+		Debug.Log("looking to remove " + character.name + " from turn order");
+		charactersInBattle.Remove(character);
 		for (int i = 0; i < charactersInBattle.Count; i++) {
-			if (name == charactersInBattle[i].name) {
-				Debug.Log("found character to remove at " + i);
-				charactersInBattle.Remove(charactersInBattle[i]);
-				break;
+			Debug.Log("characters left are " + charactersInBattle[i].name);
+		}
+
+		// remove from list of characters in battle
+		if (character.gameObject.tag == "Player Ally") {
+			Debug.Log("removing " + character + " from player list");
+			playerAllies.Remove(character);
+
+			for (int i = 0; i < playerAllies.Count; i++) {
+				Debug.Log("players left " + playerAllies[i]);
 			}
-			else {
-				Debug.Log("did not find character to remove");
+			Debug.Log("player count is " + playerAllies.Count);
+
+			if (playerAllies.Count <= 0) {
+				LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+				levelManager.LoadLevel("Lose");
+			}
+		}
+		else if (character.gameObject.tag == "Enemy Ally") {
+			Debug.Log("removing " + character + " from enemy list");
+			enemyAllies.Remove(character);
+
+			for (int i = 0; i < enemyAllies.Count; i++) {
+				Debug.Log("enemies left " + enemyAllies[i]);
+			}
+			Debug.Log("enemy count is " + enemyAllies.Count);
+
+			if (enemyAllies.Count <= 0) {
+				LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+				levelManager.LoadLevel("Win");
 			}
 		}
 	}
