@@ -64,10 +64,7 @@ public class CharacterManager : MonoBehaviour {
 		characterHealthMax = Mathf.RoundToInt(characterBaseHealth + (characterCon * 2));
 
 		// armor
-		if (this.gameObject.tag == "Enemy Ally") {
-			Debug.Log("armor for enemy");
-			SetArmorValue();
-		}
+		SetArmorValue();
 
 
 		// find character level
@@ -84,27 +81,6 @@ public class CharacterManager : MonoBehaviour {
 
 		// possible future addition..
 		// add enemy inventory for potions, etc.
-
-		// find players and enemies
-		// findPlayers = FindObjectsOfType<CharacterManager>();
-		// findPlayers = GameObject.FindGameObjectsWithTag("Player Ally");
-		// for (int i = 0; i < findPlayers.Length; i++) {
-		// 	playerAllies.Add(findPlayers[i].GetComponent<CharacterManager>());
-        // }
-		// Debug.Log("beginning player count is " + playerAllies.Count);
-		// playerAllies.RemoveAt(1);
-		// int tempPlayerCount = playerAllies.Count;
-		// Debug.Log("should have removed 1 player and have 1 left " + tempPlayerCount);
-
-		// // findEnemies = FindObjectsOfType<CharacterManager>();
-		// findEnemies = GameObject.FindGameObjectsWithTag("Enemy Ally");
-		// for (int i = 0; i < findEnemies.Length; i++) {
-		// 	enemyAllies.Add(findEnemies[i].GetComponent<CharacterManager>());
-        // }
-		// Debug.Log("beginning enemy count is " + enemyAllies.Count);
-		// enemyAllies.RemoveAt(1);
-		// int tempEnemyCount = enemyAllies.Count;
-		// Debug.Log("should have removed 1 enemy and have 1 left " + tempEnemyCount);
 
 		// reset character health(s)
 		characterHealth.Reset(this.name);
