@@ -78,6 +78,7 @@ public class CharacterManager : MonoBehaviour {
 
 		// add generic weapon
 		// for player and enemy
+		weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
 
 		// possible future addition..
 		// add enemy inventory for potions, etc.
@@ -97,7 +98,8 @@ public class CharacterManager : MonoBehaviour {
 	}
 
 	void Attack() {
-		weaponDamage = Mathf.RoundToInt(Random.Range(1.0f, 15.0f)) + (characterStr / 2);
+		// weaponDamage = Mathf.RoundToInt(Random.Range(1.0f, 15.0f)) + (characterStr / 2);
+		weaponDamage = weaponEquipped.WeaponDamage(weaponEquipped.weaponType);
 		
 		// attack player or enemy
 		Debug.Log("character has tag of " + this.gameObject.tag);
