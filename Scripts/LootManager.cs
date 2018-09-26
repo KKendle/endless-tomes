@@ -16,26 +16,26 @@ public class LootManager : MonoBehaviour {
 	private bool presetArmor;
 	private float presetArmorChance = 10.0f;
 
-	public void enemyDrops() {
+	public void EnemyDrops() {
         // Debug.Log("checking for enemy drops");
 		WeaponGenerator weaponGenerator = gameObject.GetComponent<WeaponGenerator>();
 		ArmorGenerator armorGenerator = gameObject.GetComponent<ArmorGenerator>();
 
-		checkItemDrop();
+		CheckItemDrop();
 
 		if (isWeaponDrop) {
 			// check for preset weapon chance
-			checkPresetWeapon();
+			CheckPresetWeapon();
 
-			weaponGenerator.generateWeapon(presetWeapon);
+			weaponGenerator.GenerateWeapon(presetWeapon);
 			isWeaponDrop = false;
 		}
 
 		if (isArmorDrop) {
 			// check for preset armor chance
-			checkPresetArmor();
+			CheckPresetArmor();
 
-			armorGenerator.generateArmor();
+			armorGenerator.GenerateArmor();
 			isArmorDrop = false;
 		}
     }
@@ -43,12 +43,12 @@ public class LootManager : MonoBehaviour {
 	// need to figure out return type
 	// and how I'll set weapon/armor bool's
 	// can have factors based on enemy difficulty
-	private void checkItemDrop() {
+	private void CheckItemDrop() {
 		Debug.Log("checking chance of item drops");
 
 	}
 
-	private bool checkPresetWeapon() {
+	private bool CheckPresetWeapon() {
 		Debug.Log("checking chance of preset weapon");
 		Debug.Log("chance of getting Preset Weapon is " + presetWeaponChance);
 		float presetWeaponChanceResult = Random.Range(0.0f, 100.0f);
@@ -65,7 +65,7 @@ public class LootManager : MonoBehaviour {
 		return presetWeapon;
 	}
 
-	private bool checkPresetArmor() {
+	private bool CheckPresetArmor() {
 		Debug.Log("checking chance of preset armor");
 		Debug.Log("chance of getting Preset Armor is " + presetArmorChance);
 		float presetArmorChanceResult = Random.Range(0.0f, 100.0f);

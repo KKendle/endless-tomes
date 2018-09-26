@@ -67,6 +67,14 @@ public class Weapon : MonoBehaviour {
 		return damage;
 	}
 
+	public void SetWeaponType(string type) {
+		Debug.Log("setting weapon type to " + type);
+		weaponType = type;
+		// weaponDamageMin = 10.0f;
+		// weaponDamageMax = 16.0f;
+		// weaponStr = 4;
+	}
+
 	private int GetSwordDamage() {
 		Debug.Log("getting sword damage");
 		float damageMin = 10.0f;

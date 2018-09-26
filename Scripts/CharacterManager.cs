@@ -17,6 +17,7 @@ public class CharacterManager : MonoBehaviour {
 
 	// character weapon
 	private GameObject weapon;
+	private WeaponGenerator weaponGenerator;
 	private Weapon weaponEquipped;
 	private int weaponDamage;
 	private int damage;
@@ -78,7 +79,16 @@ public class CharacterManager : MonoBehaviour {
 
 		// add generic weapon
 		// for player and enemy
-		weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
+		// weaponGenerator = GameObject.Find("LootManager").GetComponent<WeaponGenerator>();
+		// string randomWeaponType = weaponGenerator.GenerateType();
+		if (this.tag == "Enemy Ally") {
+			EnemyController enemyController = GetComponent<EnemyController>();
+			weaponEquipped = enemyController.SetStartingWeapon();
+		}
+		else {
+			weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
+		}
+		// weaponEquipped.SetWeaponType(randomWeaponType);
 
 		// possible future addition..
 		// add enemy inventory for potions, etc.
@@ -191,6 +201,9 @@ public class CharacterManager : MonoBehaviour {
 		Debug.Log("unmitigated damage is " + damage);
 		int armorDamageReduction = Mathf.RoundToInt(characterArmor * .1f);
 		damage = damage - armorDamageReduction;
+		if (damage < 0 ) {
+			damage = 0;
+		}
 		Debug.Log("damage with armor on is " + damage);
 		characterHealth.Health(this.name, damage);
 	}

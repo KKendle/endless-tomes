@@ -19,8 +19,7 @@ public class WeaponGenerator : MonoBehaviour {
 	private string generatedWeapon;
 	private string generatedDescription;
 
-	List<string> weaponTypes = new List<string>() {"dagger", "sword", "battleaxe", "staff", "mace", "flail", "spear", "bow", "club", "wand", "book"};
-	// List<string> weaponTypes = new List<string>() {"dagger"};
+	public List<string> weaponTypes = new List<string>() {"dagger", "sword", "battleaxe", "staff", "mace", "flail", "spear", "bow", "club", "wand", "book"};
     List<string> weaponElements = new List<string>() {"burning", "frost", "lightning"};
     List<string> weaponAttributeTypes = new List<string>() {"healing", "strength", "intellect", "dexterity", "constitution", "wisdom"};
 	// List<string> weaponAttributeTypes = new List<string>() {"strength"};
@@ -44,8 +43,8 @@ public class WeaponGenerator : MonoBehaviour {
 		// Debug.Log(weaponPrefabComponent.weaponDamageMax);
 	}
 
-	public void generateWeapon(bool presetWeapon) {
-		resetGenerator();
+	public void GenerateWeapon(bool presetWeapon) {
+		ResetGenerator();
 
 		if (presetWeapon) {
 			Debug.Log("preset weapon is " + presetWeapon + ".");
@@ -53,10 +52,10 @@ public class WeaponGenerator : MonoBehaviour {
 		}
 		else {
 			Debug.Log("generating random weapon");
-			randomType = generateType();
-			randomElement = generateElement();
-			randomAttributeType = generateAttribute();
-			randomMaterial = generateMaterial();
+			randomType = GenerateType();
+			randomElement = GenerateElement();
+			randomAttributeType = GenerateAttribute();
+			randomMaterial = GenerateMaterial();
 			generatedWeapon = randomElement + randomMaterial + " " + randomType + randomAttributeType;
 			generatedDescription = randomElement + randomMaterial + " " + randomType + randomAttributeType;
 		}
@@ -75,8 +74,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponDescription = generatedDescription;
 		spawnedWeapon.weaponMaterial = randomMaterial;
 		spawnedWeapon.weaponElement = randomElement;
-		getBaseStats();
-		addAttributeModifiers();
+		GetBaseStats();
+		AddAttributeModifiers();
 		
 		// temp set weapon name to just the type
 		// objToSpawn.name = generatedWeapon;
@@ -105,13 +104,13 @@ public class WeaponGenerator : MonoBehaviour {
 		newSlotText.text = generatedWeapon;
 	}
 
-	string generateType() {
+	public string GenerateType() {
 		string randomType = weaponTypes[Random.Range(0, weaponTypes.Count)];
 		
 		return randomType;
 	}
 
-	string generateElement() {
+	string GenerateElement() {
 		string randomElement = weaponElements[Random.Range(0, weaponElements.Count)];
 		// floats for inclusive max number
 		int hasModifier = Mathf.RoundToInt(Random.Range(0.0f, 1.0f));
@@ -127,7 +126,7 @@ public class WeaponGenerator : MonoBehaviour {
 		return element;
 	}
 
-	string generateAttribute() {
+	string GenerateAttribute() {
 		string randomAttributeType = weaponAttributeTypes[Random.Range(0, weaponAttributeTypes.Count)];
 		int hasAttribute = Mathf.RoundToInt(Random.Range(0.0f, 1.0f));
 		string attributeType = "";
@@ -139,13 +138,13 @@ public class WeaponGenerator : MonoBehaviour {
 		return attributeType;
 	}
 
-	string generateMaterial() {
+	string GenerateMaterial() {
 		string randomMaterial = weaponMaterials[Random.Range(0, weaponMaterials.Count)];
 	
 		return randomMaterial;
 	}
 
-	void addAttributeModifiers() {
+	void AddAttributeModifiers() {
 		Debug.Log("adding attribute modifiers");
 		if (randomAttributeType == " of strength") {
 			Debug.Log("adding strength modifier");
@@ -175,43 +174,43 @@ public class WeaponGenerator : MonoBehaviour {
 		}
 	}
 
-	public void getBaseStats() {
+	public void GetBaseStats() {
 		Debug.Log("getting weapon base stats");
 		Debug.Log("random type chosen is " + randomType);
 		if (randomType == "dagger") {
-			baseDagger();
+			BaseDagger();
 		}
 		else if (randomType == "sword") {
-			baseSword();
+			BaseSword();
 		}
 		else if (randomType == "battleaxe") {
-			baseBattleaxe();
+			BaseBattleaxe();
 		}
 		else if (randomType == "staff") {
-			baseStaff();
+			BaseStaff();
 		}
 		else if (randomType == "mace") {
-			baseMace();
+			BaseMace();
 		}
 		else if (randomType == "flail") {
-			baseFlail();
+			BaseFlail();
 		}
 		else if (randomType == "bow") {
-			baseBow();
+			BaseBow();
 		}
 		else if (randomType == "club") {
-			baseClub();
+			BaseClub();
 		}
 		else if (randomType == "wand") {
-			baseWand();
+			BaseWand();
 		}
 		else if (randomType == "book") {
-			baseBook();
+			BaseBook();
 		}
 	}
 
-	void baseDagger() {
-		Debug.Log("running base dagger stats");
+	void BaseDagger() {
+		Debug.Log("running Base dagger stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 2;
 		spawnedWeapon.weaponStr = 3;
@@ -222,8 +221,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 8;
 	}
 
-	void baseSword() {
-		Debug.Log("running base sword stats");
+	void BaseSword() {
+		Debug.Log("running Base sword stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -234,8 +233,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseBattleaxe() {
-		Debug.Log("running base battleaxe stats");
+	void BaseBattleaxe() {
+		Debug.Log("running Base battleaxe stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -246,8 +245,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseStaff() {
-		Debug.Log("running base staff stats");
+	void BaseStaff() {
+		Debug.Log("running Base staff stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -258,8 +257,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseMace() {
-		Debug.Log("running base mace stats");
+	void BaseMace() {
+		Debug.Log("running Base mace stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -270,8 +269,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseFlail() {
-		Debug.Log("running base flail stats");
+	void BaseFlail() {
+		Debug.Log("running Base flail stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -282,8 +281,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseSpear() {
-		Debug.Log("running base spear stats");
+	void BaseSpear() {
+		Debug.Log("running Base spear stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -294,8 +293,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseBow() {
-		Debug.Log("running base bow stats");
+	void BaseBow() {
+		Debug.Log("running Base bow stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -306,8 +305,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseClub() {
-		Debug.Log("running base club stats");
+	void BaseClub() {
+		Debug.Log("running Base club stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -318,8 +317,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseWand() {
-		Debug.Log("running base wand stats");
+	void BaseWand() {
+		Debug.Log("running Base wand stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -330,8 +329,8 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	void baseBook() {
-		Debug.Log("running base book stats");
+	void BaseBook() {
+		Debug.Log("running Base book stats");
 		spawnedWeapon.weaponDamageMin = 1;
 		spawnedWeapon.weaponDamageMax = 1;
 		spawnedWeapon.weaponStr = 1;
@@ -342,7 +341,7 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponHeal = 1;
 	}
 
-	private void resetGenerator() {
+	private void ResetGenerator() {
 		randomElement = "";
 		randomMaterial = "";
 		randomType = "";

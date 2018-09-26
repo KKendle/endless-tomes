@@ -19,10 +19,10 @@ public class ArmorGenerator : MonoBehaviour {
 		playerEquipped = GameObject.Find("Equipped");
 	}
 
-	public void generateArmor() {
+	public void GenerateArmor() {
 		Debug.Log("generating armor");
 
-		randomType = generateType();
+		randomType = GenerateType();
 		generatedArmor = randomType;
 
 		// create generatedArmor game object
@@ -38,38 +38,38 @@ public class ArmorGenerator : MonoBehaviour {
 		// set type of generated armor
 		armorSpawned.armorType = randomType;
 
-		getBaseStats();
+		GetBaseStats();
 	}
 
-	string generateType() {
+	string GenerateType() {
 		Debug.Log("generating armor type");
 		string randomType = armorTypes[Random.Range(0, armorTypes.Count)];
 		
 		return randomType;
 	}
 
-	void getBaseStats() {
+	void GetBaseStats() {
 		Debug.Log("getting armor base stats");
 		Debug.Log("random type chosen is " + randomType);
 		if (randomType == "chestplate") {
-			baseChestplate();
+			BaseChestplate();
 		}
 		else if (randomType == "bracers") {
-			baseBracers();
+			BaseBracers();
 		}
 		else if (randomType == "helmet") {
-			baseHelmet();
+			BaseHelmet();
 		}
 		else if (randomType == "boots") {
-			baseBoots();
+			BaseBoots();
 		}
 		else if (randomType == "legs") {
-			baseLegs();
+			BaseLegs();
 		}
 	}
 
-	void baseChestplate() {
-		Debug.Log("running base chestplate stats");
+	void BaseChestplate() {
+		Debug.Log("running Base chestplate stats");
 		armorSpawned.armorDefense = 10;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
@@ -79,8 +79,8 @@ public class ArmorGenerator : MonoBehaviour {
 		armorSpawned.armorHeal = 1;
 	}
 
-	void baseBracers() {
-		Debug.Log("running base bracers stats");
+	void BaseBracers() {
+		Debug.Log("running Base bracers stats");
 		armorSpawned.armorDefense = 2;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
@@ -90,8 +90,8 @@ public class ArmorGenerator : MonoBehaviour {
 		armorSpawned.armorHeal = 1;
 	}
 
-	void baseHelmet() {
-		Debug.Log("running base helmet stats");
+	void BaseHelmet() {
+		Debug.Log("running Base helmet stats");
 		armorSpawned.armorDefense = 5;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
@@ -101,8 +101,8 @@ public class ArmorGenerator : MonoBehaviour {
 		armorSpawned.armorHeal = 1;
 	}
 
-	void baseBoots() {
-		Debug.Log("running base boots stats");
+	void BaseBoots() {
+		Debug.Log("running Base boots stats");
 		armorSpawned.armorDefense = 5;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
@@ -112,8 +112,8 @@ public class ArmorGenerator : MonoBehaviour {
 		armorSpawned.armorHeal = 1;
 	}
 
-	void baseLegs() {
-		Debug.Log("running base legs stats");
+	void BaseLegs() {
+		Debug.Log("running Base legs stats");
 		armorSpawned.armorDefense = 8;
 		armorSpawned.armorStr = 1;
 		armorSpawned.armorCon = 1;
