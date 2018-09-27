@@ -109,7 +109,7 @@ public class CharacterManager : MonoBehaviour {
 
 	void Attack() {
 		// weaponDamage = Mathf.RoundToInt(Random.Range(1.0f, 15.0f)) + (characterStr / 2);
-		weaponDamage = weaponEquipped.WeaponDamage(weaponEquipped.weaponType);
+		weaponDamage = weaponEquipped.WeaponDamage();
 		
 		// attack player or enemy
 		Debug.Log("character has tag of " + this.gameObject.tag);

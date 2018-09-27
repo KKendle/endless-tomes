@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
 
 		Weapon weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
 		weaponEquipped.SetWeaponType(randomWeaponType);
+        weaponGenerator.GetBaseStats(weaponEquipped);
 
         return weaponEquipped;
     }

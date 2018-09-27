@@ -74,7 +74,7 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponDescription = generatedDescription;
 		spawnedWeapon.weaponMaterial = randomMaterial;
 		spawnedWeapon.weaponElement = randomElement;
-		GetBaseStats();
+		// GetBaseStats();
 		AddAttributeModifiers();
 		
 		// temp set weapon name to just the type
@@ -174,171 +174,171 @@ public class WeaponGenerator : MonoBehaviour {
 		}
 	}
 
-	public void GetBaseStats() {
+	public void GetBaseStats(Weapon weapon) {
 		Debug.Log("getting weapon base stats");
-		Debug.Log("random type chosen is " + randomType);
-		if (randomType == "dagger") {
-			BaseDagger();
+		Debug.Log("random type chosen is " + weapon.weaponType);
+		if (weapon.weaponType == "dagger") {
+			BaseDagger(weapon);
 		}
-		else if (randomType == "sword") {
-			BaseSword();
+		else if (weapon.weaponType == "sword") {
+			BaseSword(weapon);
 		}
-		else if (randomType == "battleaxe") {
-			BaseBattleaxe();
+		else if (weapon.weaponType == "battleaxe") {
+			BaseBattleaxe(weapon);
 		}
-		else if (randomType == "staff") {
-			BaseStaff();
+		else if (weapon.weaponType == "staff") {
+			BaseStaff(weapon);
 		}
-		else if (randomType == "mace") {
-			BaseMace();
+		else if (weapon.weaponType == "mace") {
+			BaseMace(weapon);
 		}
-		else if (randomType == "flail") {
-			BaseFlail();
+		else if (weapon.weaponType == "flail") {
+			BaseFlail(weapon);
 		}
-		else if (randomType == "bow") {
-			BaseBow();
+		else if (weapon.weaponType == "bow") {
+			BaseBow(weapon);
 		}
-		else if (randomType == "club") {
-			BaseClub();
+		else if (weapon.weaponType == "club") {
+			BaseClub(weapon);
 		}
-		else if (randomType == "wand") {
-			BaseWand();
+		else if (weapon.weaponType == "wand") {
+			BaseWand(weapon);
 		}
-		else if (randomType == "book") {
-			BaseBook();
+		else if (weapon.weaponType == "book") {
+			BaseBook(weapon);
 		}
 	}
 
-	void BaseDagger() {
+	void BaseDagger(Weapon weapon) {
 		Debug.Log("running Base dagger stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 2;
-		spawnedWeapon.weaponStr = 3;
-		spawnedWeapon.weaponCon = 4;
-		spawnedWeapon.weaponDex = 5;
-		spawnedWeapon.weaponInt = 6;
-		spawnedWeapon.weaponWis = 7;
-		spawnedWeapon.weaponHeal = 8;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 2;
+		weapon.weaponStr = 3;
+		weapon.weaponCon = 4;
+		weapon.weaponDex = 5;
+		weapon.weaponInt = 6;
+		weapon.weaponWis = 7;
+		weapon.weaponHeal = 8;
 	}
 
-	void BaseSword() {
+	void BaseSword(Weapon weapon) {
 		Debug.Log("running Base sword stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseBattleaxe() {
+	void BaseBattleaxe(Weapon weapon) {
 		Debug.Log("running Base battleaxe stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseStaff() {
+	void BaseStaff(Weapon weapon) {
 		Debug.Log("running Base staff stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseMace() {
+	void BaseMace(Weapon weapon) {
 		Debug.Log("running Base mace stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseFlail() {
+	void BaseFlail(Weapon weapon) {
 		Debug.Log("running Base flail stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseSpear() {
+	void BaseSpear(Weapon weapon) {
 		Debug.Log("running Base spear stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseBow() {
+	void BaseBow(Weapon weapon) {
 		Debug.Log("running Base bow stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseClub() {
+	void BaseClub(Weapon weapon) {
 		Debug.Log("running Base club stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseWand() {
+	void BaseWand(Weapon weapon) {
 		Debug.Log("running Base wand stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
-	void BaseBook() {
+	void BaseBook(Weapon weapon) {
 		Debug.Log("running Base book stats");
-		spawnedWeapon.weaponDamageMin = 1;
-		spawnedWeapon.weaponDamageMax = 1;
-		spawnedWeapon.weaponStr = 1;
-		spawnedWeapon.weaponCon = 1;
-		spawnedWeapon.weaponDex = 1;
-		spawnedWeapon.weaponInt = 1;
-		spawnedWeapon.weaponWis = 1;
-		spawnedWeapon.weaponHeal = 1;
+		weapon.weaponDamageMin = 1;
+		weapon.weaponDamageMax = 1;
+		weapon.weaponStr = 1;
+		weapon.weaponCon = 1;
+		weapon.weaponDex = 1;
+		weapon.weaponInt = 1;
+		weapon.weaponWis = 1;
+		weapon.weaponHeal = 1;
 	}
 
 	private void ResetGenerator() {
