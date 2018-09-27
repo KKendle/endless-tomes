@@ -20,9 +20,9 @@ public class Weapon : MonoBehaviour {
 	public string weaponDescription;
 	public string weaponEffect;
 
-	public int WeaponDamage() {
+	public int WeaponDamage(CharacterManager character) {
 		int damage = 0;
-		damage = (Mathf.RoundToInt(Random.Range(weaponDamageMin, weaponDamageMax)) + (weaponStr / 2));
+		damage = (Mathf.RoundToInt(Random.Range(weaponDamageMin, weaponDamageMax)) + (character.characterStr / 2));
 
 		return damage;
 	}

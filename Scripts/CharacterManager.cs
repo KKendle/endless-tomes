@@ -10,6 +10,10 @@ public class CharacterManager : MonoBehaviour {
 	public int characterLevel = 1;
 	public int characterStr = 10;
 	public int characterCon = 10;
+	public int characterDex = 0;
+	public int characterInt = 0;
+	public int characterWis = 0;
+	public int characterHeal = 0;
 	public int characterArmor = 2;
 	private int characterBaseHealth = 100;
 	public int characterHealthCurrent;
@@ -64,10 +68,6 @@ public class CharacterManager : MonoBehaviour {
 		// health
 		characterHealthMax = Mathf.RoundToInt(characterBaseHealth + (characterCon * 2));
 
-		// armor
-		SetArmorValue();
-
-
 		// find character level
 		// player level is currently setup through
 		// player prefs. don't need to keep enemy 
@@ -76,6 +76,7 @@ public class CharacterManager : MonoBehaviour {
 
 		// add generic armor
 		// for player and enemy
+		SetArmorValue();
 
 		// add generic weapon
 		// for player and enemy
@@ -88,7 +89,7 @@ public class CharacterManager : MonoBehaviour {
 		else {
 			weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
 		}
-		// weaponEquipped.SetWeaponType(randomWeaponType);
+		AddWeaponStats(weaponEquipped);
 
 		// possible future addition..
 		// add enemy inventory for potions, etc.
@@ -109,7 +110,7 @@ public class CharacterManager : MonoBehaviour {
 
 	void Attack() {
 		// weaponDamage = Mathf.RoundToInt(Random.Range(1.0f, 15.0f)) + (characterStr / 2);
-		weaponDamage = weaponEquipped.WeaponDamage();
+		weaponDamage = weaponEquipped.WeaponDamage(this);
 		
 		// attack player or enemy
 		Debug.Log("character has tag of " + this.gameObject.tag);
@@ -195,6 +196,16 @@ public class CharacterManager : MonoBehaviour {
 	void SetArmorValue() {
 		characterArmor = Mathf.RoundToInt(Random.Range(1.0f, 40.0f));
 		Debug.Log(this.name + " armor value is " + characterArmor);
+	}
+
+	private void AddWeaponStats(Weapon weaponEquipped) {
+		Debug.Log("adding stats from " + weaponEquipped.weaponName);
+		characterStr += weaponEquipped.weaponStr;
+		characterCon += weaponEquipped.weaponCon;
+		characterDex += weaponEquipped.weaponDex;
+		characterInt += weaponEquipped.weaponInt;
+		characterWis += weaponEquipped.weaponWis;
+		characterHeal += weaponEquipped.weaponHeal;
 	}
 
 	public void TakeDamage(int damage) {
