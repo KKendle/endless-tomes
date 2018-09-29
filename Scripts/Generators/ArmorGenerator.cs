@@ -54,11 +54,17 @@ public class ArmorGenerator : MonoBehaviour {
 		if (armor.armorType == "helm") {
 			BaseHelm(armor);
 		}
+		else if (armor.armorType == "shoulders") {
+			BaseShoulders(armor);
+		}
 		else if (armor.armorType == "chestplate") {
 			BaseChestplate(armor);
 		}
 		else if (armor.armorType == "bracers") {
 			BaseBracers(armor);
+		}
+		else if (armor.armorType == "gloves") {
+			BaseGloves(armor);
 		}
 		else if (armor.armorType == "legs") {
 			BaseLegs(armor);
@@ -71,6 +77,17 @@ public class ArmorGenerator : MonoBehaviour {
 	void BaseHelm(Armor armor) {
 		Debug.Log("running Base helm stats");
 		armor.armorDefense = 5;
+		armor.armorStr = 1;
+		armor.armorCon = 1;
+		armor.armorDex = 1;
+		armor.armorInt = 1;
+		armor.armorWis = 1;
+		armor.armorHeal = 1;
+	}
+
+	void BaseShoulders(Armor armor) {
+		Debug.Log("running Base shoulders stats");
+		armor.armorDefense = 7;
 		armor.armorStr = 1;
 		armor.armorCon = 1;
 		armor.armorDex = 1;
@@ -100,6 +117,18 @@ public class ArmorGenerator : MonoBehaviour {
 		armor.armorWis = 1;
 		armor.armorHeal = 1;
 	}
+
+	void BaseGloves(Armor armor) {
+		Debug.Log("running Base gloves stats");
+		armor.armorDefense = 3;
+		armor.armorStr = 1;
+		armor.armorCon = 1;
+		armor.armorDex = 1;
+		armor.armorInt = 1;
+		armor.armorWis = 1;
+		armor.armorHeal = 1;
+	}
+
 	void BaseLegs(Armor armor) {
 		Debug.Log("running Base legs stats");
 		armor.armorDefense = 8;

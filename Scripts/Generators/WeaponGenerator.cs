@@ -213,7 +213,7 @@ public class WeaponGenerator : MonoBehaviour {
 	void BaseDagger(Weapon weapon) {
 		Debug.Log("running Base dagger stats");
 		weapon.weaponDamageMin = 4;
-		weapon.weaponDamageMax = 8;
+		weapon.weaponDamageMax = 7;
 		weapon.weaponStr = 1;
 		weapon.weaponCon = 0;
 		weapon.weaponDex = 0;
@@ -260,7 +260,7 @@ public class WeaponGenerator : MonoBehaviour {
 
 	void BaseMace(Weapon weapon) {
 		Debug.Log("running Base mace stats");
-		weapon.weaponDamageMin = 10;
+		weapon.weaponDamageMin = 9;
 		weapon.weaponDamageMax = 12;
 		weapon.weaponStr = 2;
 		weapon.weaponCon = 0;
@@ -309,7 +309,7 @@ public class WeaponGenerator : MonoBehaviour {
 	void BaseClub(Weapon weapon) {
 		Debug.Log("running Base club stats");
 		weapon.weaponDamageMin = 8;
-		weapon.weaponDamageMax = 10;
+		weapon.weaponDamageMax = 11;
 		weapon.weaponStr = 3;
 		weapon.weaponCon = 0;
 		weapon.weaponDex = 0;

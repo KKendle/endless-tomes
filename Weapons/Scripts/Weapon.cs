@@ -26,9 +26,4 @@ public class Weapon : MonoBehaviour {
 
 		return damage;
 	}
-
-	public void SetWeaponType(string type) {
-		Debug.Log("setting weapon type to " + type);
-		weaponType = type;
-	}
 }

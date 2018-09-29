@@ -223,6 +223,64 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &106320421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1946955042052474, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106320422}
+  - component: {fileID: 106320423}
+  m_Layer: 0
+  m_Name: Gloves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106320422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4078951001744536, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106320421}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 910412216}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106320423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114883057333712106, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106320421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: gloves
+  armorType: gloves
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &135515303
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +592,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &251760978
 MonoBehaviour:
@@ -550,6 +608,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: bracers
   armorType: bracers
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
+--- !u!1 &320336553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320336554}
+  - component: {fileID: 320336555}
+  m_Layer: 0
+  m_Name: Shoulders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320336554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 320336553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398434618}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &320336555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 320336553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: shoulders
+  armorType: shoulders
   armorDefense: 0
   armorStr: 0
   armorCon: 0
@@ -703,7 +819,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &354360652
 MonoBehaviour:
@@ -761,8 +877,10 @@ Transform:
   m_Children:
   - {fileID: 1412942850}
   - {fileID: 1091539255}
+  - {fileID: 320336554}
   - {fileID: 1997188047}
   - {fileID: 439041043}
+  - {fileID: 2074010826}
   - {fileID: 1701709935}
   - {fileID: 1234167695}
   m_Father: {fileID: 1061834947}
@@ -813,7 +931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &411759381
 MonoBehaviour:
@@ -871,8 +989,10 @@ Transform:
   m_Children:
   - {fileID: 647623855}
   - {fileID: 1937072346}
+  - {fileID: 1445461077}
   - {fileID: 354360651}
   - {fileID: 1359870081}
+  - {fileID: 1926354237}
   - {fileID: 1377891131}
   - {fileID: 1968339924}
   m_Father: {fileID: 1485597522}
@@ -982,7 +1102,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &435797104
 MonoBehaviour:
@@ -1040,7 +1160,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &439041044
 MonoBehaviour:
@@ -1258,8 +1378,10 @@ Transform:
   m_Children:
   - {fileID: 580134738}
   - {fileID: 1841910673}
+  - {fileID: 1176658088}
   - {fileID: 435797103}
   - {fileID: 251760977}
+  - {fileID: 1787581926}
   - {fileID: 411759380}
   - {fileID: 1263001706}
   m_Father: {fileID: 1195563811}
@@ -1876,8 +1998,10 @@ Transform:
   m_Children:
   - {fileID: 1870704185}
   - {fileID: 2005950415}
+  - {fileID: 1714965832}
   - {fileID: 1692179155}
   - {fileID: 1810701206}
+  - {fileID: 106320422}
   - {fileID: 1735789356}
   - {fileID: 1806638610}
   m_Father: {fileID: 2062282307}
@@ -2363,6 +2487,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c0638b3ce2b44bcb6cc6014b6b92d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1176658087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176658088}
+  - component: {fileID: 1176658089}
+  m_Layer: 0
+  m_Name: Shoulders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176658088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176658087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 563919171}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1176658089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176658087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: shoulders
+  armorType: shoulders
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!4 &1195563811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4066077604596088, guid: 9d92f385cfd0549d3b43daa6d329a73a,
@@ -2397,7 +2579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1234167696
 MonoBehaviour:
@@ -2557,7 +2739,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1263001707
 MonoBehaviour:
@@ -2843,7 +3025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1359870082
 MonoBehaviour:
@@ -2901,7 +3083,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1377891132
 MonoBehaviour:
@@ -3131,6 +3313,64 @@ MonoBehaviour:
   weaponAttributeType: 
   weaponDescription: 
   weaponEffect: 
+--- !u!1 &1445461076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1445461077}
+  - component: {fileID: 1445461078}
+  m_Layer: 0
+  m_Name: Shoulders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1445461077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445461076}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 418300166}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1445461078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1445461076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: shoulders
+  armorType: shoulders
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &1454074342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3664,7 +3904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1692179156
 MonoBehaviour:
@@ -3722,7 +3962,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1701709936
 MonoBehaviour:
@@ -3828,6 +4068,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704256767}
   m_CullTransparentMesh: 0
+--- !u!1 &1714965831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1714965832}
+  - component: {fileID: 1714965833}
+  m_Layer: 0
+  m_Name: Shoulders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1714965832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714965831}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 910412216}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714965833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714965831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: shoulders
+  armorType: shoulders
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1001 &1718807449
 Prefab:
   m_ObjectHideFlags: 0
@@ -3961,7 +4259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1735789357
 MonoBehaviour:
@@ -4122,6 +4420,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c0638b3ce2b44bcb6cc6014b6b92d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1787581925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1946955042052474, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787581926}
+  - component: {fileID: 1787581927}
+  m_Layer: 0
+  m_Name: Gloves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1787581926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4078951001744536, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1787581925}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 563919171}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1787581927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114883057333712106, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1787581925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: gloves
+  armorType: gloves
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1001 &1792541906
 Prefab:
   m_ObjectHideFlags: 0
@@ -4193,7 +4549,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1806638611
 MonoBehaviour:
@@ -4251,7 +4607,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1810701207
 MonoBehaviour:
@@ -4496,6 +4852,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1919808651}
   m_CullTransparentMesh: 0
+--- !u!1 &1926354236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1946955042052474, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926354237}
+  - component: {fileID: 1926354238}
+  m_Layer: 0
+  m_Name: Gloves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926354237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4078951001744536, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926354236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 418300166}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926354238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114883057333712106, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926354236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: gloves
+  armorType: gloves
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &1937072345
 GameObject:
   m_ObjectHideFlags: 0
@@ -4762,7 +5176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1968339925
 MonoBehaviour:
@@ -4951,7 +5365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1997188048
 MonoBehaviour:
@@ -5174,6 +5588,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2064131761}
   m_CullTransparentMesh: 0
+--- !u!1 &2074010825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1946955042052474, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074010826}
+  - component: {fileID: 2074010827}
+  m_Layer: 0
+  m_Name: Gloves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2074010826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4078951001744536, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074010825}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398434618}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2074010827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114883057333712106, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074010825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: gloves
+  armorType: gloves
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1001 &2079620091
 Prefab:
   m_ObjectHideFlags: 0

@@ -20,7 +20,8 @@ public class EnemyController : MonoBehaviour {
 		string randomWeaponType = weaponGenerator.GenerateType();
 
 		Weapon weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
-		weaponEquipped.SetWeaponType(randomWeaponType);
+		weaponEquipped.weaponType = randomWeaponType;
+        weaponEquipped.weaponName = randomWeaponType;
         weaponGenerator.GetBaseStats(weaponEquipped);
 
         return weaponEquipped;
@@ -29,6 +30,18 @@ public class EnemyController : MonoBehaviour {
     public Armor SetHelm() {
         Debug.Log("running set helm");
         Armor armor = transform.Find("Equipped/Helm").GetComponent<Armor>();
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
+
+        return armor;
+    }
+
+    public Armor SetShoulders() {
+        Debug.Log("running set shoulders");
+        Armor armor = transform.Find("Equipped/Shoulders").GetComponent<Armor>();
         
         int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
         if (armorChance >= 5) {
@@ -53,6 +66,18 @@ public class EnemyController : MonoBehaviour {
     public Armor SetBracers() {
         Debug.Log("running set bracers");
         Armor armor = transform.Find("Equipped/Bracers").GetComponent<Armor>();
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
+
+        return armor;
+    }
+
+    public Armor SetGloves() {
+        Debug.Log("running set gloves");
+        Armor armor = transform.Find("Equipped/Gloves").GetComponent<Armor>();
         
         int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
         if (armorChance >= 5) {

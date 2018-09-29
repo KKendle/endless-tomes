@@ -69,39 +69,39 @@ public class CharacterManager : MonoBehaviour {
 
 		// add generic armor
 		// for player and enemy
-		// SetArmorValue();
 		Armor equippedHelm = transform.Find("Equipped/Helm").GetComponent<Armor>();
-        Debug.Log(this.name + " helm is " + equippedHelm.armorDefense);
+		Armor equippedShoulders = transform.Find("Equipped/Shoulders").GetComponent<Armor>();
         Armor equippedChestplate = transform.Find("Equipped/Chestplate").GetComponent<Armor>();
-        Debug.Log(this.name + " chestplate is " + equippedChestplate.armorDefense);
         Armor equippedBracers = transform.Find("Equipped/Bracers").GetComponent<Armor>();
-        Debug.Log(this.name + " bracers is " + equippedBracers.armorDefense);
+		Armor equippedGloves = transform.Find("Equipped/Gloves").GetComponent<Armor>();
         Armor equippedLegs = transform.Find("Equipped/Legs").GetComponent<Armor>();
-        Debug.Log(this.name + " legs is " + equippedLegs.armorDefense);
         Armor equippedBoots = transform.Find("Equipped/Boots").GetComponent<Armor>();
-        Debug.Log(this.name + " boots is " + equippedBoots.armorDefense);
 
 		// add generic weapon
 		// for player and enemy
-		// weaponGenerator = GameObject.Find("LootManager").GetComponent<WeaponGenerator>();
-		// string randomWeaponType = weaponGenerator.GenerateType();
 		if (this.tag == "Enemy Ally") {
 			EnemyController enemyController = GetComponent<EnemyController>();
 			weaponEquipped = enemyController.SetStartingWeapon();
 			equippedHelm = enemyController.SetHelm();
+			equippedShoulders = enemyController.SetShoulders();
 			equippedChestplate = enemyController.SetChestplate();
 			equippedBracers = enemyController.SetBracers();
+			equippedGloves = enemyController.SetGloves();
 			equippedLegs = enemyController.SetLegs();
 			equippedBoots = enemyController.SetBoots();
-
-			// add it all together
-			characterArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
-			Debug.Log(this.name + " armor is " + characterArmor);
 		}
 		else {
 			weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
 		}
+		// add equipped item stats to character stats
 		AddWeaponStats(weaponEquipped);
+		AddArmorStats(equippedHelm);
+		AddArmorStats(equippedShoulders);
+		AddArmorStats(equippedChestplate);
+		AddArmorStats(equippedBracers);
+		AddArmorStats(equippedGloves);
+		AddArmorStats(equippedLegs);
+		AddArmorStats(equippedBoots);
 
 		// possible future addition..
 		// add enemy inventory for potions, etc.
@@ -182,11 +182,6 @@ public class CharacterManager : MonoBehaviour {
 		}
 	}
 
-	void SetArmorValue() {
-		characterArmor = Mathf.RoundToInt(Random.Range(1.0f, 40.0f));
-		Debug.Log(this.name + " armor value is " + characterArmor);
-	}
-
 	private void AddWeaponStats(Weapon weaponEquipped) {
 		Debug.Log("adding stats from " + weaponEquipped.weaponName);
 		characterStr += weaponEquipped.weaponStr;
@@ -195,6 +190,17 @@ public class CharacterManager : MonoBehaviour {
 		characterInt += weaponEquipped.weaponInt;
 		characterWis += weaponEquipped.weaponWis;
 		characterHeal += weaponEquipped.weaponHeal;
+	}
+
+	private void AddArmorStats(Armor armorEquipped) {
+		Debug.Log("adding stats from " + armorEquipped.armorName);
+		characterArmor += armorEquipped.armorDefense;
+		characterStr += armorEquipped.armorStr;
+		characterCon += armorEquipped.armorCon;
+		characterDex += armorEquipped.armorDex;
+		characterInt += armorEquipped.armorInt;
+		characterWis += armorEquipped.armorWis;
+		characterHeal += armorEquipped.armorHeal;
 	}
 
 	public void TakeDamage(int damage) {
