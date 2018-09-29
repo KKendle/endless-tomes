@@ -74,7 +74,7 @@ public class WeaponGenerator : MonoBehaviour {
 		spawnedWeapon.weaponDescription = generatedDescription;
 		spawnedWeapon.weaponMaterial = randomMaterial;
 		spawnedWeapon.weaponElement = randomElement;
-		// GetBaseStats();
+		GetBaseStats(spawnedWeapon);
 		AddAttributeModifiers();
 		
 		// temp set weapon name to just the type
