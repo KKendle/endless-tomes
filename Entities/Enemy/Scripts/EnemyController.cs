@@ -4,8 +4,19 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 
+    private GameObject lootManager;
+    private WeaponGenerator weaponGenerator;
+    private ArmorGenerator armorGenerator;
+    // private ItemGenerator itemGenerator;
+
+    void Start() {
+        lootManager = GameObject.Find("LootManager");
+        armorGenerator = lootManager.GetComponent<ArmorGenerator>();
+        weaponGenerator = lootManager.GetComponent<WeaponGenerator>();
+        // itemGenerator = lootManager.GetComponent<ItemGenerator>();
+    }
+
     public Weapon SetStartingWeapon() {
-        WeaponGenerator weaponGenerator = GameObject.Find("LootManager").GetComponent<WeaponGenerator>();
 		string randomWeaponType = weaponGenerator.GenerateType();
 
 		Weapon weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
@@ -15,55 +26,62 @@ public class EnemyController : MonoBehaviour {
         return weaponEquipped;
     }
 
-    // public void SetStartingArmor() {
-    //     SetHelmet();
-    //     SetChestplate();
-    //     SetBracers();
-    //     SetLegs();
-    //     SetBoots();
-    // }
-
     public Armor SetHelm() {
         Debug.Log("running set helm");
-        ArmorGenerator armorGenerator = GameObject.Find("LootManager").GetComponent<ArmorGenerator>();
         Armor armor = transform.Find("Equipped/Helm").GetComponent<Armor>();
-        armorGenerator.GetBaseStats(armor);
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
 
         return armor;
     }
 
     public Armor SetChestplate() {
         Debug.Log("running set chestplate");
-        ArmorGenerator armorGenerator = GameObject.Find("LootManager").GetComponent<ArmorGenerator>();
         Armor armor = transform.Find("Equipped/Chestplate").GetComponent<Armor>();
-        armorGenerator.GetBaseStats(armor);
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
 
         return armor;
     }
 
     public Armor SetBracers() {
         Debug.Log("running set bracers");
-        ArmorGenerator armorGenerator = GameObject.Find("LootManager").GetComponent<ArmorGenerator>();
         Armor armor = transform.Find("Equipped/Bracers").GetComponent<Armor>();
-        armorGenerator.GetBaseStats(armor);
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
 
         return armor;
     }
 
     public Armor SetLegs() {
         Debug.Log("running set legs");
-        ArmorGenerator armorGenerator = GameObject.Find("LootManager").GetComponent<ArmorGenerator>();
         Armor armor = transform.Find("Equipped/Legs").GetComponent<Armor>();
-        armorGenerator.GetBaseStats(armor);
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
 
         return armor;
     }
 
     public Armor SetBoots() {
         Debug.Log("running set boots");
-        ArmorGenerator armorGenerator = GameObject.Find("LootManager").GetComponent<ArmorGenerator>();
         Armor armor = transform.Find("Equipped/Boots").GetComponent<Armor>();
-        armorGenerator.GetBaseStats(armor);
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
 
         return armor;
     }

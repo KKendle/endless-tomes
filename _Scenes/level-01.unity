@@ -550,13 +550,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: bracers
   armorType: bracers
-  armorDefense: 5
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -716,13 +719,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: chestplate
   armorType: chestplate
-  armorDefense: 10
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -823,13 +829,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: legs
   armorType: legs
-  armorDefense: 8
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -989,13 +998,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: chestplate
   armorType: chestplate
-  armorDefense: 10
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -1051,6 +1063,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -2114,6 +2129,10 @@ MonoBehaviour:
   characterLevel: 1
   characterStr: 10
   characterCon: 10
+  characterDex: 0
+  characterInt: 0
+  characterWis: 0
+  characterHeal: 0
   characterArmor: 2
   characterHealthCurrent: 0
   characterHealthMax: 0
@@ -2239,6 +2258,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -2398,6 +2420,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -2548,13 +2573,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: boots
   armorType: boots
-  armorDefense: 5
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -2831,13 +2859,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: bracers
   armorType: bracers
-  armorDefense: 5
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -2886,13 +2917,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: legs
   armorType: legs
-  armorDefense: 8
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -3653,6 +3687,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -3708,6 +3745,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -3944,6 +3984,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4173,6 +4216,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4228,6 +4274,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4276,13 +4325,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: helm
   armorType: helm
-  armorDefense: 5
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4489,13 +4541,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: helm
   armorType: helm
-  armorDefense: 5
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4723,13 +4778,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armorName: boots
   armorType: boots
-  armorDefense: 5
+  armorDefense: 0
   armorStr: 0
   armorCon: 0
   armorDex: 0
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4916,6 +4974,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -4971,6 +5032,9 @@ MonoBehaviour:
   armorInt: 0
   armorWis: 0
   armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
   armorDescription: 0
   armorEffect: 0
   armorSet: 0
@@ -5006,6 +5070,10 @@ MonoBehaviour:
   characterLevel: 1
   characterStr: 10
   characterCon: 10
+  characterDex: 0
+  characterInt: 0
+  characterWis: 0
+  characterHeal: 0
   characterArmor: 2
   characterHealthCurrent: 0
   characterHealthMax: 0

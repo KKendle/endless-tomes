@@ -81,10 +81,6 @@ public class CharacterManager : MonoBehaviour {
         Armor equippedBoots = transform.Find("Equipped/Boots").GetComponent<Armor>();
         Debug.Log(this.name + " boots is " + equippedBoots.armorDefense);
 
-		// add it all together
-        characterArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
-        Debug.Log(this.name + " armor is " + characterArmor);
-
 		// add generic weapon
 		// for player and enemy
 		// weaponGenerator = GameObject.Find("LootManager").GetComponent<WeaponGenerator>();
@@ -97,6 +93,10 @@ public class CharacterManager : MonoBehaviour {
 			equippedBracers = enemyController.SetBracers();
 			equippedLegs = enemyController.SetLegs();
 			equippedBoots = enemyController.SetBoots();
+
+			// add it all together
+			characterArmor += equippedHelm.armorDefense + equippedChestplate.armorDefense + equippedBracers.armorDefense + equippedLegs.armorDefense + equippedBoots.armorDefense;
+			Debug.Log(this.name + " armor is " + characterArmor);
 		}
 		else {
 			weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();

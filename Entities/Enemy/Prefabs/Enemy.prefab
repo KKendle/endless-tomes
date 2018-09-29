@@ -90,6 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4066077604596088}
   - component: {fileID: 114298026594300344}
+  - component: {fileID: 114752837130928288}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy Ally
@@ -158,6 +159,10 @@ MonoBehaviour:
   characterLevel: 1
   characterStr: 10
   characterCon: 10
+  characterDex: 0
+  characterInt: 0
+  characterWis: 0
+  characterHeal: 0
   characterArmor: 2
   characterHealthCurrent: 0
   characterHealthMax: 0
@@ -188,6 +193,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114752837130928288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1927139123040226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8a85fd54818479e99a227f0ab15bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114772397580476808
 MonoBehaviour:
   m_ObjectHideFlags: 1
