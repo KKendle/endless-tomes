@@ -31,13 +31,6 @@ public class CharacterManager : MonoBehaviour {
 	private Text characterLevelText;
 	private HealthManager characterHealth;
 	private bool yourTurn = false;
-
-	// characters in battle
-	// private GameObject[] findPlayers;
-	// private List<CharacterManager> playerAllies = new List<CharacterManager>();
-	// private GameObject[] findEnemies;
-	// private List<CharacterManager> enemyAllies = new List<CharacterManager>();
-	// private List<CharacterManager> charactersInBattle = new List<CharacterManager>();
 	private bool attackAnyCharacter = false;
 	private bool attackAllCharacters = false;
 
@@ -109,7 +102,6 @@ public class CharacterManager : MonoBehaviour {
 	}
 
 	void Attack() {
-		// weaponDamage = Mathf.RoundToInt(Random.Range(1.0f, 15.0f)) + (characterStr / 2);
 		weaponDamage = weaponEquipped.WeaponDamage(this);
 		
 		// attack player or enemy
@@ -162,17 +154,6 @@ public class CharacterManager : MonoBehaviour {
 		if (character != null) {
 			character.TakeDamage(weaponDamage);
 		}
-		// int playersAlive = playerAllies.Count;
-		// Debug.Log("player count is " + playersAlive);
-		// if (playersAlive > 0) {
-		// 	Debug.Log("players are alive");
-		// 	CharacterManager player = playerAllies[Mathf.RoundToInt(Random.Range(0, playerAllies.Count))];
-
-		// 	player.TakeDamage(weaponDamage);
-		// }
-		// else {
-		// 	AllPlayersDead();
-		// }
 	}
 
 	private void AttackEnemy() {
@@ -180,17 +161,6 @@ public class CharacterManager : MonoBehaviour {
 		if (character != null) {
 			character.TakeDamage(weaponDamage);
 		}
-		// int enemiesAlive = enemyAllies.Count;
-		// Debug.Log("enemy count is " + enemiesAlive);
-		// if (enemiesAlive > 0) {
-		// 	Debug.Log("enemies are alive");
-		// 	CharacterManager enemy = enemyAllies[Mathf.RoundToInt(Random.Range(0, enemyAllies.Count))];
-			
-		// 	enemy.TakeDamage(weaponDamage);
-		// }
-		// else {
-		// 	AllEnemiesDead();
-		// }
 	}
 
 	void SetArmorValue() {
@@ -226,22 +196,6 @@ public class CharacterManager : MonoBehaviour {
 
 	public void CharacterDied() {
 		Debug.Log(this + " character has died");
-		// // remove from list of characters in battle
-		// if (this.gameObject.tag == "Player Ally") {
-		// 	Debug.Log("removing " + this + " from player list");
-		// 	playerAllies.Remove(this);
-		// 	for (int i = 0; i < playerAllies.Count; i++) {
-		// 		Debug.Log("players left " + playerAllies[i]);
-		// 	}
-		// }
-		// else if (this.gameObject.tag == "Enemy Ally") {
-		// 	Debug.Log("removing " + this + " from enemy list");
-		// 	enemyAllies.Remove(this);
-		// 	for (int i = 0; i < enemyAllies.Count; i++) {
-		// 		Debug.Log("enemies left " + enemyAllies[i]);
-		// 	}
-		// }
-
 		// remove from turn order
 		turnOrderManager.RemoveCharacterTurn(this);
 	}
