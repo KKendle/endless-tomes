@@ -63,6 +63,18 @@ public class EnemyController : MonoBehaviour {
         return armor;
     }
 
+    public Armor SetBelt() {
+        Debug.Log("running set belt");
+        Armor armor = transform.Find("Equipped/Belt").GetComponent<Armor>();
+        
+        int armorChance = Mathf.RoundToInt(Random.Range(0.0f, 10.0f));
+        if (armorChance >= 5) {
+            armorGenerator.GetBaseStats(armor);
+        }
+
+        return armor;
+    }
+
     public Armor SetBracers() {
         Debug.Log("running set bracers");
         Armor armor = transform.Find("Equipped/Bracers").GetComponent<Armor>();

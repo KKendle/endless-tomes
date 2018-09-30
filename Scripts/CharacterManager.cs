@@ -72,6 +72,7 @@ public class CharacterManager : MonoBehaviour {
 		Armor equippedHelm = transform.Find("Equipped/Helm").GetComponent<Armor>();
 		Armor equippedShoulders = transform.Find("Equipped/Shoulders").GetComponent<Armor>();
         Armor equippedChestplate = transform.Find("Equipped/Chestplate").GetComponent<Armor>();
+		Armor equippedBelt = transform.Find("Equipped/Belt").GetComponent<Armor>();
         Armor equippedBracers = transform.Find("Equipped/Bracers").GetComponent<Armor>();
 		Armor equippedGloves = transform.Find("Equipped/Gloves").GetComponent<Armor>();
         Armor equippedLegs = transform.Find("Equipped/Legs").GetComponent<Armor>();
@@ -85,6 +86,7 @@ public class CharacterManager : MonoBehaviour {
 			equippedHelm = enemyController.SetHelm();
 			equippedShoulders = enemyController.SetShoulders();
 			equippedChestplate = enemyController.SetChestplate();
+			equippedBelt = enemyController.SetBelt();
 			equippedBracers = enemyController.SetBracers();
 			equippedGloves = enemyController.SetGloves();
 			equippedLegs = enemyController.SetLegs();
@@ -98,6 +100,7 @@ public class CharacterManager : MonoBehaviour {
 		AddArmorStats(equippedHelm);
 		AddArmorStats(equippedShoulders);
 		AddArmorStats(equippedChestplate);
+		AddArmorStats(equippedBelt);
 		AddArmorStats(equippedBracers);
 		AddArmorStats(equippedGloves);
 		AddArmorStats(equippedLegs);

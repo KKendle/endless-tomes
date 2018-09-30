@@ -76,78 +76,89 @@ public class ArmorGenerator : MonoBehaviour {
 
 	void BaseHelm(Armor armor) {
 		Debug.Log("running Base helm stats");
-		armor.armorDefense = 5;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorDefense = 6;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}
 
 	void BaseShoulders(Armor armor) {
 		Debug.Log("running Base shoulders stats");
 		armor.armorDefense = 7;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}
 
 	void BaseChestplate(Armor armor) {
 		Debug.Log("running Base chestplate stats");
 		armor.armorDefense = 10;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
+	}
+
+	void BaseBelt(Armor armor) {
+		Debug.Log("running Base belt stats");
+		armor.armorDefense = 4;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}
 
 	void BaseBracers(Armor armor) {
 		Debug.Log("running Base bracers stats");
 		armor.armorDefense = 2;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}
 
 	void BaseGloves(Armor armor) {
 		Debug.Log("running Base gloves stats");
-		armor.armorDefense = 3;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorDefense = 4;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}
 
 	void BaseLegs(Armor armor) {
 		Debug.Log("running Base legs stats");
 		armor.armorDefense = 8;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}
 
 	void BaseBoots(Armor armor) {
 		Debug.Log("running Base boots stats");
-		armor.armorDefense = 5;
-		armor.armorStr = 1;
-		armor.armorCon = 1;
-		armor.armorDex = 1;
-		armor.armorInt = 1;
-		armor.armorWis = 1;
-		armor.armorHeal = 1;
+		armor.armorDefense = 6;
+		armor.armorStr = 0;
+		armor.armorCon = 0;
+		armor.armorDex = 0;
+		armor.armorInt = 0;
+		armor.armorWis = 0;
+		armor.armorHeal = 0;
 	}	
 }

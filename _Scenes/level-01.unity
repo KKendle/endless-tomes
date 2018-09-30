@@ -252,7 +252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &106320423
 MonoBehaviour:
@@ -458,6 +458,64 @@ MonoBehaviour:
   weaponAttributeType: 
   weaponDescription: 
   weaponEffect: 
+--- !u!1 &184854674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184854675}
+  - component: {fileID: 184854676}
+  m_Layer: 0
+  m_Name: Belt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184854675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184854674}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 910412216}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184854676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 184854674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: belt
+  armorType: belt
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &194696090
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +650,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &251760978
 MonoBehaviour:
@@ -879,6 +937,7 @@ Transform:
   - {fileID: 1091539255}
   - {fileID: 320336554}
   - {fileID: 1997188047}
+  - {fileID: 770481893}
   - {fileID: 439041043}
   - {fileID: 2074010826}
   - {fileID: 1701709935}
@@ -931,7 +990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &411759381
 MonoBehaviour:
@@ -991,6 +1050,7 @@ Transform:
   - {fileID: 1937072346}
   - {fileID: 1445461077}
   - {fileID: 354360651}
+  - {fileID: 909425416}
   - {fileID: 1359870081}
   - {fileID: 1926354237}
   - {fileID: 1377891131}
@@ -1160,7 +1220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &439041044
 MonoBehaviour:
@@ -1380,6 +1440,7 @@ Transform:
   - {fileID: 1841910673}
   - {fileID: 1176658088}
   - {fileID: 435797103}
+  - {fileID: 955320780}
   - {fileID: 251760977}
   - {fileID: 1787581926}
   - {fileID: 411759380}
@@ -1802,6 +1863,64 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224204571673038814, guid: f62510d363aba4cfcbf91a89a01b2048,
     type: 2}
   m_PrefabInternal: {fileID: 1263648690}
+--- !u!1 &770481892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770481893}
+  - component: {fileID: 770481894}
+  m_Layer: 0
+  m_Name: Belt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770481893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770481892}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 398434618}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &770481894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770481892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: belt
+  armorType: belt
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &824002214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1969,6 +2088,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &909425415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909425416}
+  - component: {fileID: 909425417}
+  m_Layer: 0
+  m_Name: Belt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &909425416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909425415}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 418300166}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909425417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909425415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: belt
+  armorType: belt
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &910412215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +2177,7 @@ Transform:
   - {fileID: 2005950415}
   - {fileID: 1714965832}
   - {fileID: 1692179155}
+  - {fileID: 184854675}
   - {fileID: 1810701206}
   - {fileID: 106320422}
   - {fileID: 1735789356}
@@ -2007,6 +2185,64 @@ Transform:
   m_Father: {fileID: 2062282307}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &955320779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1303792026544898, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 955320780}
+  - component: {fileID: 955320781}
+  m_Layer: 0
+  m_Name: Belt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &955320780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4311213511562340, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 955320779}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 563919171}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955320781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114038147168583532, guid: b927853957bf24764b4f924c41014c56,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 955320779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e4ecae1c0adb4c0d9439ffb457b9b23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armorName: belt
+  armorType: belt
+  armorDefense: 0
+  armorStr: 0
+  armorCon: 0
+  armorDex: 0
+  armorInt: 0
+  armorWis: 0
+  armorHeal: 0
+  armorElement: 
+  armorMaterial: 
+  armorAttributeType: 
+  armorDescription: 0
+  armorEffect: 0
+  armorSet: 0
 --- !u!1 &995643368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1234167696
 MonoBehaviour:
@@ -2739,7 +2975,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1263001707
 MonoBehaviour:
@@ -3025,7 +3261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1359870082
 MonoBehaviour:
@@ -3083,7 +3319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1377891132
 MonoBehaviour:
@@ -3962,7 +4198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1701709936
 MonoBehaviour:
@@ -4259,7 +4495,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1735789357
 MonoBehaviour:
@@ -4449,7 +4685,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 563919171}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1787581927
 MonoBehaviour:
@@ -4549,7 +4785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1806638611
 MonoBehaviour:
@@ -4607,7 +4843,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910412216}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1810701207
 MonoBehaviour:
@@ -4881,7 +5117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1926354238
 MonoBehaviour:
@@ -5176,7 +5412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 418300166}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1968339925
 MonoBehaviour:
@@ -5617,7 +5853,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 398434618}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2074010827
 MonoBehaviour:
