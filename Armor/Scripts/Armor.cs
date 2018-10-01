@@ -16,7 +16,7 @@ public class Armor : MonoBehaviour {
 	public string armorElement;
 	public string armorMaterial;
 	public string armorAttributeType;
-	public int armorDescription;
-	public int armorEffect;
-	public int armorSet;
+	public string armorDescription;
+	public string armorEffect;
+	public string armorSet;
 }

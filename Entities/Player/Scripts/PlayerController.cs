@@ -5,6 +5,48 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    void Start() {
+        // level
+        PlayerPrefs.GetInt(this.name + " level", 1);
+        PlayerPrefs.SetInt(this.name + " level", PlayerPrefs.GetInt(this.name + " level", 1));
+    }
+
+    public void PPSetWeapon(Weapon weapon) {
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponName", weapon.weaponName);
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponType", weapon.weaponType);
+        PlayerPrefs.SetFloat(this.name + " " + weapon.weaponName + " weaponDamageMin", weapon.weaponDamageMin);
+        PlayerPrefs.SetFloat(this.name + " " + weapon.weaponName + " weaponDamageMax", weapon.weaponDamageMax);
+        PlayerPrefs.SetInt(this.name + " " + weapon.weaponName + " weaponStr", weapon.weaponStr);
+        PlayerPrefs.SetInt(this.name + " " + weapon.weaponName + " weaponCon", weapon.weaponCon);
+        PlayerPrefs.SetInt(this.name + " " + weapon.weaponName + " weaponDex", weapon.weaponDex);
+        PlayerPrefs.SetInt(this.name + " " + weapon.weaponName + " weaponInt", weapon.weaponInt);
+        PlayerPrefs.SetInt(this.name + " " + weapon.weaponName + " weaponWis", weapon.weaponWis);
+        PlayerPrefs.SetInt(this.name + " " + weapon.weaponName + " weaponHeal", weapon.weaponHeal);
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponElement", weapon.weaponElement);
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponMaterial", weapon.weaponMaterial);
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponAttributeType", weapon.weaponAttributeType);
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponDescription", weapon.weaponDescription);
+        PlayerPrefs.SetString(this.name + " " + weapon.weaponName + " weaponEffect", weapon.weaponEffect);
+    }
+
+    public void PPSetArmor(Armor armor) {
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorName", armor.armorName);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorType", armor.armorType);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorDefense", armor.armorDefense);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorStr", armor.armorStr);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorCon", armor.armorCon);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorDex", armor.armorDex);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorInt", armor.armorInt);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorWis", armor.armorWis);
+        PlayerPrefs.SetInt(this.name + " " + armor.armorName + " armorHeal", armor.armorHeal);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorElement", armor.armorElement);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorMaterial", armor.armorMaterial);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorAttributeType", armor.armorAttributeType);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorDescription", armor.armorDescription);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorEffect", armor.armorEffect);
+        PlayerPrefs.SetString(this.name + " " + armor.armorName + " armorSet", armor.armorSet);
+    }
+
     // public int playerLevel = 1;
     // public int playerXP;
     // public int playerXPNextLevel = 83;
@@ -152,37 +194,6 @@ public class PlayerController : MonoBehaviour {
     //     characterHealth.Reset(this.name);
 	// }
 
-    // void Update() {
-    //     if (yourTurn) {
-    //         if(Input.GetKeyDown(KeyCode.Space)) {
-    //             Debug.Log(this.name + " is attacking");
-    //             yourTurn = false;
-    //             Attack();
-    //         }
-    //     }
-
-    //     if(playerHealthCurrent <= 0) {
-    //         Debug.Log(this.name + " health is zero or below. dying. " + playerHealthCurrent);
-    //         // Die();
-    //     }
-    // }
-
-    // void Attack() {
-    //     Debug.Log(this.name + " attacking");
-    //     // weaponDamage = weaponEquipped.WeaponDamage(currentWeapon);
-    //     weaponDamage = weaponEquipped.WeaponDamage();
-    //     // weaponDamage = 100;
-    //     // Debug.Log("weapon damage from " + currentWeapon + " is " + weaponDamage);
-    //     damage = Mathf.RoundToInt(weaponDamage + (playerStr / 2));
-    //     // Debug.Log("player str " + playerStr);
-    //     Debug.Log("total player damage " + damage);
-    //     enemy[Mathf.RoundToInt(Random.Range(0, enemyAllies.Length))].TakeDamage(damage);
-    //     // enemy.TakeDamage(damage);
-    //     // Debug.Log("Enemy health is now at " + EnemyHealth.enemyHealth);
-
-    //     turnOrderManager.EndTurn();
-    // }
-
     // public void ChangeWeapon(string newWeapon) {
     //     Debug.Log("changing weapons");
     //     Debug.Log("current weapon is " + currentWeaponText);
@@ -257,25 +268,4 @@ public class PlayerController : MonoBehaviour {
     //     playerXPText.text = "XP " + PlayerPrefs.GetInt(this.name + " experience") + "/" + playerXPNextLevel;
     //     levelUpManager.CheckLvlUp(this.name);
     // }
-
-    // public void TakeDamage(int damage) {
-    //     Debug.Log("taking " + damage + " amount");
-    //     int armorDamageReduction = Mathf.RoundToInt(playerArmor * .1f);
-    //     Debug.Log(this.name + " armor is negating " + armorDamageReduction + " damage");
-    //     damage = damage - armorDamageReduction;
-    //     Debug.Log(this.name + " is taking " + damage + " damage");
-    //     playerHealth.Health(this.name, damage);
-    // }
-
-    // public void TakeTurn() {
-    //     Debug.Log(this.name + " is taking their turn");
-    //     yourTurn = true;
-    // }
-
-	// void Die() {
-	// 	Debug.Log("Player Died");
-	// 	// Destroy(gameObject);
-	// 	LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-	// 	levelManager.LoadLevel("Lose");
-	// }
 }

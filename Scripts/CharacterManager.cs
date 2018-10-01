@@ -45,6 +45,11 @@ public class CharacterManager : MonoBehaviour {
 		// FINDING COMPONENTS
 		//
 
+		// find enemy
+		EnemyController enemyController = GetComponent<EnemyController>();
+		// find player
+		PlayerController playerController = GetComponent<PlayerController>();
+
 		// find character health
 		characterHealth = transform.Find("Canvas/Health").GetComponent<HealthManager>();
 		if (characterHealth != null) {
@@ -81,7 +86,6 @@ public class CharacterManager : MonoBehaviour {
 		// add generic weapon
 		// for player and enemy
 		if (this.tag == "Enemy Ally") {
-			EnemyController enemyController = GetComponent<EnemyController>();
 			weaponEquipped = enemyController.SetStartingWeapon();
 			equippedHelm = enemyController.SetHelm();
 			equippedShoulders = enemyController.SetShoulders();
@@ -94,6 +98,15 @@ public class CharacterManager : MonoBehaviour {
 		}
 		else {
 			weaponEquipped = transform.Find("Equipped/Weapon").GetComponent<Weapon>();
+			playerController.PPSetWeapon(weaponEquipped);
+			playerController.PPSetArmor(equippedHelm);
+			playerController.PPSetArmor(equippedShoulders);
+			playerController.PPSetArmor(equippedChestplate);
+			playerController.PPSetArmor(equippedBelt);
+			playerController.PPSetArmor(equippedBracers);
+			playerController.PPSetArmor(equippedGloves);
+			playerController.PPSetArmor(equippedLegs);
+			playerController.PPSetArmor(equippedBoots);
 		}
 		// add equipped item stats to character stats
 		AddWeaponStats(weaponEquipped);
