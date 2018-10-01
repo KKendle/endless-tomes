@@ -5,6 +5,15 @@ using UnityEngine.UI;
 
 public class LevelUpManager : MonoBehaviour {
 
+	public int GetXPNextLevel(int level) {
+		int nextLevel = 83;
+		if (level == 1) {
+			nextLevel = 83;
+		}
+
+		return nextLevel;
+	}
+
 	// private GameObject levelUpInfo;
 	// private PlayerController player;
 

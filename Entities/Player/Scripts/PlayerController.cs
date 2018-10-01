@@ -5,10 +5,27 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    private Text playerLevelText;
+    private Text playerXPText;
+    private int playerXPNextLevel;
+
     void Start() {
         // level
-        PlayerPrefs.GetInt(this.name + " level", 1);
         PlayerPrefs.SetInt(this.name + " level", PlayerPrefs.GetInt(this.name + " level", 1));
+
+        // experience
+        PlayerPrefs.SetInt(this.name + " experience", PlayerPrefs.GetInt(this.name + " experience", 0));
+        LevelUpManager levelUpManager = GameObject.Find("LevelUpManager").GetComponent<LevelUpManager>();
+        playerXPNextLevel = levelUpManager.GetXPNextLevel(PlayerPrefs.GetInt(this.name + " level"));
+        PlayerPrefs.SetInt(this.name + " experienceNext", playerXPNextLevel);
+
+        // show level of player
+        playerLevelText = transform.Find("Canvas/Level").GetComponent<Text>();
+        playerLevelText.text = "Lvl " + PlayerPrefs.GetInt(this.name + " level");
+
+        // show experience points of player
+        playerXPText = transform.Find("Canvas/Experience").GetComponent<Text>();
+        playerXPText.text = "XP " + PlayerPrefs.GetInt(this.name + " experience") + "/" + playerXPNextLevel;
     }
 
     public void PPSetWeapon(Weapon weapon) {
