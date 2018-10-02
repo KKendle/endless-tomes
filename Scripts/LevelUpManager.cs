@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class LevelUpManager : MonoBehaviour {
 
+	private int[] expLevel = {72, 243, 576, 1125, 1944, 3087, 4608, 6561, 9000, 11979, 15552, 19773, 24696, 30375, 36864, 44217, 52488, 61731, 72000};
+
 	public int GetXPNextLevel(int level) {
-		int nextLevel = 83;
-		if (level == 1) {
-			nextLevel = 83;
-		}
+		int nextLevel = expLevel[level - 1];
+		Debug.Log("nextlevel is set to " + nextLevel);
 
 		return nextLevel;
 	}
