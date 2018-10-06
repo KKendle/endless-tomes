@@ -143,6 +143,8 @@ public class TurnOrderManager : MonoBehaviour {
 			Debug.Log("enemy count is " + enemyAllies.Count);
 
 			if (enemyAllies.Count <= 0) {
+				LootManager lootManager = GameObject.Find("LootManager").GetComponent<LootManager>();
+				lootManager.EnemyDrops();
 				LevelManager levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
 				levelManager.LoadLevel("Win");
 			}

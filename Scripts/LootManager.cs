@@ -6,6 +6,7 @@ public class LootManager : MonoBehaviour {
 
 	private bool isWeaponDrop = false;
 	private bool isArmorDrop = false;
+	private bool isItemDrop = false;
 	private string randomElement;
 	private string randomMaterial;
 	private string randomType;
@@ -20,6 +21,7 @@ public class LootManager : MonoBehaviour {
         // Debug.Log("checking for enemy drops");
 		WeaponGenerator weaponGenerator = gameObject.GetComponent<WeaponGenerator>();
 		ArmorGenerator armorGenerator = gameObject.GetComponent<ArmorGenerator>();
+		ItemGenerator itemGenerator = gameObject.GetComponent<ItemGenerator>();
 
 		CheckItemDrop();
 
@@ -38,6 +40,11 @@ public class LootManager : MonoBehaviour {
 			armorGenerator.GenerateArmor();
 			isArmorDrop = false;
 		}
+
+		if (isItemDrop) {
+			itemGenerator.GenerateItem();
+			isItemDrop = false;
+		}
     }
 
 	// need to figure out return type
@@ -45,7 +52,7 @@ public class LootManager : MonoBehaviour {
 	// can have factors based on enemy difficulty
 	private void CheckItemDrop() {
 		Debug.Log("checking chance of item drops");
-
+		isItemDrop = true;
 	}
 
 	private bool CheckPresetWeapon() {

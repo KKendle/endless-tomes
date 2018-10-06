@@ -278,9 +278,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &135515303
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,9 +513,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &194696090
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,9 +676,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &320336553
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,9 +734,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &326694378
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,9 +903,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &398434617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,9 +1016,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &418300165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,9 +1188,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &439041042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,9 +1246,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &460548032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,9 +1918,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &824002214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,9 +2143,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &910412215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,9 +2240,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &995643368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,9 +2621,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1155918077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,9 +2778,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!4 &1195563811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4066077604596088, guid: 9d92f385cfd0549d3b43daa6d329a73a,
@@ -2841,9 +2841,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1238402933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,9 +3001,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1001 &1263648690
 Prefab:
   m_ObjectHideFlags: 0
@@ -3287,9 +3287,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1377891130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,9 +3345,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!4 &1390197509
 Transform:
   m_ObjectHideFlags: 0
@@ -3604,9 +3604,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1454074342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,9 +4166,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1701709934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,9 +4224,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1704256767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,9 +4359,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1001 &1718807449
 Prefab:
   m_ObjectHideFlags: 0
@@ -4521,9 +4521,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1745011731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4711,9 +4711,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1001 &1792541906
 Prefab:
   m_ObjectHideFlags: 0
@@ -4811,9 +4811,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1810701205
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,9 +4869,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1841910672
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,9 +4927,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!4 &1870704185
 Transform:
   m_ObjectHideFlags: 0
@@ -4986,33 +4986,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcf607b7c8d544aa96dc03cbc3b38ab, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1910187117 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1630317124384006, guid: 8fcf607b7c8d544aa96dc03cbc3b38ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 1910187116}
---- !u!114 &1910187118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1910187117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697da38a7e7f44fcc970b32fd1dd865c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1910187121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1910187117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b624d58bed7b481082ec71cdae764db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1919808651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5143,9 +5116,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1937072345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,9 +5174,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1958741642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5438,9 +5411,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &1995434958
 GameObject:
   m_ObjectHideFlags: 0
@@ -5627,9 +5600,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &2005950414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5685,9 +5658,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1 &2062282305
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,9 +5852,9 @@ MonoBehaviour:
   armorElement: 
   armorMaterial: 
   armorAttributeType: 
-  armorDescription: 0
-  armorEffect: 0
-  armorSet: 0
+  armorDescription: 
+  armorEffect: 
+  armorSet: 
 --- !u!1001 &2079620091
 Prefab:
   m_ObjectHideFlags: 0
